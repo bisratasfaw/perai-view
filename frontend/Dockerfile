@@ -11,7 +11,7 @@
 # simulation in the browser instead, build with --build-arg VITE_DATA_SOURCE=local.
 
 # ── Build: install deps and bundle src + shared into dist/ ──────────────────────
-FROM node:22-alpine AS build
+FROM node:26-alpine AS build
 WORKDIR /app/frontend
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci --no-audit --no-fund
