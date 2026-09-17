@@ -1,0 +1,32 @@
+{
+  "name": "perai-view",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Interactive 3D globe of simulated AI-assistant activity. Repository-level scripts that orchestrate frontend/, backend/ and ai-classifier/.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "setup": "npm ci --no-audit --no-fund --prefix backend && npm ci --no-audit --no-fund --prefix frontend",
+    "dev": "concurrently --names api,web --prefix-colors cyan,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:all": "concurrently --names api,web,ml --prefix-colors cyan,magenta,yellow \"npm:dev:api\" \"npm:dev:web\" \"npm:classifier:dev\"",
+    "dev:api": "npm run dev --prefix backend",
+    "dev:web": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend",
+    "preview": "npm run preview --prefix frontend",
+    "lint": "npm run lint --prefix backend && npm run lint --prefix frontend",
+    "typecheck": "npm run typecheck --prefix backend && npm run typecheck --prefix frontend",
+    "test": "npm test --prefix backend && npm test --prefix frontend",
+    "test:e2e": "npm run test:e2e --prefix frontend",
+    "check": "npm run lint && npm run typecheck && npm test",
+    "classifier:setup": "node scripts/classifier.mjs setup",
+    "classifier:dev": "node scripts/classifier.mjs dev",
+    "classifier:test": "node scripts/classifier.mjs test",
+    "classifier:lint": "node scripts/classifier.mjs lint"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

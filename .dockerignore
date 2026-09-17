@@ -1,0 +1,18 @@
+# Fallback for builds that use the repository root as context without BuildKit.
+# BuildKit (the default in Docker Engine 23+ and Docker Compose v2) prefers the
+# per-Dockerfile ignore files: backend/Dockerfile.dockerignore and
+# frontend/Dockerfile.dockerignore.
+.git
+.github
+.claude
+docs
+**/node_modules
+**/dist
+**/coverage
+**/playwright-report
+**/test-results
+**/.venv
+**/__pycache__
+**/.env
+**/.env.*
+**/*.log

@@ -1,0 +1,16 @@
+# BuildKit uses this file (instead of a root .dockerignore) for
+# `docker build -f frontend/Dockerfile .`. Paths are relative to the repo root.
+# Only frontend/ and shared/ are needed; everything else is excluded.
+*
+!frontend/
+!shared/
+
+**/node_modules
+**/dist
+**/coverage
+**/playwright-report
+**/test-results
+**/.env
+**/.env.*
+**/*.log
+frontend/e2e

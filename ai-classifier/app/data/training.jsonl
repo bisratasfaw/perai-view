@@ -1,0 +1,350 @@
+{"text": "hey, how's your day going?", "label": "conversation"}
+{"text": "I can't sleep, can we just talk for a bit?", "label": "conversation"}
+{"text": "What's your favorite movie and why?", "label": "conversation"}
+{"text": "Tell me a joke about cats", "label": "conversation"}
+{"text": "I'm feeling kind of anxious about my job interview tomorrow", "label": "conversation"}
+{"text": "Do you think pineapple belongs on pizza?", "label": "conversation"}
+{"text": "good morning!", "label": "conversation"}
+{"text": "What should I cook for dinner tonight? I have chicken, rice and some spinach", "label": "conversation"}
+{"text": "My best friend forgot my birthday and I'm upset. Is it silly to feel this way?", "label": "conversation"}
+{"text": "Can you recommend a board game for four people who don't like long rules?", "label": "conversation"}
+{"text": "thanks, that was really helpful", "label": "conversation"}
+{"text": "What would you do if you had a free weekend in Lisbon?", "label": "conversation"}
+{"text": "I just adopted a puppy! Any tips for the first night?", "label": "conversation"}
+{"text": "Would you rather be able to fly or be invisible?", "label": "conversation"}
+{"text": "I'm bored. Entertain me.", "label": "conversation"}
+{"text": "How do I tell my roommate politely that they need to clean the kitchen more often?", "label": "conversation"}
+{"text": "Let's play 20 questions. I'm thinking of an animal.", "label": "conversation"}
+{"text": "Do you ever get tired of answering questions?", "label": "conversation"}
+{"text": "Give me some motivation to go to the gym today", "label": "conversation"}
+{"text": "What's a good name for a goldfish?", "label": "conversation"}
+{"text": "I finally finished my marathon training!", "label": "conversation"}
+{"text": "Can you help me decide between getting a cat or a dog?", "label": "conversation"}
+{"text": "lol that's hilarious", "label": "conversation"}
+{"text": "I'm nervous about moving to Seoul next month, can you cheer me up?", "label": "conversation"}
+{"text": "What's something fun to do on a rainy Sunday?", "label": "conversation"}
+{"text": "Pretend you're a pirate and say hi", "label": "conversation"}
+{"text": "Who do you think would win in a fight, a gorilla or a bear?", "label": "conversation"}
+{"text": "I had a really rough day at work and just need to vent", "label": "conversation"}
+{"text": "What are some good conversation starters for a first date?", "label": "conversation"}
+{"text": "Is it normal to feel lonely after graduating?", "label": "conversation"}
+{"text": "Tell me something interesting", "label": "conversation"}
+{"text": "I'm planning a surprise party for my mom, any ideas?", "label": "conversation"}
+{"text": "how are you", "label": "conversation"}
+{"text": "What gift should I get my dad who likes fishing and jazz?", "label": "conversation"}
+{"text": "Can we chat about Studio Ghibli films? My favourite is Spirited Away", "label": "conversation"}
+{"text": "Say something nice to me please", "label": "conversation"}
+{"text": "I keep procrastinating. Any advice on how to stop?", "label": "conversation"}
+{"text": "Do you have a sense of humor?", "label": "conversation"}
+{"text": "My plants keep dying, what am I doing wrong?", "label": "conversation"}
+{"text": "What's your opinion on working from home versus going to the office?", "label": "conversation"}
+{"text": "Riddle me this: what has keys but can't open locks?", "label": "conversation"}
+{"text": "I got the job!!! I'm so happy", "label": "conversation"}
+{"text": "Should I text my ex happy birthday or is that weird?", "label": "conversation"}
+{"text": "What are you up to?", "label": "conversation"}
+{"text": "Help me pick a weekend plan: hiking, a museum, or staying in", "label": "conversation"}
+{"text": "I'm visiting Marrakech with my grandparents, what should we keep in mind for a relaxed trip?", "label": "conversation"}
+{"text": "Just wanted to say hi before I head out", "label": "conversation"}
+{"text": "Would it be rude to leave a party early without saying goodbye?", "label": "conversation"}
+{"text": "Can you keep me company while I wait for my train?", "label": "conversation"}
+{"text": "Rate my breakfast: cold pizza and black coffee", "label": "conversation"}
+{"text": "Write a cover letter for a junior data analyst position", "label": "writing"}
+{"text": "Draft a polite email to my landlord asking to fix the heating", "label": "writing"}
+{"text": "Write a short poem about autumn leaves", "label": "writing"}
+{"text": "Can you help me write a wedding toast for my brother?", "label": "writing"}
+{"text": "Write a 500-word blog post about the benefits of cycling to work", "label": "writing"}
+{"text": "Compose a haiku about the ocean", "label": "writing"}
+{"text": "Rewrite this paragraph so it sounds more professional: hey guys, the meeting got moved to friday", "label": "writing"}
+{"text": "Write a product description for handmade soy candles", "label": "writing"}
+{"text": "Help me write a LinkedIn post announcing my new job", "label": "writing"}
+{"text": "Write a bedtime story about a dragon who is afraid of the dark", "label": "writing"}
+{"text": "Draft a resignation letter that keeps things positive", "label": "writing"}
+{"text": "Write an opening paragraph for a mystery novel set in Victorian London", "label": "writing"}
+{"text": "Proofread my essay introduction and improve the flow", "label": "writing"}
+{"text": "Write a catchy slogan for a coffee shop called Bean There", "label": "writing"}
+{"text": "Can you write a thank-you note to my child's teacher?", "label": "writing"}
+{"text": "Write song lyrics about a road trip with friends", "label": "writing"}
+{"text": "Draft a persuasive essay arguing that school should start later", "label": "writing"}
+{"text": "Write an Instagram caption for a sunset beach photo", "label": "writing"}
+{"text": "Make my speech for the graduation ceremony more inspiring", "label": "writing"}
+{"text": "Write a limerick about a cat who loves lasagna", "label": "writing"}
+{"text": "Write a complaint letter to an airline about my lost luggage", "label": "writing"}
+{"text": "Create a short script for a 30-second radio ad for a bakery", "label": "writing"}
+{"text": "Write a personal statement for a master's application in environmental science", "label": "writing"}
+{"text": "Help me write my dating profile bio, I like climbing and cooking", "label": "writing"}
+{"text": "Write a eulogy for my grandfather who was a carpenter", "label": "writing"}
+{"text": "Rewrite this sentence to be less passive: the report was written by the team", "label": "writing"}
+{"text": "Write a cold outreach email to a potential client for my web design studio", "label": "writing"}
+{"text": "Write a fantasy short story about a village where it never stops snowing", "label": "writing"}
+{"text": "Give me a stronger opening line for my college essay", "label": "writing"}
+{"text": "Write a newsletter intro for our March community update", "label": "writing"}
+{"text": "Draft a birthday card message for my coworker", "label": "writing"}
+{"text": "Write a sonnet about city lights", "label": "writing"}
+{"text": "Write the dialogue for a scene where two old friends meet after 20 years", "label": "writing"}
+{"text": "Write an apology message to a customer whose order arrived late", "label": "writing"}
+{"text": "Make this job description sound more welcoming to new graduates", "label": "writing"}
+{"text": "Write a children's rhyme to help kids remember to brush their teeth", "label": "writing"}
+{"text": "Draft a press release announcing our app's launch", "label": "writing"}
+{"text": "Write a heartfelt anniversary letter to my wife", "label": "writing"}
+{"text": "Can you edit my short story for grammar and tone? It's about a lighthouse keeper", "label": "writing"}
+{"text": "Write a funny out-of-office auto-reply", "label": "writing"}
+{"text": "Write a travel blog post about a week in Kyoto during cherry blossom season", "label": "writing"}
+{"text": "Write a two-sentence horror story", "label": "writing"}
+{"text": "Help me word a message declining a job offer gracefully", "label": "writing"}
+{"text": "Write an about page for my pottery business", "label": "writing"}
+{"text": "Write a motivational speech for a youth football team before the final", "label": "writing"}
+{"text": "Draft a letter of recommendation for my former intern", "label": "writing"}
+{"text": "Write a rap verse about Monday mornings", "label": "writing"}
+{"text": "Improve the wording of my cover letter's final paragraph", "label": "writing"}
+{"text": "Write a tagline and three bullet points for a fitness app landing page", "label": "writing"}
+{"text": "Write a fairy tale that takes place in a Brazilian rainforest", "label": "writing"}
+{"text": "Write a Python function that checks if a string is a palindrome", "label": "coding"}
+{"text": "Why am I getting 'TypeError: undefined is not a function' in my React component?", "label": "coding"}
+{"text": "How do I reverse a linked list in Java?", "label": "coding"}
+{"text": "Fix this SQL query: SELECT name, COUNT(*) FROM users GROUP BY", "label": "coding"}
+{"text": "Explain the difference between let, const and var in JavaScript", "label": "coding"}
+{"text": "Write a bash script that backs up my home folder every night", "label": "coding"}
+{"text": "My Docker container exits immediately after starting, how do I debug it?", "label": "coding"}
+{"text": "Convert this for loop into a list comprehension", "label": "coding"}
+{"text": "How do I center a div with CSS flexbox?", "label": "coding"}
+{"text": "Write unit tests for a function that calculates shipping cost", "label": "coding"}
+{"text": "What does git rebase do and when should I use it instead of merge?", "label": "coding"}
+{"text": "Refactor this class to use dependency injection", "label": "coding"}
+{"text": "Implement binary search in C++", "label": "coding"}
+{"text": "How can I speed up a pandas groupby on 10 million rows?", "label": "coding"}
+{"text": "Write a regex that matches valid email addresses", "label": "coding"}
+{"text": "Create a REST API endpoint in Express that returns a list of products", "label": "coding"}
+{"text": "What's the time complexity of quicksort in the worst case?", "label": "coding"}
+{"text": "Help me fix a segmentation fault in my C program", "label": "coding"}
+{"text": "Write a Rust function to parse a CSV line into a struct", "label": "coding"}
+{"text": "How do I use async/await with fetch in TypeScript?", "label": "coding"}
+{"text": "Kubernetes pod is stuck in CrashLoopBackOff, what should I check?", "label": "coding"}
+{"text": "Write a SQL query to find the second highest salary in the employees table", "label": "coding"}
+{"text": "Why is my Python script throwing IndentationError: unexpected indent?", "label": "coding"}
+{"text": "Build a simple todo list component in Vue 3", "label": "coding"}
+{"text": "How do I set up GitHub Actions to run pytest on every push?", "label": "coding"}
+{"text": "Optimize this recursive Fibonacci function", "label": "coding"}
+{"text": "Explain what a closure is with a code example", "label": "coding"}
+{"text": "Write a Go HTTP server that serves static files", "label": "coding"}
+{"text": "npm install fails with ERESOLVE unable to resolve dependency tree", "label": "coding"}
+{"text": "How do I write a custom hook in React for fetching data?", "label": "coding"}
+{"text": "Add type hints to this Python function", "label": "coding"}
+{"text": "Write a function to debounce user input in JavaScript", "label": "coding"}
+{"text": "What's the best way to handle null values in Kotlin?", "label": "coding"}
+{"text": "Generate a Dockerfile for a Node.js app", "label": "coding"}
+{"text": "Write a Swift function that formats a date as dd/MM/yyyy", "label": "coding"}
+{"text": "How do I prevent SQL injection in PHP?", "label": "coding"}
+{"text": "Code review this function and suggest improvements", "label": "coding"}
+{"text": "Write a script that renames all .jpeg files in a folder to .jpg", "label": "coding"}
+{"text": "Implement an LRU cache in Python", "label": "coding"}
+{"text": "The build fails with 'cannot find module' after I upgraded webpack", "label": "coding"}
+{"text": "How do I merge two sorted arrays in O(n)?", "label": "coding"}
+{"text": "Write a Terraform config for an S3 bucket with versioning enabled", "label": "coding"}
+{"text": "What does this error mean: NullPointerException at line 42", "label": "coding"}
+{"text": "Create a Flask route that accepts file uploads", "label": "coding"}
+{"text": "How can I make my Unity game character jump only when grounded?", "label": "coding"}
+{"text": "Write a C# LINQ query to group orders by customer", "label": "coding"}
+{"text": "Explain Big O notation using simple code examples", "label": "coding"}
+{"text": "Write an Excel VBA macro that deletes empty rows", "label": "coding"}
+{"text": "How do I connect to PostgreSQL from a Django app?", "label": "coding"}
+{"text": "Debug this: my while loop never ends in Python", "label": "coding"}
+{"text": "Generate an image of a cat astronaut floating in space", "label": "image_generation"}
+{"text": "Create a watercolor painting of a lighthouse at sunset", "label": "image_generation"}
+{"text": "Draw a cute cartoon fox holding a coffee cup", "label": "image_generation"}
+{"text": "Make a logo for my bakery with a croissant and warm colors", "label": "image_generation"}
+{"text": "Photorealistic image of a futuristic Tokyo street at night with neon signs", "label": "image_generation"}
+{"text": "Design a minimalist poster for a jazz festival", "label": "image_generation"}
+{"text": "Generate a fantasy landscape with floating islands and waterfalls", "label": "image_generation"}
+{"text": "Create an illustration of a medieval knight riding a giant snail", "label": "image_generation"}
+{"text": "Can you make a picture of my dog as a Renaissance oil painting?", "label": "image_generation"}
+{"text": "Generate a pixel art sprite of a wizard", "label": "image_generation"}
+{"text": "Render a 3D style image of a cozy wooden cabin in the snow", "label": "image_generation"}
+{"text": "Create a children's book illustration of a bear having a picnic", "label": "image_generation"}
+{"text": "Make an album cover with a surreal desert and melting clocks", "label": "image_generation"}
+{"text": "Generate a profile picture of an anime-style girl with blue hair", "label": "image_generation"}
+{"text": "Design a tattoo sketch of a phoenix rising from flames", "label": "image_generation"}
+{"text": "Create a banner image for my YouTube cooking channel", "label": "image_generation"}
+{"text": "Draw a comic panel of two robots arguing over a sandwich", "label": "image_generation"}
+{"text": "Generate a realistic photo of a golden retriever in a field of sunflowers, shallow depth of field", "label": "image_generation"}
+{"text": "Create a vector icon set for a weather app", "label": "image_generation"}
+{"text": "Paint an impressionist scene of a Parisian cafe in the rain", "label": "image_generation"}
+{"text": "Generate concept art for a sci-fi spaceship interior", "label": "image_generation"}
+{"text": "Make a birthday card image with balloons and confetti", "label": "image_generation"}
+{"text": "Create a mood board image with earthy tones for a living room", "label": "image_generation"}
+{"text": "Show me what a Victorian house would look like on Mars", "label": "image_generation"}
+{"text": "Generate a hyper-detailed macro shot of a dewdrop on a leaf", "label": "image_generation"}
+{"text": "Draw a map-style illustration of an imaginary island kingdom", "label": "image_generation"}
+{"text": "Create a stained glass window design featuring an owl", "label": "image_generation"}
+{"text": "Make a meme image of a cat looking confused at a laptop", "label": "image_generation"}
+{"text": "cyberpunk portrait, 85mm lens, dramatic lighting, 4k, highly detailed", "label": "image_generation"}
+{"text": "Illustrate a traditional Mexican Day of the Dead altar with marigolds", "label": "image_generation"}
+{"text": "Create a sticker design of a smiling avocado", "label": "image_generation"}
+{"text": "Generate a phone wallpaper with a starry night sky over mountains", "label": "image_generation"}
+{"text": "Draw a low-poly isometric scene of a tiny farm", "label": "image_generation"}
+{"text": "Make a picture of a dragon made entirely of origami paper", "label": "image_generation"}
+{"text": "Create a blog header image showing a laptop on a wooden desk with plants", "label": "image_generation"}
+{"text": "Generate a black and white ink drawing of a samurai under cherry blossoms", "label": "image_generation"}
+{"text": "Design a mascot character for a recycling campaign", "label": "image_generation"}
+{"text": "Visualize a steampunk city with airships, in the style of an old engraving", "label": "image_generation"}
+{"text": "Create a thumbnail with a shocked face and a bright yellow background", "label": "image_generation"}
+{"text": "Generate an image of a Scandinavian kitchen with soft morning light", "label": "image_generation"}
+{"text": "Make a cartoon avatar of me with glasses and curly hair", "label": "image_generation"}
+{"text": "Produce a photorealistic render of a sneaker made of moss", "label": "image_generation"}
+{"text": "Create a retro 80s synthwave sunset graphic", "label": "image_generation"}
+{"text": "Draw a botanical illustration of a monstera plant", "label": "image_generation"}
+{"text": "fantasy tavern interior, digital painting, warm candlelight, trending on artstation", "label": "image_generation"}
+{"text": "Make an image of a tiger swimming through a coral reef", "label": "image_generation"}
+{"text": "Create a flat illustration of people collaborating in an office for a website hero section", "label": "image_generation"}
+{"text": "Generate a picture of a bowl of ramen in Studio Ghibli style", "label": "image_generation"}
+{"text": "Design a book cover for a thriller called The Silent Harbor", "label": "image_generation"}
+{"text": "Create an ultra-wide cinematic shot of a lone astronaut on a red planet", "label": "image_generation"}
+{"text": "Summarize this article in three bullet points", "label": "summarization"}
+{"text": "Can you give me a TL;DR of the following email thread?", "label": "summarization"}
+{"text": "Condense these meeting notes into key decisions and action items", "label": "summarization"}
+{"text": "Summarize the plot of Pride and Prejudice in one paragraph", "label": "summarization"}
+{"text": "Give me the main takeaways from this research paper abstract", "label": "summarization"}
+{"text": "Shorten this report to under 200 words", "label": "summarization"}
+{"text": "What are the key points of this podcast transcript?", "label": "summarization"}
+{"text": "Summarize this YouTube video transcript for me", "label": "summarization"}
+{"text": "Make a brief summary of the attached quarterly earnings report", "label": "summarization"}
+{"text": "Recap this chapter of my textbook so I can study faster", "label": "summarization"}
+{"text": "Boil this long Slack conversation down to what I actually need to know", "label": "summarization"}
+{"text": "Summarize the terms and conditions below in plain language", "label": "summarization"}
+{"text": "Give me a one-sentence summary of this news story", "label": "summarization"}
+{"text": "Create an executive summary of this 20-page business proposal", "label": "summarization"}
+{"text": "Summarize these product reviews: most people complain about battery life but love the screen", "label": "summarization"}
+{"text": "Extract the key arguments from this opinion piece", "label": "summarization"}
+{"text": "Can you summarize what was discussed in today's standup notes?", "label": "summarization"}
+{"text": "Give me a short synopsis of the movie Inception", "label": "summarization"}
+{"text": "Condense this legal contract into the obligations of each party", "label": "summarization"}
+{"text": "tl;dr please", "label": "summarization"}
+{"text": "Summarize these customer support tickets by common themes", "label": "summarization"}
+{"text": "Write a summary of this lecture transcript on photosynthesis", "label": "summarization"}
+{"text": "Give me the gist of this long Reddit thread", "label": "summarization"}
+{"text": "Summarize the history of the Roman Empire in five sentences", "label": "summarization"}
+{"text": "Break this 3000-word essay down into its main ideas", "label": "summarization"}
+{"text": "Can you summarize my notes from the book Atomic Habits?", "label": "summarization"}
+{"text": "Sum up the pros and cons listed in this document", "label": "summarization"}
+{"text": "Summarize this paper on climate change impacts in Bangladesh for a general audience", "label": "summarization"}
+{"text": "Make bullet-point notes from this webinar transcript", "label": "summarization"}
+{"text": "What's the short version of this policy update?", "label": "summarization"}
+{"text": "Summarize the key findings from these survey results", "label": "summarization"}
+{"text": "Condense this email into two sentences I can forward to my boss", "label": "summarization"}
+{"text": "Give me chapter-by-chapter summaries of 1984", "label": "summarization"}
+{"text": "Summarize this GitHub issue discussion and the proposed fix", "label": "summarization"}
+{"text": "Summarize the following patient information leaflet in simple words", "label": "summarization"}
+{"text": "Recap the last season of the show in a few paragraphs", "label": "summarization"}
+{"text": "Give me a quick overview of what this long PDF says", "label": "summarization"}
+{"text": "Reduce these interview notes to the candidate's strengths and weaknesses", "label": "summarization"}
+{"text": "Summarize the minutes of last night's city council meeting", "label": "summarization"}
+{"text": "Highlight the most important sentences in this text", "label": "summarization"}
+{"text": "Shorten this Wikipedia article into one paragraph for my presentation", "label": "summarization"}
+{"text": "Summarize this thread of 50 comments about the new update", "label": "summarization"}
+{"text": "Provide an abstract for this paper based on its introduction and conclusion", "label": "summarization"}
+{"text": "Condense this recipe blog post into just the ingredients and steps", "label": "summarization"}
+{"text": "Summarize the key points of the Paris Agreement", "label": "summarization"}
+{"text": "Give me a TLDR of this changelog", "label": "summarization"}
+{"text": "Summarize this interview with the CEO in bullet points", "label": "summarization"}
+{"text": "Can you digest this dense academic text into something a teenager could follow?", "label": "summarization"}
+{"text": "Summarize the arguments on both sides of this debate transcript", "label": "summarization"}
+{"text": "Briefly summarize what this contract says about cancellation", "label": "summarization"}
+{"text": "Translate 'Where is the train station?' into Spanish", "label": "translation"}
+{"text": "How do you say 'thank you very much' in Japanese?", "label": "translation"}
+{"text": "Translate this paragraph from German to English", "label": "translation"}
+{"text": "What does 'je ne sais quoi' mean in English?", "label": "translation"}
+{"text": "Translate my resume into French", "label": "translation"}
+{"text": "Can you translate this email to Portuguese for a client in Brazil?", "label": "translation"}
+{"text": "Convert this text into simplified Chinese", "label": "translation"}
+{"text": "What is 'good morning' in Korean?", "label": "translation"}
+{"text": "Translate the menu items below into Italian", "label": "translation"}
+{"text": "Help me translate a birthday message into Arabic for my friend", "label": "translation"}
+{"text": "Translate 'I am allergic to peanuts' into Thai", "label": "translation"}
+{"text": "What's the English translation of 'Schadenfreude'?", "label": "translation"}
+{"text": "Translate this product description into Dutch, Swedish and Polish", "label": "translation"}
+{"text": "How would I say 'can I have the bill please' in Greek?", "label": "translation"}
+{"text": "Translate these subtitles from English to Hindi", "label": "translation"}
+{"text": "Please translate this legal notice into formal Spanish", "label": "translation"}
+{"text": "What does the Russian toast 'na zdorovie' mean?", "label": "translation"}
+{"text": "Translate 'I love you' into ten different languages", "label": "translation"}
+{"text": "Translate this Turkish hotel review into English", "label": "translation"}
+{"text": "Localize our app strings into Brazilian Portuguese", "label": "translation"}
+{"text": "How do you say 'where is the bathroom' in Vietnamese?", "label": "translation"}
+{"text": "Translate this poem into French while keeping the rhyme", "label": "translation"}
+{"text": "Translate the following sentence to Hebrew: the meeting starts at noon", "label": "translation"}
+{"text": "What's the meaning of the Swahili phrase 'hakuna matata' in English?", "label": "translation"}
+{"text": "Translate my cover letter to German and keep it formal", "label": "translation"}
+{"text": "Can you translate this text message from my Italian host family?", "label": "translation"}
+{"text": "Translate 'please turn left at the next corner' into Mandarin with pinyin", "label": "translation"}
+{"text": "Translate this recipe from Japanese into English", "label": "translation"}
+{"text": "English to Indonesian: we will arrive tomorrow morning", "label": "translation"}
+{"text": "How do I say 'nice to meet you' in Tagalog?", "label": "translation"}
+{"text": "Translate these website headings into Spanish for a Mexican audience", "label": "translation"}
+{"text": "What does 'carpe diem' translate to?", "label": "translation"}
+{"text": "Translate this Ukrainian news paragraph into English", "label": "translation"}
+{"text": "Put this section of the instruction manual into French", "label": "translation"}
+{"text": "Translate 'happy new year' into Farsi", "label": "translation"}
+{"text": "Render this English contract clause in Japanese", "label": "translation"}
+{"text": "Can you translate a greeting from Finnish? 'Hyvaa paivaa'", "label": "translation"}
+{"text": "Translate our error messages into Czech", "label": "translation"}
+{"text": "How would a native speaker say 'I'm just looking, thanks' in Spanish?", "label": "translation"}
+{"text": "Translate this letter from my grandmother written in Polish", "label": "translation"}
+{"text": "Translate the lyrics of this K-pop song into English", "label": "translation"}
+{"text": "Give me the Norwegian for 'the weather is lovely today'", "label": "translation"}
+{"text": "Translate 'keep refrigerated after opening' into Arabic and French for our labels", "label": "translation"}
+{"text": "What's the Portuguese word for butterfly?", "label": "translation"}
+{"text": "Translate this tweet from Korean", "label": "translation"}
+{"text": "Convert this English paragraph into Latin", "label": "translation"}
+{"text": "Translate my out-of-office message into German and French", "label": "translation"}
+{"text": "What does 'arigatou gozaimasu' mean?", "label": "translation"}
+{"text": "Translate this Hungarian street sign for me: Tilos a dohanyzas", "label": "translation"}
+{"text": "Translate the following job posting from English into Romanian", "label": "translation"}
+{"text": "What are the main causes of inflation?", "label": "research"}
+{"text": "Compare the health benefits of green tea and black tea", "label": "research"}
+{"text": "Find recent studies on intermittent fasting and longevity", "label": "research"}
+{"text": "How does CRISPR gene editing work?", "label": "research"}
+{"text": "What were the economic effects of the 2008 financial crisis in Iceland?", "label": "research"}
+{"text": "Which electric cars have the longest driving range right now?", "label": "research"}
+{"text": "Explain the theory of relativity in simple terms", "label": "research"}
+{"text": "What are the pros and cons of nuclear energy?", "label": "research"}
+{"text": "Research the history of the Silk Road trade routes", "label": "research"}
+{"text": "What is the population of Nigeria and how fast is it growing?", "label": "research"}
+{"text": "Compare the healthcare systems of Canada and Germany", "label": "research"}
+{"text": "What evidence is there that microplastics harm human health?", "label": "research"}
+{"text": "Why did the Byzantine Empire fall?", "label": "research"}
+{"text": "Find sources about the impact of social media on teenage mental health", "label": "research"}
+{"text": "What's the difference between a virus and a bacterium?", "label": "research"}
+{"text": "How do black holes form?", "label": "research"}
+{"text": "What do studies say about reducing customer churn in subscription businesses?", "label": "research"}
+{"text": "What is the current scientific consensus on climate sensitivity?", "label": "research"}
+{"text": "Look up the tallest mountains in South America", "label": "research"}
+{"text": "How does the Japanese pension system work?", "label": "research"}
+{"text": "What are the side effects of long-term ibuprofen use?", "label": "research"}
+{"text": "Investigate the market size for plant-based meat in Europe", "label": "research"}
+{"text": "Who invented the printing press and how did it change Europe?", "label": "research"}
+{"text": "What factors influence global coffee bean prices?", "label": "research"}
+{"text": "How do vaccines train the immune system?", "label": "research"}
+{"text": "What does the research say about learning styles?", "label": "research"}
+{"text": "Compare PostgreSQL and MongoDB for a large analytics workload", "label": "research"}
+{"text": "Which countries have tried a four-day work week and what were the results?", "label": "research"}
+{"text": "What is quantum entanglement?", "label": "research"}
+{"text": "Give me an overview of the causes of the French Revolution with sources", "label": "research"}
+{"text": "How effective are carbon capture technologies today?", "label": "research"}
+{"text": "What are the most common reasons startups fail?", "label": "research"}
+{"text": "Explain how the Federal Reserve sets interest rates", "label": "research"}
+{"text": "What is known about the origins of the Moai statues on Easter Island?", "label": "research"}
+{"text": "How does sleep deprivation affect memory?", "label": "research"}
+{"text": "Find statistics on renewable energy adoption in India", "label": "research"}
+{"text": "How accurate are wearable fitness trackers at measuring heart rate?", "label": "research"}
+{"text": "Why is the sky blue?", "label": "research"}
+{"text": "What caused the collapse of the classic Maya civilization?", "label": "research"}
+{"text": "Research competitors for a meal-kit delivery startup in Australia", "label": "research"}
+{"text": "How do ocean tides work?", "label": "research"}
+{"text": "What are the latest developments in solid-state batteries?", "label": "research"}
+{"text": "Is there evidence that bilingual children perform better at school?", "label": "research"}
+{"text": "What is the history of the modern Olympic Games?", "label": "research"}
+{"text": "How do central banks in emerging markets fight currency depreciation?", "label": "research"}
+{"text": "What are the environmental impacts of lithium mining in Chile?", "label": "research"}
+{"text": "Which programming languages are most used in scientific computing and why?", "label": "research"}
+{"text": "How did the Green Revolution change agriculture in Punjab?", "label": "research"}
+{"text": "What's the difference between weather and climate?", "label": "research"}
+{"text": "What are the arguments for and against a universal basic income, based on pilot programs?", "label": "research"}

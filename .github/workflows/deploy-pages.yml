@@ -1,0 +1,77 @@
+name: Deploy demo to GitHub Pages
+
+# Builds the frontend as a static site that runs the shared simulation in the browser
+# (no backend needed) and publishes it to https://<owner>.github.io/<repo>/.
+#
+# The public demo is normally served from the portfolio site at
+# https://bisratasfaw.github.io/Portfolio-HTML-CSS-1/perai-view/, which builds this repository
+# itself, so this workflow only runs when you start it from the Actions tab. To publish a
+# standalone copy as well: Settings -> Pages -> Source: "GitHub Actions", run this workflow, and
+# uncomment the workflow_run trigger below to redeploy automatically after CI passes.
+#
+#  workflow_run:
+#    workflows: [CI]
+#    types: [completed]
+#    branches: [main]
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build static demo
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - name: Build
+        run: npm run build
+        env:
+          # Asset URLs are relative (vite.config.ts), so no base path is needed for the
+          # /<repo>/ sub-path.
+          VITE_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          VITE_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+          # Optional repository variable (Settings -> Secrets and variables -> Actions -> Variables).
+          # Unset: the demo runs the simulation in the browser. Set to https://<api-host>/api to use
+          # a deployed backend instead.
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+      - name: Check that Cesium is bundled and referenced relatively
+        run: |
+          test -f dist/cesium/Cesium.js
+          grep -Eq '<script[^>]*src="(\./)?cesium/Cesium\.js"' dist/index.html
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: frontend/dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

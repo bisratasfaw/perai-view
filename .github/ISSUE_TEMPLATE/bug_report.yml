@@ -1,0 +1,69 @@
+name: Bug report
+description: Something in PerAI View does not work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem. Please search existing issues first.
+        Security vulnerabilities should be reported privately. See SECURITY.md.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Globe (rendering, imagery, layers)
+        - Analytics panel, city card or live feed
+        - Backend API or WebSocket feed
+        - Activity classifier (ai-classifier)
+        - Docker, CI or deployment
+        - Documentation
+    validations:
+      required: true
+
+  - type: dropdown
+    id: setup
+    attributes:
+      label: How are you running it?
+      options:
+        - Hosted static demo (GitHub Pages)
+        - Local dev servers (npm run dev)
+        - Docker Compose
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Include what you expected to happen instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: A link with the query string (for example `?layer=heat&theme=cyber&city=Tokyo`) helps a lot.
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Browser, OS and GPU
+      description: WebGL problems often depend on the graphics driver.
+      placeholder: Chrome 140 on Windows 11, NVIDIA RTX 3060
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console output or logs
+      description: Browser console errors, API logs or test output. This is rendered as code.
+      render: text

@@ -1,0 +1,18 @@
+# BuildKit uses this file (instead of the root .dockerignore) for
+# `docker build -f backend/Dockerfile .`. Paths are relative to the repo root.
+# Only backend/ and shared/ are needed; everything else is excluded.
+*
+!backend/
+!shared/
+
+**/node_modules
+**/dist
+**/coverage
+**/.env
+**/.env.*
+!backend/.env.example
+backend/test
+**/*.log
+.git
+frontend
+ai-classifier

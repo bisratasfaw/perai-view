@@ -1,0 +1,85 @@
+# PerAI View full stack on one machine:
+#
+#   docker compose up --build
+#
+# Web app:     http://localhost:8080  (unprivileged nginx; proxies /api to the backend)
+# API:         http://127.0.0.1:4000/api/health  (published on localhost only)
+# Classifier:  http://127.0.0.1:8000/docs         (published on localhost only)
+#
+# There is no database: every number comes from the shared, deterministic simulation.
+
+name: perai-view
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        VITE_DATA_SOURCE: api
+    ports:
+      - "8080:8080"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      start_interval: 2s
+      retries: 3
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      NODE_ENV: production
+      PORT: "4000"
+      # Browser origins allowed for CORS and the WebSocket upgrade (the nginx site above).
+      CORS_ORIGINS: http://localhost:8080,http://127.0.0.1:8080
+      AI_CLASSIFIER_URL: http://ai-classifier:8000
+      # One reverse-proxy hop (nginx), so rate limits see the real client IP.
+      TRUST_PROXY: "1"
+    ports:
+      - "127.0.0.1:4000:4000"
+    depends_on:
+      # Started, not healthy: the backend falls back to keyword classification
+      # whenever the classifier is unreachable, so it must not block on it.
+      ai-classifier:
+        condition: service_started
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:4000/api/health').then((r) => process.exit(r.ok ? 0 : 1), () => process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      start_interval: 2s
+      retries: 3
+    restart: unless-stopped
+
+  ai-classifier:
+    build:
+      context: ai-classifier
+    environment:
+      LOG_LEVEL: INFO
+    ports:
+      - "127.0.0.1:8000:8000"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=4)"
+      interval: 30s
+      timeout: 5s
+      # The model trains at startup.
+      start_period: 20s
+      start_interval: 2s
+      retries: 3
+    restart: unless-stopped
