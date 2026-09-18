@@ -3,8 +3,11 @@
 Thanks for your interest. Bug reports, fixes, tests, documentation and accessibility improvements
 are all welcome.
 
-One ground rule: PerAI View shows **simulated** data. Changes that collect, store or display real
-user data will not be accepted.
+One ground rule: PerAI View shows a **simulation** and **published, aggregated datasets**, each
+labelled as such. Changes that collect, store or display data about individual people, or that
+blur which numbers are simulated and which are measured, will not be accepted. A new real-data
+source must be free to use, carry a licence the UI can show, and go through the pipeline with a
+schema in `shared/realData.ts`.
 
 ## Before you start
 
@@ -33,6 +36,7 @@ Optional pieces:
 ```bash
 npm run classifier:setup                       # Python venv for ai-classifier (Python 3.11-3.13)
 cd frontend && npx playwright install chromium # browser for end-to-end tests
+npm ci --prefix data-pipeline                  # only if you work on the real-data pipeline
 ```
 
 ## Make a change
@@ -51,6 +55,8 @@ Where things live:
 | UI and globe | `frontend/src/` | Cesium code stays in `globe/engine.ts`; React talks to it through its methods. Respect reduced motion and keep controls keyboard-accessible. |
 | API and WebSocket | `backend/src/` | Validate input with zod, return the standard error envelope, add supertest tests in `backend/test/`. |
 | Classifier | `ai-classifier/` | Activity-type ids must match `shared/programs.ts`. Changing the training data changes `model_version`. |
+| Real-data pipeline | `data-pipeline/src/` | One fetcher per source in `sources/`; declare provenance in its `meta`, return data that parses with `shared/realData.ts`, and add tests with recorded fixtures in `data-pipeline/test/` (no network in tests). Changing a schema means changing it for both the pipeline and the UI. |
+| Snapshots | `data/real/` | Written by the pipeline and the nightly workflow only; never hand-edit them. If a snapshot needs to change, fix the fetcher and re-run `npm run data:refresh`. |
 
 Map colours are deliberately limited to three assistant hues plus a neutral grey so they stay
 distinguishable for colour-blind viewers. Please do not add hues without checking that.
@@ -76,10 +82,22 @@ npm run classifier:test   # pytest
 and, inside `ai-classifier/` with its virtual environment active, `pip-audit -r requirements.txt`
 when you change dependencies.
 
-Individual suites can also run on their own, for example `npm test --prefix backend` or, inside
-`frontend/`, `npx vitest run src/globe` and `npx playwright test e2e/mobile.spec.ts`.
+Data pipeline, if you touched `data-pipeline/` or `shared/realData.ts`:
 
-CI runs all of these on every pull request, plus a Docker Compose build and smoke test.
+```bash
+npm run data:test         # Vitest against recorded fixtures, no network
+npm run data:validate     # every file in data/real must still parse with the shared schemas
+cd data-pipeline && npm run lint && npm run typecheck
+```
+
+Individual suites can also run on their own, for example `npm test --prefix backend` or, inside
+`frontend/`, `npx vitest run src/globe` and `npx playwright test e2e/realdata.spec.ts`.
+
+CI runs all of these on every pull request, plus a Docker Compose build and smoke test. The
+`data-pipeline` job also validates the committed snapshots in `data/real/`, so a schema change
+that the existing files no longer satisfy fails CI until the snapshots are regenerated (run the
+pipeline locally and commit the result, or let the nightly workflow do it after the merge if the
+change is backwards compatible).
 
 ## Commit messages
 
@@ -90,7 +108,8 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 ```
 
 Types: `feat`, `fix`, `docs`, `test`, `refactor`, `perf`, `style`, `build`, `ci`, `chore`.
-Scopes: `frontend`, `globe`, `backend`, `shared`, `classifier`, `docker`, `docs`, `deps`.
+Scopes: `frontend`, `globe`, `backend`, `shared`, `classifier`, `pipeline`, `data`, `docker`,
+`docs`, `deps`.
 
 Examples:
 

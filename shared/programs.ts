@@ -31,6 +31,8 @@ export interface AiProgram {
   id: ProgramId
   name: string
   provider: string
+  /** Short vendor label for sources about SDKs or companies rather than the product itself. */
+  vendor: string
   /** Relative share of simulated global activity. */
   share: number
   /** Colour used on the globe, legend and panel. */
@@ -50,39 +52,39 @@ export const MAP_COLORS = {
 
 export const PROGRAMS: readonly AiProgram[] = [
   {
-    id: 'chatgpt', name: 'ChatGPT', provider: 'OpenAI', share: 32, color: MAP_COLORS.chatgpt, highlighted: true,
+    id: 'chatgpt', name: 'ChatGPT', provider: 'OpenAI', vendor: 'OpenAI', share: 32, color: MAP_COLORS.chatgpt, highlighted: true,
     activityMix: { conversation: 26, writing: 22, coding: 16, summarization: 12, research: 10, image_generation: 8, translation: 6 },
   },
   {
-    id: 'gemini', name: 'Gemini', provider: 'Google', share: 17, color: MAP_COLORS.gemini, highlighted: true,
+    id: 'gemini', name: 'Gemini', provider: 'Google', vendor: 'Google', share: 17, color: MAP_COLORS.gemini, highlighted: true,
     activityMix: { conversation: 24, research: 20, writing: 18, summarization: 14, coding: 12, translation: 8, image_generation: 4 },
   },
   {
-    id: 'claude', name: 'Claude', provider: 'Anthropic', share: 15, color: MAP_COLORS.claude, highlighted: true,
+    id: 'claude', name: 'Claude', provider: 'Anthropic', vendor: 'Anthropic', share: 15, color: MAP_COLORS.claude, highlighted: true,
     activityMix: { coding: 28, writing: 24, conversation: 18, summarization: 16, research: 10, translation: 4 },
   },
   {
-    id: 'copilot', name: 'GitHub Copilot', provider: 'GitHub', share: 12, color: MAP_COLORS.other, highlighted: false,
+    id: 'copilot', name: 'GitHub Copilot', provider: 'GitHub', vendor: 'GitHub', share: 12, color: MAP_COLORS.other, highlighted: false,
     activityMix: { coding: 90, conversation: 10 },
   },
   {
-    id: 'midjourney', name: 'Midjourney', provider: 'Midjourney', share: 6, color: MAP_COLORS.other, highlighted: false,
+    id: 'midjourney', name: 'Midjourney', provider: 'Midjourney', vendor: 'Midjourney', share: 6, color: MAP_COLORS.other, highlighted: false,
     activityMix: { image_generation: 100 },
   },
   {
-    id: 'mistral', name: 'Mistral', provider: 'Mistral AI', share: 5, color: MAP_COLORS.other, highlighted: false,
+    id: 'mistral', name: 'Mistral', provider: 'Mistral AI', vendor: 'Mistral AI', share: 5, color: MAP_COLORS.other, highlighted: false,
     activityMix: { conversation: 30, coding: 25, writing: 20, translation: 15, summarization: 10 },
   },
   {
-    id: 'llama', name: 'Llama', provider: 'Meta', share: 5, color: MAP_COLORS.other, highlighted: false,
+    id: 'llama', name: 'Llama', provider: 'Meta', vendor: 'Meta', share: 5, color: MAP_COLORS.other, highlighted: false,
     activityMix: { conversation: 35, writing: 20, coding: 20, summarization: 15, translation: 10 },
   },
   {
-    id: 'perplexity', name: 'Perplexity', provider: 'Perplexity', share: 4, color: MAP_COLORS.other, highlighted: false,
+    id: 'perplexity', name: 'Perplexity', provider: 'Perplexity', vendor: 'Perplexity', share: 4, color: MAP_COLORS.other, highlighted: false,
     activityMix: { research: 80, summarization: 20 },
   },
   {
-    id: 'other', name: 'Other / regional', provider: 'Various', share: 4, color: MAP_COLORS.other, highlighted: false,
+    id: 'other', name: 'Other / regional', provider: 'Various', vendor: 'Other', share: 4, color: MAP_COLORS.other, highlighted: false,
     activityMix: { conversation: 30, writing: 20, coding: 20, translation: 15, research: 15 },
   },
 ]

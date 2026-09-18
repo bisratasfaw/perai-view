@@ -1,9 +1,12 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useAppStore } from '@/store'
 import { useReducedMotion } from '@/hooks/useMediaQuery'
 import type { DataSource } from '@/data/types'
+import { useRealData } from '@/data/realData'
+import { useLayerData } from '@/data/useLayerData'
+import { getLayer } from '@/layers'
 import { bindGlobeController } from './controller'
-import type { GlobeEngine } from './engine'
+import type { GlobeEngine, GlobeLayer, GlobePick } from './engine'
 
 const INTENSITY_REFRESH_MS = 60_000
 
@@ -30,11 +33,15 @@ export function GlobeViewer({ source, onRestart }: { source: DataSource | null; 
   const [error, setError] = useState<string | null>(
     hasWebgl ? null : 'Your browser or device could not start WebGL, which the 3D globe needs. The analytics panel and live feed still work.',
   )
-  const [hover, setHover] = useState<{ city: string; x: number; y: number } | null>(null)
+  const [hover, setHover] = useState<(GlobePick & { x: number; y: number }) | null>(null)
 
   const layer = useAppStore((s) => s.layer)
   const theme = useAppStore((s) => s.theme)
   const selectedCity = useAppStore((s) => s.selectedCity)
+  const selectedCountry = useAppStore((s) => s.selectedCountry)
+  const selectCountry = useAppStore((s) => s.selectCountry)
+  const layerData = useLayerData(layer)
+  const countries = useRealData('countries')
   const rotationPaused = useAppStore((s) => s.rotationPaused)
   const feed = useAppStore((s) => s.feed)
   const selectCity = useAppStore((s) => s.selectCity)
@@ -85,10 +92,12 @@ export function GlobeViewer({ source, onRestart }: { source: DataSource | null; 
   useEffect(() => {
     if (!engine) return
     engine.setEvents({
-      onCityClick: (city) => {
-        if (city) selectCity(city)
+      onPick: (pick) => {
+        if (!pick) return
+        if (pick.kind === 'city') selectCity(pick.name)
+        else selectCountry(pick.name)
       },
-      onCityHover: setHover,
+      onHover: setHover,
       onFirstTilesLoaded: () => setStatus('ready'),
       onRenderError: (message) => {
         setError(
@@ -104,13 +113,31 @@ export function GlobeViewer({ source, onRestart }: { source: DataSource | null; 
       zoomOut: () => engine.zoom(-1),
       resetView: () => {
         selectCity(null)
+        selectCountry(null)
         engine.resetView()
       },
     })
-  }, [engine, selectCity])
+  }, [engine, selectCity, selectCountry])
 
   useEffect(() => engine?.setTheme(theme), [engine, theme])
-  useEffect(() => engine?.setLayer(layer), [engine, layer])
+  // Map the app layer to an engine mode and feed it the data it needs.
+  useEffect(() => {
+    if (!engine) return
+    const def = getLayer(layer)!
+    const mode: GlobeLayer = def.kind === 'simulated' ? (layer as 'activity' | 'heat') : def.geometry
+    if (layerData.status === 'ready') {
+      if (layerData.data.geometry === 'countries') engine.setCountryValues(layerData.data.values)
+      else engine.setCityPoints(layerData.data.points)
+    } else if (def.kind === 'real') {
+      engine.setCountryValues([])
+      engine.setCityPoints([])
+    }
+    engine.setLayer(mode)
+  }, [engine, layer, layerData])
+  useEffect(() => {
+    if (engine && countries.status === 'ready') engine.setCountries(countries.data.countries)
+  }, [engine, countries])
+  useEffect(() => engine?.selectCountry(selectedCountry), [engine, selectedCountry])
   useEffect(() => engine?.setReducedMotion(reducedMotion), [engine, reducedMotion])
   useEffect(() => engine?.setRotationWanted(!rotationPaused), [engine, rotationPaused])
   useEffect(() => engine?.selectCity(selectedCity), [engine, selectedCity])
@@ -131,6 +158,11 @@ export function GlobeViewer({ source, onRestart }: { source: DataSource | null; 
       clearInterval(timer)
     }
   }, [engine, source])
+
+  const countryNames = useMemo(
+    () => new Map((countries.status === 'ready' ? countries.data.countries : []).map((c) => [c.cc, c.name])),
+    [countries],
+  )
 
   // Flash each new live event on the globe.
   const lastFlashed = useRef<string | null>(null)
@@ -166,6 +198,13 @@ export function GlobeViewer({ source, onRestart }: { source: DataSource | null; 
         </div>
       )}
 
+      {status === 'ready' && layerData.status === 'loading' && (
+        <div className="globe-notice" role="status">Loading snapshot…</div>
+      )}
+      {status === 'ready' && layerData.status === 'error' && (
+        <div className="globe-notice globe-notice-error" role="alert">This layer's data isn't available: {layerData.error}</div>
+      )}
+
       {status === 'error' && error && (
         <div className="globe-overlay globe-error" role="alert">
           <p>{error}</p>
@@ -179,7 +218,15 @@ export function GlobeViewer({ source, onRestart }: { source: DataSource | null; 
 
       {hover && (
         <div className="globe-tooltip" style={{ transform: `translate(${hover.x + 14}px, ${hover.y + 14}px)` }} aria-hidden="true">
-          {hover.city}
+          {hover.kind === 'country' ? (countryNames.get(hover.name) ?? hover.name) : hover.name}
+          {hover.kind === 'country' && layerData.status === 'ready' && layerData.data.geometry === 'countries' && (
+            <span className="globe-tooltip-value">
+              {layerData.data.raw.has(hover.name) ? layerData.data.format(layerData.data.raw.get(hover.name)!) : 'no data'}
+            </span>
+          )}
+          {hover.kind === 'city' && layerData.status === 'ready' && layerData.data.geometry === 'points' && layerData.data.raw.has(hover.name) && (
+            <span className="globe-tooltip-value">{layerData.data.format(layerData.data.raw.get(hover.name)!)}</span>
+          )}
         </div>
       )}
     </section>

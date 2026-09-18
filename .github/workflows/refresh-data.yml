@@ -1,0 +1,90 @@
+name: Refresh real-data snapshots
+
+# Nightly: fetches the free public sources behind data/real (Anthropic Economic Index,
+# Wikipedia pageviews, GitHub fork locations; PyPI downloads via BigQuery on Mondays or on
+# demand), validates every snapshot against shared/realData.ts and commits the result.
+# Nothing here costs money: BigQuery is optional and only used when the two secrets exist.
+
+on:
+  schedule:
+    - cron: "15 4 * * *"
+  workflow_dispatch:
+    inputs:
+      force_pypi:
+        description: "Run the BigQuery PyPI query even if today is not Monday"
+        type: boolean
+        default: false
+      force:
+        description: "Ignore the object-id and per-day caches (re-download everything)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Fetch, validate and commit data/real
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: data-pipeline
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: data-pipeline/package-lock.json
+      - run: npm ci
+      - name: Restore the pipeline cache (Hugging Face object ids, per-day country sums)
+        uses: actions/cache@v6
+        with:
+          path: data/real/.pipeline-state.json
+          key: pipeline-state-${{ github.run_id }}
+          restore-keys: |
+            pipeline-state-
+      - name: Decide which sources to run
+        id: plan
+        shell: bash
+        run: |
+          # The BigQuery query scans tens of GB of the 1 TB free monthly quota, so PyPI runs weekly.
+          args=""
+          if [ "$(date -u +%u)" != "1" ] && [ "${FORCE_PYPI}" != "true" ]; then
+            args="--skip pypi"
+          fi
+          if [ "${FORCE}" = "true" ]; then
+            args="$args --force"
+          fi
+          echo "args=$args" >> "$GITHUB_OUTPUT"
+          echo "Refresh arguments: $args"
+        env:
+          FORCE_PYPI: ${{ inputs.force_pypi }}
+          FORCE: ${{ inputs.force }}
+      - name: Refresh snapshots
+        run: npm run refresh -- ${{ steps.plan.outputs.args }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Optional; without them sdk-downloads-by-country.json is written as "not_configured".
+          BIGQUERY_PROJECT: ${{ secrets.BIGQUERY_PROJECT }}
+          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+      - run: npm run validate
+      - name: Commit changed snapshots
+        working-directory: .
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add data/real
+          if git diff --cached --quiet; then
+            echo "No changes in data/real."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data: refresh real-data snapshots ($(date -u +%F))"
+          git push

@@ -12,8 +12,10 @@ see [ARCHITECTURE.md](ARCHITECTURE.md).
 | Python | 3.11 to 3.13 | only the optional `ai-classifier` service |
 | A WebGL-capable browser | current Chrome, Edge, Firefox or Safari | the 3D globe |
 | Docker with Compose v2 | optional | running the full stack in containers |
+| A GitHub token (`gh auth token` works) | optional | the data pipeline's GitHub source; the other sources need no credentials |
 
-CI and the Docker images use Node 22 and Python 3.12.
+CI and the Docker images use Node 22 and Python 3.12. The data pipeline requires Node 22 (it
+uses `tsx` and the built-in `fetch`).
 
 ## First-time setup
 
@@ -35,6 +37,58 @@ Optional, for end-to-end tests (downloads a Playwright Chromium build once):
 ```bash
 cd frontend && npx playwright install chromium
 ```
+
+Optional, for refreshing the real-data snapshots (the repository already contains a committed
+set, so the app works without this):
+
+```bash
+cd data-pipeline && npm ci
+```
+
+## Real-data pipeline
+
+`data-pipeline/` fetches five free public sources and writes validated JSON snapshots to
+`data/real/`, which the frontend serves as static files. [`data/real/README.md`](../data/real/README.md)
+describes every file, its source, licence and caveats; [ARCHITECTURE.md](ARCHITECTURE.md#real-data)
+explains the design. Day to day:
+
+```bash
+cd data-pipeline
+GITHUB_TOKEN=$(gh auth token) npm run refresh      # every source
+npm run refresh -- --only wikipedia                 # one source; ids: anthropic, openai, wikipedia, pypi, github
+npm run refresh -- --skip pypi,github              # everything except these
+npm run refresh -- --force                         # ignore the fingerprint and per-day caches, re-download everything
+npm run refresh -- --data-dir /tmp/real            # write somewhere else (tests and experiments)
+npm run validate                                   # parse every file in data/real against shared/realData.ts
+npm test                                           # 112 tests against recorded fixtures, no network
+npm run lint && npm run typecheck
+```
+
+The same commands exist at the repository root as `npm run data:refresh -- <flags>`,
+`npm run data:validate` and `npm run data:test`. Sources run independently: a failing one keeps
+its previous file and is marked `failed` in `manifest.json`; the exit code is 1 only when a
+produced file fails validation or when no source succeeded. A source left out with `--only` or
+`--skip` keeps its previous snapshot and manifest entry untouched.
+
+What each run does, in order: `countries.json` is rebuilt offline from the `world-countries`
+package; Anthropic lists the Hugging Face dataset, compares the newest release CSV's object id
+with the cached one and only streams the 219 MB file when it changed; OpenAI writes its static
+transcription; Wikipedia fetches 30 days of per-article views for 8 articles across all language
+editions and downloads only the days of the country dataset that are not yet cached; PyPI runs a
+BigQuery query when credentials exist, otherwise writes `status: "not_configured"`; GitHub pages
+through the newest 6,000 forks of each of 8 SDK repositories and geocodes the owners' profile
+locations offline. The run ends by validating every file and writing `manifest.json`.
+
+Two files in `data/real/` are special: `manifest.json` is the provenance record the UI reads, and
+`.pipeline-state.json` is a cache (object ids, per-day sums, freshness dates) that is git-ignored
+and kept in the GitHub Actions cache instead. Delete it (or use `--force`) to start from scratch.
+Never hand-edit the snapshots; change the fetcher in `data-pipeline/src/sources/` and re-run.
+
+In development, Vite serves `../data/real` at `/data/real` (with `Cache-Control: no-cache`, so a
+fresh run shows up on reload), and `npm run build` copies the `.json` files into
+`frontend/dist/data/real`. The browser validates each file with the shared schemas before
+rendering it, and the layer menu disables a real layer whose source is `not_configured` or has
+never succeeded.
 
 ## Running locally
 
@@ -123,6 +177,23 @@ process environment only; it does not load `.env` files.
 | `CORS_ORIGINS` | `http://localhost:4000,http://localhost:5173` | Browser origins allowed by CORS |
 | `LOG_LEVEL` | `INFO` | `CRITICAL`, `ERROR`, `WARNING`, `INFO` or `DEBUG` |
 
+### Data pipeline (`data-pipeline/`)
+
+Read from the process environment only (no `.env` file). Nothing is required for the Anthropic,
+OpenAI, Wikipedia and countries sources.
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `GITHUB_TOKEN` | unset | Required for `developer-cities.json`: the GraphQL API needs authentication. Only public data is read, so a token without extra scopes is enough (`gh auth token` locally; the automatic `secrets.GITHUB_TOKEN` in Actions). Without it the GitHub source fails and keeps its previous file |
+| `BIGQUERY_PROJECT` | unset | Google Cloud project id that runs the PyPI query. Without it `sdk-downloads-by-country.json` is written with `status: "not_configured"` and the SDK layer is disabled |
+| `GCP_SERVICE_ACCOUNT_KEY` | unset | Contents of a service-account JSON key (used by the workflow secret) |
+| `GOOGLE_APPLICATION_CREDENTIALS` | unset | Path to the same key file, the usual choice locally. Either this or `GCP_SERVICE_ACCOUNT_KEY` is needed together with `BIGQUERY_PROJECT` |
+
+The pipeline identifies itself to every service with a fixed `User-Agent`
+(`PerAI-View-data-pipeline/1.0 (https://github.com/bisratasfaw/perai-view; ...)`, in
+`data-pipeline/src/lib/http.ts`), as the Wikimedia and GitHub API policies ask. If you fork the
+project and run the pipeline under your own name, change the contact URL in that constant.
+
 ## Scripts
 
 ### Repository root
@@ -139,6 +210,7 @@ process environment only; it does not load `.env` files.
 | `npm test` | Vitest in backend, then frontend (the frontend run includes `shared/` tests) |
 | `npm run check` | lint, typecheck and test in one go |
 | `npm run test:e2e` | Playwright end-to-end tests |
+| `npm run data:refresh -- [flags]` / `data:validate` / `data:test` | Run the real-data pipeline (`--only`, `--skip`, `--force`, `--data-dir`), validate `data/real/`, run its tests |
 | `npm run classifier:setup` / `classifier:dev` / `classifier:test` / `classifier:lint` | Create the venv, run uvicorn with reload, pytest, ruff (works on Windows, macOS and Linux) |
 
 ### Packages
@@ -147,6 +219,7 @@ process environment only; it does not load `.env` files.
 | --- | --- |
 | `frontend/` | `dev`, `build`, `preview`, `typecheck`, `lint`, `test`, `test:watch`, `test:e2e`, `screenshots` |
 | `backend/` | `dev` (tsx watch), `build` (esbuild bundle to `dist/server.js`), `start`, `typecheck`, `lint`, `test`, `test:watch` |
+| `data-pipeline/` | `refresh` (tsx, accepts `--only`, `--skip`, `--force`, `--data-dir`), `validate`, `typecheck`, `lint`, `test`, `test:watch` |
 | `ai-classifier/` | no npm scripts; use `pytest`, `ruff check .`, `ruff format --check .`, `pip-audit -r requirements.txt` inside the venv |
 
 ## Testing
@@ -154,9 +227,10 @@ process environment only; it does not load `.env` files.
 | Suite | Location | Run with | Covers |
 | --- | --- | --- | --- |
 | Backend | `backend/test/` | `npm test --prefix backend` | Every endpoint with supertest, validation and error envelope, body limits, helmet headers, CORS, rate limits, WebSocket protocol (replay, ping/pong, origin check, client cap, payload limit, heartbeat, shutdown), config parsing, classifier proxy and fallback |
-| Frontend + shared | `frontend/src/**/*.test.ts(x)`, `shared/*.test.ts` | `npm test --prefix frontend` | Simulation invariants (determinism, totals, time of day, event generation), city and program registries, keyword classifier, in-browser data source, colour and heat-ramp helpers, formatting, key components |
-| End-to-end | `frontend/e2e/` | `npm run test:e2e` | Real Chromium against a production build: globe and imagery load without console errors, layer/style switching and deep links, analytics and city details, keyboard controls, axe accessibility scan, reduced motion, phone layout and touch-target sizes |
+| Frontend + shared | `frontend/src/**/*.test.ts(x)`, `shared/*.test.ts` | `npm test --prefix frontend` | Simulation invariants (determinism, totals, time of day, event generation), city and program registries, keyword classifier, in-browser data source, real-data loader (fetch, zod validation, caching), choropleth scaling, colour and heat-ramp helpers, formatting, key components |
+| End-to-end | `frontend/e2e/` | `npm run test:e2e` | Real Chromium against a production build: globe and imagery load without console errors, layer/style switching and deep links, analytics and city details, keyboard controls, axe accessibility scan, reduced motion, phone layout and touch-target sizes; `realdata.spec.ts` switches to the real layers, opens the Real data tab and the country card and checks the provenance labels against the committed snapshots |
 | Classifier | `ai-classifier/tests/` | `npm run classifier:test` | API shapes and validation limits, batch ordering, CORS, cross-validated accuracy floor, determinism, unseen prompts per label, training-data checks |
+| Data pipeline | `data-pipeline/test/` | `npm run data:test` | CSV/TSV parsing and streaming against recorded fixtures (`test/fixtures/`), the offline geocoder, per-source extraction and aggregation (Anthropic, Wikipedia, GitHub, PyPI, activity series), manifest status rules (`ok`, `stale`, `failed`, `not_configured`, kept-when-skipped), snapshot validation. No network access |
 
 End-to-end notes:
 
@@ -216,3 +290,32 @@ as `https://example.com/app`; use bare origins such as `https://example.com`.
 
 **`npm run classifier:setup` cannot find Python.**
 Install Python 3.11 to 3.13 and make sure `py` (Windows) or `python3` (macOS/Linux) is on `PATH`.
+
+**The Real data layers are greyed out or the analytics tab says "snapshots unavailable".**
+The browser could not fetch or validate `data/real/manifest.json`. Check that `data/real/` exists
+at the repository root (the Vite plugin serves it from there) and run `npm run data:validate`;
+a file that fails the shared schema is reported with its path. A layer that shows "not
+configured" is the PyPI layer without BigQuery credentials, which is expected.
+
+**The first pipeline run is slow or seems stuck on `anthropic`.**
+The Anthropic Economic Index CSV is about 219 MB. It is streamed line by line (a few kilobytes of
+memory) and processed once per release; afterwards the run only compares the file's Hugging Face
+object id and reuses the cached extraction in `.pipeline-state.json`. How long the first run
+takes depends on your connection; use `--only wikipedia,github` while working on other sources.
+
+**`github: FAILED ... GITHUB_TOKEN is not set`, `HTTP 401` or `HTTP 403`.**
+The source refuses to run without `GITHUB_TOKEN`; 401 means the token is invalid or expired, and
+403 with `Retry-After` is GitHub's secondary rate limit, which the client waits for
+automatically. The source logs a warning when fewer than 100 GraphQL points remain; the limit
+resets hourly. In every case the previous `developer-cities.json` is kept.
+
+**`wikipedia: FAILED ... HTTP 403` or `429`.**
+Wikimedia's APIs require a descriptive `User-Agent` with a contact address
+([policy](https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_User-Agent_Policy))
+and throttle bursts. The pipeline sends one and retries with backoff; if you changed
+`USER_AGENT` in `data-pipeline/src/lib/http.ts`, keep a contact URL or e-mail in it. Only the
+missing days of the country dataset are fetched, so a retry a minute later is cheap.
+
+**`pypi` reports `not_configured`.**
+Expected without `BIGQUERY_PROJECT` and credentials; the SDK downloads layer is disabled and
+everything else works. The setup steps are in `data/real/README.md`.

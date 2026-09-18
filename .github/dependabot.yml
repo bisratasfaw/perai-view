@@ -6,6 +6,7 @@ updates:
       - /
       - /frontend
       - /backend
+      - /data-pipeline
     schedule:
       interval: weekly
     commit-message:

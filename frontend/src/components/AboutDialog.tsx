@@ -3,6 +3,7 @@ import { ExternalLink, TriangleAlert, X } from 'lucide-react'
 import { REPO_URL } from '@/config'
 import type { DataSource } from '@/data/types'
 import { useAppStore } from '@/store'
+import { useRealData } from '@/data/realData'
 import { ClassifierDemo } from './ClassifierDemo'
 
 const TECH = ['React 18', 'TypeScript', 'CesiumJS', 'Zustand', 'Vite', 'Node.js + Express', 'WebSockets', 'Zod', 'FastAPI', 'scikit-learn', 'Vitest', 'Playwright']
@@ -12,6 +13,7 @@ export function AboutDialog({ source: dataSource }: { source: DataSource | null 
   const setOpen = useAppStore((s) => s.setAboutOpen)
   const source = useAppStore((s) => s.source)
   const ref = useRef<HTMLDialogElement>(null)
+  const manifest = useRealData('manifest', open)
 
   useEffect(() => {
     const dialog = ref.current
@@ -75,6 +77,33 @@ export function AboutDialog({ source: dataSource }: { source: DataSource | null 
               <li key={t}>{t}</li>
             ))}
           </ul>
+        </section>
+
+        <section>
+          <h3>Real data sources</h3>
+          <p>
+            The "Real data" layers and analytics tab use published, free datasets, fetched by a nightly GitHub Action and
+            shipped with the site. Nothing about individual people is collected.
+          </p>
+          {manifest.status === 'ready' ? (
+            <ul className="source-list">
+              {Object.values(manifest.data.sources).map((s) => (
+                <li key={s.id}>
+                  <a href={s.url} target="_blank" rel="noreferrer">
+                    {s.title}
+                  </a>
+                  <span className="source-meta">
+                    {s.publisher} · {s.license}
+                    {s.as_of ? ` · ${s.as_of}` : ''}
+                    {s.status === 'ok' ? '' : ` · ${s.status.replace('_', ' ')}`}
+                  </span>
+                  <span className="source-desc">{s.description}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="panel-note">{manifest.status === 'error' ? `Snapshots unavailable: ${manifest.error}` : 'Loading sources…'}</p>
+          )}
         </section>
 
         <section>

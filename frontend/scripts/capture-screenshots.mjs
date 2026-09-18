@@ -50,6 +50,14 @@ await shot('analytics', {
     await sleep(2500)
   },
 })
+await shot('real-data', {
+  query: 'layer=usage-index&country=DE',
+  before: async (page) => {
+    await page.getByRole('button', { name: 'Analytics' }).click()
+    await page.getByRole('tab', { name: 'Real data' }).click()
+    await sleep(2500)
+  },
+})
 await shot('mobile', { viewport: { width: 390, height: 844 }, scale: 2 })
 await shot('og-image', { viewport: { width: 1200, height: 630 } })
 

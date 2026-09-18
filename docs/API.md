@@ -10,6 +10,15 @@ PerAI View has two HTTP services:
 Every number these services return is **simulated**. There is no authentication because there
 is no user data. The example responses below were captured from a local run and shortened.
 
+> **Real data is not an API.** The real-data layers, the analytics panel's *Real data* tab and
+> the country card read static JSON snapshots (`manifest.json`, `ai-usage-by-country.json`,
+> `wikipedia-interest.json`, `developer-cities.json`, ...) that the nightly pipeline commits to
+> [`data/real/`](../data/real/README.md). The site serves them as files next to `index.html`
+> (`./data/real/<file>.json`, copied into `frontend/dist/data/real` at build time); neither the
+> backend nor the classifier exposes them. Their shapes are the zod schemas in
+> [`shared/realData.ts`](../shared/realData.ts), and `data/real/README.md` documents every file,
+> its source, licence and caveats.
+
 ## Backend API
 
 Base URL: `http://localhost:4000/api` in development, `/api` behind the Docker nginx proxy.

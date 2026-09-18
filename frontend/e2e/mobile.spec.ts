@@ -42,8 +42,8 @@ test('changes layers from the menu and opens analytics as a sheet', async ({ pag
   await openApp(page)
   await page.getByRole('button', { name: 'Map layers and style' }).click()
   const menu = page.getByRole('group', { name: 'Map options' })
-  await menu.getByRole('button', { name: 'Heat map' }).click()
-  await expect(menu.getByRole('button', { name: 'Heat map' })).toHaveAttribute('aria-pressed', 'true')
+  await menu.getByRole('option', { name: /Heat map/ }).click()
+  await expect(menu.getByRole('option', { name: /Heat map/ })).toHaveAttribute('aria-selected', 'true')
   await page.keyboard.press('Escape')
   await expect(menu).toBeHidden()
 

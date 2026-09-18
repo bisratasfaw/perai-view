@@ -5,7 +5,7 @@ limits and terms before you rely on them; this guide does not quote quotas.
 
 | Option | What runs | Server needed | Best for |
 | --- | --- | --- | --- |
-| [GitHub Pages](#recommended-github-pages-static-demo) | Frontend only, simulation in the browser | No | The public demo (recommended) |
+| [GitHub Pages](#how-the-public-demo-is-published) | Frontend only: simulation in the browser plus the committed real-data snapshots | No | The public demo (recommended) |
 | [Netlify or Cloudflare Pages](#alternative-netlify-or-cloudflare-pages) | Same static build | No | If you prefer those hosts or want preview deploys |
 | [Docker Compose](#full-stack-with-docker-compose) | Frontend (nginx), backend and classifier | Your own machine | Showing the full stack locally or on a spare machine |
 | [Split deployment](#split-deployment-static-frontend-and-a-hosted-api) | Static frontend plus the API on a container host | A free-tier container host | A public demo that uses the real API |
@@ -17,15 +17,82 @@ at about 6 MB (1.8 MB gzipped). Compare that with your host's file-count and fil
 
 The demo lives on the portfolio site at
 **https://bisratasfaw.github.io/Portfolio-HTML-CSS-1/perai-view/**. The portfolio repository's
-Pages workflow checks this repository out, runs `npm ci && npm run build` in `frontend/`, and
-copies `dist/` into `perai-view/` on the published site. No build output is committed anywhere.
+Pages workflow checks this repository's `main` branch out, runs `npm ci && npm run build` in
+`frontend/`, and copies `dist/` into `perai-view/` on the published site. The build includes the
+real-data snapshots (`dist/data/real/`, copied from `data/real/` by the Vite plugin), so whatever
+the nightly refresh last committed is what the demo shows. No build output is committed anywhere.
 
-That workflow runs on every push to the portfolio, once a week, and whenever it is started by
-hand, so pushing here reaches the live site at the next portfolio deploy (or immediately if you
-run the portfolio's **Deploy portfolio to GitHub Pages** workflow yourself).
+That workflow runs on every push to the portfolio, once a day at 05:30 UTC and whenever it is
+started by hand, so pushing here reaches the live site at the next portfolio deploy (or
+immediately if you run the portfolio's **Deploy portfolio to GitHub Pages** workflow yourself).
+The daily run is scheduled after this repository's data refresh (04:15 UTC), so the demo carries
+each night's snapshots by morning. The cadence is the `schedule.cron` in the portfolio's
+`.github/workflows/deploy-pages.yml`; the owner can change it, and anything from hourly to weekly
+works as long as it runs after the refresh.
 
 Requirements: this repository must be **public** and named `perai-view` (the portfolio workflow's
 `DEMO_REPO`), and the portfolio's **Settings, Pages, Source** must be **GitHub Actions**.
+
+## Real-data snapshots and the nightly refresh
+
+[`.github/workflows/refresh-data.yml`](../.github/workflows/refresh-data.yml) keeps
+[`data/real/`](../data/real/README.md) current. Every night at 04:15 UTC it:
+
+1. Checks out `main` and installs `data-pipeline/`.
+2. Restores `data/real/.pipeline-state.json` from the **GitHub Actions cache** (see below).
+3. Decides which sources to run: everything except PyPI, unless it is Monday (UTC) or the run
+   was dispatched with `force_pypi`; `--force` is added when dispatched with `force`.
+4. Runs `npm run refresh` with `GITHUB_TOKEN` (the automatic workflow token, enough for the
+   GraphQL API) and, if the secrets exist, `BIGQUERY_PROJECT` and `GCP_SERVICE_ACCOUNT_KEY`.
+5. Runs `npm run validate`; a snapshot that fails the shared schemas fails the job before
+   anything is committed.
+6. Commits `data/real/**` as `github-actions[bot]` with the message
+   `data: refresh real-data snapshots (<date>)` and pushes, or logs "No changes" and exits.
+
+The job has `contents: write` (the only workflow that does), a 45-minute timeout and a
+`refresh-data` concurrency group so a manual run cannot overlap the nightly one. It runs from a
+schedule and `workflow_dispatch` only, never from a pull request. Run it by hand from the
+**Actions** tab (**Refresh real-data snapshots**, **Run workflow**) to pick up a new Anthropic
+release immediately or to test credentials; tick `force_pypi` to run the BigQuery query on any
+day and `force` to ignore every cache.
+
+Two consequences of the bot commit are worth knowing. Pushes made with the workflow token do
+**not** trigger other workflows, so CI does not run on the data commits (the snapshots were
+already validated in the job) and the standalone Pages workflow in this repository is not
+triggered either; the portfolio's scheduled build is what publishes them. And because the
+snapshots are ordinary files in git, a bad refresh can be reverted like any other commit.
+
+**Failure behaviour.** Sources are independent: if one API is down, its previous file stays,
+`manifest.json` records `status: "failed"` with the error, and the others are still committed. If
+a source keeps failing past its cadence (45 days for the rolling windows, 120 for the Anthropic
+releases) its status becomes `stale`, which the layer menu and About dialog show. The job itself
+fails only when a produced file does not validate or when no source at all succeeded, and the
+failure e-mail from GitHub is the alert.
+
+**The Actions cache.** `data/real/.pipeline-state.json` holds the pipeline's caches (the Hugging
+Face object id of the Anthropic CSV and the extraction made from it, per-day Wikipedia country
+sums, freshness dates). It is git-ignored and saved with `actions/cache` under the key
+`pipeline-state-<run id>` with `pipeline-state-` as the restore prefix, so each run restores the
+newest previous cache and saves its own. GitHub evicts caches that have not been used for 7 days
+and keeps at most 10 GB per repository; the file is a few hundred kilobytes. Losing it is
+harmless: the next run re-streams the 219 MB Anthropic CSV and re-downloads 30 days of the
+Wikimedia country dataset, which takes longer but produces the same snapshots.
+
+**Enabling PyPI downloads.** The SDK-downloads source is `not_configured` until two repository
+secrets exist; everything else works without them. Setup, free of charge: (1) create a Google
+Cloud project; (2) open BigQuery and accept the **sandbox** (no billing account, 1 TB of queries
+per month); (3) create a service account with the **BigQuery Job User** role (public datasets are
+readable by everyone) and download a JSON key; (4) add the repository secrets `BIGQUERY_PROJECT`
+(the project id) and `GCP_SERVICE_ACCOUNT_KEY` (the whole JSON key file as the value) under
+**Settings, Secrets and variables, Actions**; (5) run the workflow with `force_pypi` ticked and
+check that `sdk-downloads-by-country.json` now has `status: "ok"`. The query scans tens of GB per
+run, which is why it is limited to Mondays. Rotate the key by replacing the secret; the pipeline
+reads it fresh on every run.
+
+**Checking a refresh.** Open the workflow run: the refresh step prints one line per source with
+its status and `as_of`. In the repository, `data/real/manifest.json` shows the same plus notes
+(release name, object id, days covered, geocoding match rates). On the live site, the About
+dialog's *Real data sources* list is rendered from that manifest.
 
 ## Optional: publish a standalone copy from this repository
 
@@ -55,6 +122,9 @@ Notes:
   absolute `/cesium/...` path would 404 under a sub-path.
 - Deployments use the `github-pages` environment, which by default only accepts the default
   branch.
+- The build includes `data/real/` automatically. Because the nightly data commits are made with
+  the workflow token, they do not trigger this workflow; add a `schedule` (after 04:15 UTC) or
+  run it by hand if you want the standalone copy to follow the refreshes.
 
 ## Alternative: Netlify or Cloudflare Pages
 
@@ -69,10 +139,12 @@ Both can build straight from the GitHub repository. Use these settings:
 
 Optionally set `VITE_SITE_URL` to the site's URL and `VITE_REPO_URL` to your repository.
 
-The build imports `../shared`, so the whole repository must be available during the build (both
-hosts clone the full repository and only change the working directory). If a host only uploads
-the chosen folder, build from the repository root instead with
-`npm ci --prefix frontend && npm run build --prefix frontend` and publish `frontend/dist`.
+The build imports `../shared` and copies `../data/real`, so the whole repository must be
+available during the build (both hosts clone the full repository and only change the working
+directory). If a host only uploads the chosen folder, build from the repository root instead with
+`npm ci --prefix frontend && npm run build --prefix frontend` and publish `frontend/dist`. To
+follow the nightly data refresh, enable the host's scheduled or webhook builds, since the bot
+commits do not trigger GitHub workflows but do reach these hosts through their Git integration.
 
 GitHub Pages does not let you set response headers. Netlify and Cloudflare Pages do (through a
 `_headers` file); the Content Security Policy and other headers in
@@ -181,6 +253,8 @@ until the API wakes up. This is why the static demo is the recommended public li
 | Frontend (build) | `VITE_DATA_SOURCE` | No | Force `local` or `api` |
 | Frontend (build) | `VITE_WS_URL` | No | Override the derived WebSocket URL |
 | Frontend (build) | `VITE_SITE_URL`, `VITE_REPO_URL` | No | Social-preview URLs and the source link |
+| Refresh workflow (secrets) | `BIGQUERY_PROJECT`, `GCP_SERVICE_ACCOUNT_KEY` | No | Enable the PyPI source; without them it is `not_configured` |
+| Refresh workflow | `GITHUB_TOKEN` | Automatic | The workflow token; needed by the GitHub fork source |
 
 The full lists with defaults are in [DEVELOPMENT.md](DEVELOPMENT.md#configuration).
 
@@ -190,5 +264,9 @@ The full lists with defaults are in [DEVELOPMENT.md](DEVELOPMENT.md#configuratio
   chip reads **Simulated data · Live**.
 - Opening **Analytics** shows totals, the hourly chart and the busiest cities.
 - A shared link such as `?layer=heat&theme=cyber&city=Tokyo` restores that view.
+- `<site>/data/real/manifest.json` loads, and the layer menu offers the real-data layers with
+  their dates (only *SDK downloads* may say "not configured"). Switching to **Claude usage by
+  country** fills the countries and the status chip reads **Real data · Anthropic · May 2026**
+  (or the current release); clicking a country opens the country card.
 - For API deployments: `GET /api/health` returns `"status":"ok"`, and the browser's network tab
   shows the WebSocket upgrade to `/api/ws/activities` with status 101.

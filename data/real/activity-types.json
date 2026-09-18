@@ -1,0 +1,266 @@
+{
+  "generated_at": "2026-09-18T03:22:18.772Z",
+  "series": [
+    {
+      "source": "anthropic_economic_index",
+      "title": "What people use Claude for",
+      "subject": "Claude.ai conversations by request topic (major category), global",
+      "as_of": "May 2026",
+      "period": {
+        "start": "2026-05-01",
+        "end": "2026-05-31"
+      },
+      "method": "Global 'request' category shares (hierarchy level 2) from release_2026_06_26 (released 2026-06-26); unpublished remainder added so shares sum to 1",
+      "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex/tree/main/release_2026_06_26",
+      "categories": [
+        {
+          "label": "Content Creation & Copywriting",
+          "share": 0.2272
+        },
+        {
+          "label": "Education & Learning",
+          "share": 0.1323
+        },
+        {
+          "label": "Software Development",
+          "share": 0.1151
+        },
+        {
+          "label": "Research & Intelligence",
+          "share": 0.1094
+        },
+        {
+          "label": "Hobbies & Lifestyle",
+          "share": 0.0949
+        },
+        {
+          "label": "Business Process & Operations",
+          "share": 0.047
+        },
+        {
+          "label": "Document Processing & Extraction",
+          "share": 0.0432
+        },
+        {
+          "label": "Data Analysis & Business Intelligence",
+          "share": 0.0383
+        },
+        {
+          "label": "Knowledge Retrieval & Enterprise Search",
+          "share": 0.0361
+        },
+        {
+          "label": "Existential, Relational, and Emotional Support",
+          "share": 0.0344
+        },
+        {
+          "label": "Personal AI Assistant",
+          "share": 0.0286
+        },
+        {
+          "label": "DevOps & Infrastructure Operations",
+          "share": 0.0282
+        },
+        {
+          "label": "Companionship & General Conversation",
+          "share": 0.0137
+        },
+        {
+          "label": "Sales & Revenue Operations",
+          "share": 0.011
+        },
+        {
+          "label": "Compliance & Regulatory",
+          "share": 0.0106
+        },
+        {
+          "label": "Customer Support & Service Operations",
+          "share": 0.006
+        },
+        {
+          "label": "Cybersecurity & Threat Detection",
+          "share": 0.0038
+        },
+        {
+          "label": "Other / Unclear",
+          "share": 0.0036
+        },
+        {
+          "label": "Conversation & Meeting Intelligence",
+          "share": 0.0026
+        },
+        {
+          "label": "Trust & Safety / Platform Integrity",
+          "share": 0.0007
+        },
+        {
+          "label": "Not published (below reporting threshold)",
+          "share": 0.0133,
+          "note": "Remainder: topics whose cells fell below Anthropic's publication threshold"
+        }
+      ],
+      "previous": {
+        "as_of": "April 2026",
+        "categories": [
+          {
+            "label": "Content Creation & Copywriting",
+            "share": 0.2159
+          },
+          {
+            "label": "Education & Learning",
+            "share": 0.1253
+          },
+          {
+            "label": "Software Development",
+            "share": 0.1213
+          },
+          {
+            "label": "Research & Intelligence",
+            "share": 0.1036
+          },
+          {
+            "label": "Hobbies & Lifestyle",
+            "share": 0.0837
+          },
+          {
+            "label": "Business Process & Operations",
+            "share": 0.0457
+          },
+          {
+            "label": "Document Processing & Extraction",
+            "share": 0.0395
+          },
+          {
+            "label": "Data Analysis & Business Intelligence",
+            "share": 0.0358
+          },
+          {
+            "label": "Knowledge Retrieval & Enterprise Search",
+            "share": 0.0342
+          },
+          {
+            "label": "Existential, Relational, and Emotional Support",
+            "share": 0.0333
+          },
+          {
+            "label": "DevOps & Infrastructure Operations",
+            "share": 0.0308
+          },
+          {
+            "label": "Personal AI Assistant",
+            "share": 0.0238
+          },
+          {
+            "label": "Companionship & General Conversation",
+            "share": 0.0133
+          },
+          {
+            "label": "Sales & Revenue Operations",
+            "share": 0.0111
+          },
+          {
+            "label": "Compliance & Regulatory",
+            "share": 0.0104
+          },
+          {
+            "label": "Customer Support & Service Operations",
+            "share": 0.0057
+          },
+          {
+            "label": "Cybersecurity & Threat Detection",
+            "share": 0.004
+          },
+          {
+            "label": "Other / Unclear",
+            "share": 0.0039
+          },
+          {
+            "label": "Conversation & Meeting Intelligence",
+            "share": 0.0026
+          },
+          {
+            "label": "Trust & Safety / Platform Integrity",
+            "share": 0.0006
+          },
+          {
+            "label": "Not published (below reporting threshold)",
+            "share": 0.0555
+          }
+        ]
+      }
+    },
+    {
+      "source": "openai_usage_report",
+      "title": "What people use ChatGPT for",
+      "subject": "Consumer ChatGPT messages by conversation topic",
+      "as_of": "July 2025",
+      "period": {
+        "start": "2024-05-15",
+        "end": "2025-06-26"
+      },
+      "method": "Transcribed from the paper's text (Figure 7 discussion)",
+      "url": "https://www.nber.org/papers/w34255",
+      "categories": [
+        {
+          "label": "Practical guidance",
+          "share": 0.29,
+          "note": "\"roughly 29% of overall usage\", constant over the period"
+        },
+        {
+          "label": "Seeking information",
+          "share": 0.24,
+          "note": "Grew from 14% (July 2024) to 24% (July 2025)"
+        },
+        {
+          "label": "Writing",
+          "share": 0.24,
+          "note": "Declined from 36% (July 2024) to 24% (July 2025)"
+        },
+        {
+          "label": "Multimedia",
+          "share": 0.07,
+          "note": "\"just over 7%\", up from 2%; spike in April 2025 after image generation launched"
+        },
+        {
+          "label": "Technical help",
+          "share": 0.05,
+          "note": "\"around 5%\", down from 12% (July 2024)"
+        },
+        {
+          "label": "Self-expression, relationships and other",
+          "share": 0.11,
+          "note": "Remainder: 100% minus the five stated categories (Self-Expression, Relationships and Personal Reflection, Other/Unknown)"
+        }
+      ],
+      "previous": {
+        "as_of": "July 2024",
+        "categories": [
+          {
+            "label": "Practical guidance",
+            "share": 0.29
+          },
+          {
+            "label": "Writing",
+            "share": 0.36
+          },
+          {
+            "label": "Seeking information",
+            "share": 0.14
+          },
+          {
+            "label": "Technical help",
+            "share": 0.12
+          },
+          {
+            "label": "Multimedia",
+            "share": 0.02
+          },
+          {
+            "label": "Self-expression, relationships and other",
+            "share": 0.07
+          }
+        ]
+      }
+    }
+  ]
+}

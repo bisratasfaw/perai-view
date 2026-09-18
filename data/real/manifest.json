@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-18T03:22:18.772Z",
+  "pipeline_version": "1.0.0",
+  "sources": {
+    "anthropic_economic_index": {
+      "id": "anthropic_economic_index",
+      "title": "Anthropic Economic Index",
+      "publisher": "Anthropic",
+      "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex",
+      "license": "CC-BY (release data documentation); dataset card lists MIT",
+      "description": "Monthly Claude.ai usage by country and US state (share of global usage and per-capita index) and the global mix of request topics, from the Anthropic Economic Index releases on Hugging Face.",
+      "status": "ok",
+      "fetched_at": "2026-09-18T01:46:49.084Z",
+      "as_of": "May 2026",
+      "error": null,
+      "notes": [
+        "release_2026_06_26 covers April 2026 and May 2026; snapshot shows May 2026: 121 countries, 52 US states.",
+        "Cells below Anthropic's aggregation thresholds are not published, so smaller countries are missing rather than zero.",
+        "Request-topic shares use hierarchy level 2 ('Major' topics); 1.33% of conversations fall in topics below the publication threshold and are shown as a remainder.",
+        "Source file release_2026_06_26/data/aei_claude_ai_2026-06-26.csv (oid f974b358bce0e5a8417510c61da4342234cd0de9d9d0b62acf4c6dbcf8ec7b68), processed 2026-09-18T01:46:49.084Z."
+      ]
+    },
+    "openai_usage_report": {
+      "id": "openai_usage_report",
+      "title": "How People Use ChatGPT",
+      "publisher": "OpenAI / NBER (Chatterji et al., Working Paper 34255)",
+      "url": "https://www.nber.org/papers/w34255",
+      "license": "Figures quoted from a published working paper; no dataset was released. Transcription, not redistribution.",
+      "description": "Share of consumer ChatGPT messages by conversation topic, July 2025 versus July 2024, from a sample of about one million de-identified consumer messages (May 2024 - June 2025).",
+      "status": "ok",
+      "fetched_at": "2026-09-18T01:46:49.084Z",
+      "as_of": "July 2025",
+      "error": null,
+      "notes": [
+        "Static transcription: no dataset exists, so this series changes only when the code is updated.",
+        "Non-work messages: 53% (June 2024) -> 73% (June 2025).",
+        "Intent overall: Asking 49% / Doing 40% / Expressing 11%.",
+        "Sample: approximately 1.1 million sampled conversations, May 15, 2024 through June 26, 2025 (Figure 7 caption)."
+      ]
+    },
+    "wikipedia_pageviews": {
+      "id": "wikipedia_pageviews",
+      "title": "Wikipedia pageviews for AI-assistant articles",
+      "publisher": "Wikimedia Foundation (Wikimedia Analytics)",
+      "url": "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews",
+      "license": "CC0 (Wikimedia Analytics pageview datasets are released under the Creative Commons CC0 dedication)",
+      "description": "Daily human pageviews of each assistant's Wikipedia article summed across language editions (Pageviews REST API), plus per-country sums from the differentially private country_project_page dataset, over the last 30 full days.",
+      "status": "ok",
+      "fetched_at": "2026-09-18T03:22:18.772Z",
+      "as_of": "2026-09-17",
+      "error": null,
+      "notes": [
+        "Daily series: 436 language editions across 8 articles, agent=user, all-access, 2026-08-19 to 2026-09-17.",
+        "Country sums: 30 of 30 days available, 76 countries."
+      ]
+    },
+    "pypi_downloads": {
+      "id": "pypi_downloads",
+      "title": "PyPI SDK downloads by country",
+      "publisher": "Python Software Foundation (PyPI) via Google BigQuery public datasets",
+      "url": "https://console.cloud.google.com/marketplace/product/gcp-public-data-pypi/pypi",
+      "license": "BigQuery public dataset bigquery-public-data.pypi (PyPI download statistics, published under the PSF's open data terms)",
+      "description": "Downloads of the openai, anthropic, google-genai and mistralai Python packages by country over the last 7 complete days.",
+      "status": "not_configured",
+      "fetched_at": "2026-09-18T01:46:49.084Z",
+      "as_of": null,
+      "error": null,
+      "notes": []
+    },
+    "github_forks": {
+      "id": "github_forks",
+      "title": "GitHub SDK fork owners by city",
+      "publisher": "GitHub (GraphQL API)",
+      "url": "https://docs.github.com/en/graphql",
+      "license": "Public profile data via the GitHub API, subject to GitHub's Terms of Service; only aggregated counts are stored",
+      "description": "Self-reported profile locations of people who forked the official OpenAI, Anthropic, Google Gemini, Mistral and Meta Llama SDK repositories, geocoded offline to the globe's cities and to countries.",
+      "status": "ok",
+      "fetched_at": "2026-09-18T01:46:49.084Z",
+      "as_of": "2026-09-18",
+      "error": null,
+      "notes": [
+        "21530 fork owners enumerated (newest first, at most 6000 per repository); 7643 list a location.",
+        "Geocoding matched 42.1% of locations to a globe city and 87.6% to a country.",
+        "Organisations and users without a location are counted in forks_seen only."
+      ]
+    }
+  }
+}

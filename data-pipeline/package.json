@@ -1,0 +1,34 @@
+{
+  "name": "perai-view-data-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fetches free public datasets about AI-assistant usage and writes validated JSON snapshots to /data/real for the PerAI View globe.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "refresh": "tsx src/refresh.ts",
+    "validate": "tsx src/validate.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "google-auth-library": "^11.1.0",
+    "tsx": "^4.23.13",
+    "typescript": "~5.9.3",
+    "world-countries": "^5.1.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.3",
+    "eslint": "^10.10.0",
+    "globals": "^17.12.0",
+    "typescript-eslint": "^8.70.0",
+    "vitest": "^5.0.1"
+  }
+}

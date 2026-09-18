@@ -1,0 +1,30 @@
+{
+  "source": "pypi_downloads",
+  "status": "not_configured",
+  "as_of": null,
+  "period_days": 7,
+  "packages": [
+    {
+      "name": "openai",
+      "assistant": "chatgpt",
+      "vendor": "OpenAI"
+    },
+    {
+      "name": "anthropic",
+      "assistant": "claude",
+      "vendor": "Anthropic"
+    },
+    {
+      "name": "google-genai",
+      "assistant": "gemini",
+      "vendor": "Google"
+    },
+    {
+      "name": "mistralai",
+      "assistant": "mistral",
+      "vendor": "Mistral AI"
+    }
+  ],
+  "countries": [],
+  "note": "Not configured. Five-minute setup, free of charge: (1) create a Google Cloud project; (2) open BigQuery and accept the sandbox (no billing account needed, 1 TB of queries per month); (3) create a service account with the \"BigQuery Job User\" role (public datasets are readable by everyone) and download a JSON key; (4) add the repository secrets BIGQUERY_PROJECT (the project id) and GCP_SERVICE_ACCOUNT_KEY (the JSON key contents); locally use BIGQUERY_PROJECT plus GOOGLE_APPLICATION_CREDENTIALS=path/to/key.json. The query scans tens of GB, so the workflow runs it weekly (Mondays) or on demand. Missing: BIGQUERY_PROJECT."
+}

@@ -97,6 +97,29 @@ jobs:
       - run: npm test
       - run: npm run build
 
+  data-pipeline:
+    name: Data pipeline (lint, typecheck, tests, validate snapshots)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: data-pipeline
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: data-pipeline/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      # The committed snapshots in data/real must always parse with shared/realData.ts.
+      - run: npm run validate
+
   classifier:
     name: Classifier (ruff, pytest, pip-audit)
     runs-on: ubuntu-latest

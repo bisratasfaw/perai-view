@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { AboutDialog } from '@/components/AboutDialog'
 import { AnalyticsPanel } from '@/components/AnalyticsPanel'
 import { CityCard } from '@/components/CityCard'
+import { CountryCard } from '@/components/CountryCard'
 import { GlobeControls } from '@/components/GlobeControls'
 import { Legend } from '@/components/Legend'
 import { LiveFeed } from '@/components/LiveFeed'
@@ -16,6 +17,7 @@ export default function App() {
   const [globeKey, setGlobeKey] = useState(0)
   const panelOpen = useAppStore((s) => s.panelOpen)
   const selectedCity = useAppStore((s) => s.selectedCity)
+  const selectedCountry = useAppStore((s) => s.selectedCountry)
 
   useEffect(() => syncUrlWithStore(), [])
 
@@ -38,7 +40,7 @@ export default function App() {
     }
   }, [])
 
-  const className = ['app', panelOpen && 'panel-open', selectedCity && 'city-open'].filter(Boolean).join(' ')
+  const className = ['app', panelOpen && 'panel-open', (selectedCity || selectedCountry) && 'city-open'].filter(Boolean).join(' ')
 
   return (
     <div className={className}>
@@ -49,6 +51,7 @@ export default function App() {
         <LiveFeed />
         <Legend />
         <CityCard source={source} />
+        <CountryCard />
         {panelOpen && <AnalyticsPanel source={source} />}
       </main>
       <AboutDialog source={source} />

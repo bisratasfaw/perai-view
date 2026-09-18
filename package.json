@@ -2,7 +2,7 @@
   "name": "perai-view",
   "version": "2.0.0",
   "private": true,
-  "description": "Interactive 3D globe of simulated AI-assistant activity. Repository-level scripts that orchestrate frontend/, backend/ and ai-classifier/.",
+  "description": "Interactive 3D globe of AI-assistant activity: a deterministic simulation plus real published datasets. Repository-level scripts that orchestrate frontend/, backend/, ai-classifier/ and data-pipeline/.",
   "license": "MIT",
   "type": "module",
   "engines": {
@@ -21,6 +21,9 @@
     "test": "npm test --prefix backend && npm test --prefix frontend",
     "test:e2e": "npm run test:e2e --prefix frontend",
     "check": "npm run lint && npm run typecheck && npm test",
+    "data:refresh": "npm run refresh --prefix data-pipeline --",
+    "data:validate": "npm run validate --prefix data-pipeline",
+    "data:test": "npm test --prefix data-pipeline",
     "classifier:setup": "node scripts/classifier.mjs setup",
     "classifier:dev": "node scripts/classifier.mjs dev",
     "classifier:test": "node scripts/classifier.mjs test",

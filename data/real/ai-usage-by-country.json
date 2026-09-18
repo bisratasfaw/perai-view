@@ -1,0 +1,1298 @@
+{
+  "source": "anthropic_economic_index",
+  "release": "release_2026_06_26",
+  "product": "Claude.ai chat and Cowork (Free, Pro and Max plans)",
+  "period": {
+    "start": "2026-05-01",
+    "end": "2026-05-31"
+  },
+  "as_of": "May 2026",
+  "metrics": {
+    "usage_pct": "Share of global Claude.ai usage in the month, in percent (Anthropic 'usage_pct', relative to the global total).",
+    "usage_per_capita_index": "Anthropic Usage Index: usage share divided by working-age (15-64) population share; 1.0 means proportional to population ('usage_per_capita_index')."
+  },
+  "countries": [
+    {
+      "cc": "US",
+      "name": "United States",
+      "usage_pct": 20.16,
+      "usage_per_capita_index": 3.87,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "IN",
+      "name": "India",
+      "usage_pct": 7.12,
+      "usage_per_capita_index": 0.3,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "FR",
+      "name": "France",
+      "usage_pct": 3.95,
+      "usage_per_capita_index": 3.97,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "GB",
+      "name": "United Kingdom",
+      "usage_pct": 3.47,
+      "usage_per_capita_index": 3.35,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "BR",
+      "name": "Brazil",
+      "usage_pct": 3.33,
+      "usage_per_capita_index": 0.96,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "JP",
+      "name": "Japan",
+      "usage_pct": 3.28,
+      "usage_per_capita_index": 1.91,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "KR",
+      "name": "South Korea",
+      "usage_pct": 3.24,
+      "usage_per_capita_index": 3.78,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "DE",
+      "name": "Germany",
+      "usage_pct": 2.98,
+      "usage_per_capita_index": 2.4,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "AU",
+      "name": "Australia",
+      "usage_pct": 2.65,
+      "usage_per_capita_index": 6.4,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "CA",
+      "name": "Canada",
+      "usage_pct": 2.63,
+      "usage_per_capita_index": 4.13,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "ID",
+      "name": "Indonesia",
+      "usage_pct": 2.08,
+      "usage_per_capita_index": 0.46,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "ES",
+      "name": "Spain",
+      "usage_pct": 2.05,
+      "usage_per_capita_index": 2.69,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "IT",
+      "name": "Italy",
+      "usage_pct": 1.5,
+      "usage_per_capita_index": 1.7,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "MX",
+      "name": "Mexico",
+      "usage_pct": 1.32,
+      "usage_per_capita_index": 0.63,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "PK",
+      "name": "Pakistan",
+      "usage_pct": 1.08,
+      "usage_per_capita_index": 0.31,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "NL",
+      "name": "Netherlands",
+      "usage_pct": 1.07,
+      "usage_per_capita_index": 3.9,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "AR",
+      "name": "Argentina",
+      "usage_pct": 1.05,
+      "usage_per_capita_index": 1.48,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "CO",
+      "name": "Colombia",
+      "usage_pct": 1.03,
+      "usage_per_capita_index": 1.18,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "TR",
+      "name": "Türkiye",
+      "usage_pct": 0.88,
+      "usage_per_capita_index": 0.64,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "TH",
+      "name": "Thailand",
+      "usage_pct": 0.86,
+      "usage_per_capita_index": 0.73,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "VN",
+      "name": "Vietnam",
+      "usage_pct": 0.85,
+      "usage_per_capita_index": 0.53,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "PH",
+      "name": "Philippines",
+      "usage_pct": 0.8,
+      "usage_per_capita_index": 0.44,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "TW",
+      "name": "Taiwan",
+      "usage_pct": 0.79,
+      "usage_per_capita_index": 2.08,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "PL",
+      "name": "Poland",
+      "usage_pct": 0.75,
+      "usage_per_capita_index": 1.33,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "NG",
+      "name": "Nigeria",
+      "usage_pct": 0.73,
+      "usage_per_capita_index": 0.24,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "CH",
+      "name": "Switzerland",
+      "usage_pct": 0.7,
+      "usage_per_capita_index": 5.02,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "BE",
+      "name": "Belgium",
+      "usage_pct": 0.68,
+      "usage_per_capita_index": 3.8,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "EG",
+      "name": "Egypt",
+      "usage_pct": 0.62,
+      "usage_per_capita_index": 0.36,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "SG",
+      "name": "Singapore",
+      "usage_pct": 0.62,
+      "usage_per_capita_index": 5.81,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "AE",
+      "name": "United Arab Emirates",
+      "usage_pct": 0.61,
+      "usage_per_capita_index": 2.84,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "CL",
+      "name": "Chile",
+      "usage_pct": 0.59,
+      "usage_per_capita_index": 1.84,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "PE",
+      "name": "Peru",
+      "usage_pct": 0.57,
+      "usage_per_capita_index": 1.05,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "SA",
+      "name": "Saudi Arabia",
+      "usage_pct": 0.57,
+      "usage_per_capita_index": 0.93,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "MA",
+      "name": "Morocco",
+      "usage_pct": 0.54,
+      "usage_per_capita_index": 0.9,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "PT",
+      "name": "Portugal",
+      "usage_pct": 0.53,
+      "usage_per_capita_index": 3.32,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "MY",
+      "name": "Malaysia",
+      "usage_pct": 0.51,
+      "usage_per_capita_index": 0.87,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "UA",
+      "name": "Ukraine",
+      "usage_pct": 0.47,
+      "usage_per_capita_index": 0.78,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "ZA",
+      "name": "South Africa",
+      "usage_pct": 0.47,
+      "usage_per_capita_index": 0.46,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "SE",
+      "name": "Sweden",
+      "usage_pct": 0.46,
+      "usage_per_capita_index": 2.98,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "IL",
+      "name": "Israel",
+      "usage_pct": 0.43,
+      "usage_per_capita_index": 3.05,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "RO",
+      "name": "Romania",
+      "usage_pct": 0.4,
+      "usage_per_capita_index": 1.37,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "DZ",
+      "name": "Algeria",
+      "usage_pct": 0.39,
+      "usage_per_capita_index": 0.56,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "NZ",
+      "name": "New Zealand",
+      "usage_pct": 0.39,
+      "usage_per_capita_index": 4.84,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "AT",
+      "name": "Austria",
+      "usage_pct": 0.37,
+      "usage_per_capita_index": 2.61,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "NO",
+      "name": "Norway",
+      "usage_pct": 0.35,
+      "usage_per_capita_index": 4.04,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "DK",
+      "name": "Denmark",
+      "usage_pct": 0.32,
+      "usage_per_capita_index": 3.57,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "BD",
+      "name": "Bangladesh",
+      "usage_pct": 0.31,
+      "usage_per_capita_index": 0.11,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "CZ",
+      "name": "Czechia",
+      "usage_pct": 0.3,
+      "usage_per_capita_index": 1.84,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "IE",
+      "name": "Ireland",
+      "usage_pct": 0.27,
+      "usage_per_capita_index": 3.23,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "KE",
+      "name": "Kenya",
+      "usage_pct": 0.27,
+      "usage_per_capita_index": 0.34,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "TN",
+      "name": "Tunisia",
+      "usage_pct": 0.27,
+      "usage_per_capita_index": 1.4,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "GR",
+      "name": "Greece",
+      "usage_pct": 0.23,
+      "usage_per_capita_index": 1.51,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "KZ",
+      "name": "Kazakhstan",
+      "usage_pct": 0.21,
+      "usage_per_capita_index": 0.71,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "GH",
+      "name": "Ghana",
+      "usage_pct": 0.19,
+      "usage_per_capita_index": 0.38,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "LK",
+      "name": "Sri Lanka",
+      "usage_pct": 0.19,
+      "usage_per_capita_index": 0.56,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "NP",
+      "name": "Nepal",
+      "usage_pct": 0.19,
+      "usage_per_capita_index": 0.41,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "FI",
+      "name": "Finland",
+      "usage_pct": 0.18,
+      "usage_per_capita_index": 2.19,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "EC",
+      "name": "Ecuador",
+      "usage_pct": 0.17,
+      "usage_per_capita_index": 0.58,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "HU",
+      "name": "Hungary",
+      "usage_pct": 0.16,
+      "usage_per_capita_index": 1.07,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "IQ",
+      "name": "Iraq",
+      "usage_pct": 0.16,
+      "usage_per_capita_index": 0.24,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "UZ",
+      "name": "Uzbekistan",
+      "usage_pct": 0.16,
+      "usage_per_capita_index": 0.3,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "CM",
+      "name": "Cameroon",
+      "usage_pct": 0.15,
+      "usage_per_capita_index": 0.38,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "BG",
+      "name": "Bulgaria",
+      "usage_pct": 0.13,
+      "usage_per_capita_index": 1.36,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "CI",
+      "name": "Ivory Coast",
+      "usage_pct": 0.13,
+      "usage_per_capita_index": 0.3,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "CR",
+      "name": "Costa Rica",
+      "usage_pct": 0.13,
+      "usage_per_capita_index": 1.57,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "RS",
+      "name": "Serbia",
+      "usage_pct": 0.13,
+      "usage_per_capita_index": 1.31,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "DO",
+      "name": "Dominican Republic",
+      "usage_pct": 0.12,
+      "usage_per_capita_index": 0.67,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "SK",
+      "name": "Slovakia",
+      "usage_pct": 0.12,
+      "usage_per_capita_index": 1.43,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "BO",
+      "name": "Bolivia",
+      "usage_pct": 0.11,
+      "usage_per_capita_index": 0.56,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "JO",
+      "name": "Jordan",
+      "usage_pct": 0.11,
+      "usage_per_capita_index": 0.64,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "SN",
+      "name": "Senegal",
+      "usage_pct": 0.11,
+      "usage_per_capita_index": 0.41,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "GE",
+      "name": "Georgia",
+      "usage_pct": 0.1,
+      "usage_per_capita_index": 1.8,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "GT",
+      "name": "Guatemala",
+      "usage_pct": 0.1,
+      "usage_per_capita_index": 0.37,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "HR",
+      "name": "Croatia",
+      "usage_pct": 0.1,
+      "usage_per_capita_index": 1.8,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "LT",
+      "name": "Lithuania",
+      "usage_pct": 0.1,
+      "usage_per_capita_index": 2.28,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "UY",
+      "name": "Uruguay",
+      "usage_pct": 0.1,
+      "usage_per_capita_index": 1.89,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "PA",
+      "name": "Panama",
+      "usage_pct": 0.09,
+      "usage_per_capita_index": 1.28,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "QA",
+      "name": "Qatar",
+      "usage_pct": 0.09,
+      "usage_per_capita_index": 1.66,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "KW",
+      "name": "Kuwait",
+      "usage_pct": 0.08,
+      "usage_per_capita_index": 0.92,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "LB",
+      "name": "Lebanon",
+      "usage_pct": 0.08,
+      "usage_per_capita_index": 0.96,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "PR",
+      "name": "Puerto Rico",
+      "usage_pct": 0.08,
+      "usage_per_capita_index": 1.68,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "AZ",
+      "name": "Azerbaijan",
+      "usage_pct": 0.07,
+      "usage_per_capita_index": 0.43,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "BJ",
+      "name": "Benin",
+      "usage_pct": 0.07,
+      "usage_per_capita_index": 0.39,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "CY",
+      "name": "Cyprus",
+      "usage_pct": 0.07,
+      "usage_per_capita_index": 3.08,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "EE",
+      "name": "Estonia",
+      "usage_pct": 0.07,
+      "usage_per_capita_index": 3.21,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "LV",
+      "name": "Latvia",
+      "usage_pct": 0.07,
+      "usage_per_capita_index": 2.37,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "MN",
+      "name": "Mongolia",
+      "usage_pct": 0.07,
+      "usage_per_capita_index": 1.37,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "OM",
+      "name": "Oman",
+      "usage_pct": 0.07,
+      "usage_per_capita_index": 0.73,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "SI",
+      "name": "Slovenia",
+      "usage_pct": 0.07,
+      "usage_per_capita_index": 2.13,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "UG",
+      "name": "Uganda",
+      "usage_pct": 0.07,
+      "usage_per_capita_index": 0.11,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "KH",
+      "name": "Cambodia",
+      "usage_pct": 0.06,
+      "usage_per_capita_index": 0.21,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "PY",
+      "name": "Paraguay",
+      "usage_pct": 0.06,
+      "usage_per_capita_index": 0.59,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "SV",
+      "name": "El Salvador",
+      "usage_pct": 0.06,
+      "usage_per_capita_index": 0.59,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "TZ",
+      "name": "Tanzania",
+      "usage_pct": 0.06,
+      "usage_per_capita_index": 0.07,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "AM",
+      "name": "Armenia",
+      "usage_pct": 0.05,
+      "usage_per_capita_index": 0.95,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "AO",
+      "name": "Angola",
+      "usage_pct": 0.05,
+      "usage_per_capita_index": 0.1,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "BF",
+      "name": "Burkina Faso",
+      "usage_pct": 0.05,
+      "usage_per_capita_index": 0.15,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "LU",
+      "name": "Luxembourg",
+      "usage_pct": 0.05,
+      "usage_per_capita_index": 4.85,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "MD",
+      "name": "Moldova",
+      "usage_pct": 0.05,
+      "usage_per_capita_index": 1.45,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "AL",
+      "name": "Albania",
+      "usage_pct": 0.04,
+      "usage_per_capita_index": 1.02,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "BH",
+      "name": "Bahrain",
+      "usage_pct": 0.04,
+      "usage_per_capita_index": 1.5,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "HN",
+      "name": "Honduras",
+      "usage_pct": 0.04,
+      "usage_per_capita_index": 0.26,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "KG",
+      "name": "Kyrgyzstan",
+      "usage_pct": 0.04,
+      "usage_per_capita_index": 0.35,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "MG",
+      "name": "Madagascar",
+      "usage_pct": 0.04,
+      "usage_per_capita_index": 0.1,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "MT",
+      "name": "Malta",
+      "usage_pct": 0.04,
+      "usage_per_capita_index": 4,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "MU",
+      "name": "Mauritius",
+      "usage_pct": 0.04,
+      "usage_per_capita_index": 1.74,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "RW",
+      "name": "Rwanda",
+      "usage_pct": 0.04,
+      "usage_per_capita_index": 0.2,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "ZM",
+      "name": "Zambia",
+      "usage_pct": 0.04,
+      "usage_per_capita_index": 0.15,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "ZW",
+      "name": "Zimbabwe",
+      "usage_pct": 0.04,
+      "usage_per_capita_index": 0.2,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "BA",
+      "name": "Bosnia and Herzegovina",
+      "usage_pct": 0.03,
+      "usage_per_capita_index": 0.61,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "HT",
+      "name": "Haiti",
+      "usage_pct": 0.03,
+      "usage_per_capita_index": 0.14,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "JM",
+      "name": "Jamaica",
+      "usage_pct": 0.03,
+      "usage_per_capita_index": 0.66,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "MK",
+      "name": "North Macedonia",
+      "usage_pct": 0.03,
+      "usage_per_capita_index": 0.98,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "MZ",
+      "name": "Mozambique",
+      "usage_pct": 0.03,
+      "usage_per_capita_index": 0.08,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "PS",
+      "name": "Palestine",
+      "usage_pct": 0.03,
+      "usage_per_capita_index": 0.43,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "TG",
+      "name": "Togo",
+      "usage_pct": 0.03,
+      "usage_per_capita_index": 0.22,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "BW",
+      "name": "Botswana",
+      "usage_pct": 0.02,
+      "usage_per_capita_index": 0.52,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "CG",
+      "name": "Republic of the Congo",
+      "usage_pct": 0.02,
+      "usage_per_capita_index": 0.24,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "IS",
+      "name": "Iceland",
+      "usage_pct": 0.02,
+      "usage_per_capita_index": 4.02,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "NA",
+      "name": "Namibia",
+      "usage_pct": 0.02,
+      "usage_per_capita_index": 0.44,
+      "usage_tier": null,
+      "usage_count": null
+    },
+    {
+      "cc": "TT",
+      "name": "Trinidad and Tobago",
+      "usage_pct": 0.02,
+      "usage_per_capita_index": 1.05,
+      "usage_tier": null,
+      "usage_count": null
+    }
+  ],
+  "us_states": [
+    {
+      "code": "CA",
+      "name": "California",
+      "usage_pct": 19.25,
+      "usage_per_capita_index": 1.62
+    },
+    {
+      "code": "NY",
+      "name": "New York",
+      "usage_pct": 9.08,
+      "usage_per_capita_index": 1.55
+    },
+    {
+      "code": "TX",
+      "name": "Texas",
+      "usage_pct": 8.91,
+      "usage_per_capita_index": 0.95
+    },
+    {
+      "code": "FL",
+      "name": "Florida",
+      "usage_pct": 7.01,
+      "usage_per_capita_index": 1.05
+    },
+    {
+      "code": "IL",
+      "name": "Illinois",
+      "usage_pct": 3.79,
+      "usage_per_capita_index": 1
+    },
+    {
+      "code": "WA",
+      "name": "Washington",
+      "usage_pct": 3.57,
+      "usage_per_capita_index": 1.51
+    },
+    {
+      "code": "GA",
+      "name": "Georgia",
+      "usage_pct": 3.12,
+      "usage_per_capita_index": 0.93
+    },
+    {
+      "code": "MA",
+      "name": "Massachusetts",
+      "usage_pct": 3.05,
+      "usage_per_capita_index": 1.42
+    },
+    {
+      "code": "PA",
+      "name": "Pennsylvania",
+      "usage_pct": 3.01,
+      "usage_per_capita_index": 0.8
+    },
+    {
+      "code": "NC",
+      "name": "North Carolina",
+      "usage_pct": 2.85,
+      "usage_per_capita_index": 0.88
+    },
+    {
+      "code": "NJ",
+      "name": "New Jersey",
+      "usage_pct": 2.85,
+      "usage_per_capita_index": 1.02
+    },
+    {
+      "code": "VA",
+      "name": "Virginia",
+      "usage_pct": 2.76,
+      "usage_per_capita_index": 1.07
+    },
+    {
+      "code": "CO",
+      "name": "Colorado",
+      "usage_pct": 2.56,
+      "usage_per_capita_index": 1.41
+    },
+    {
+      "code": "AZ",
+      "name": "Arizona",
+      "usage_pct": 2.08,
+      "usage_per_capita_index": 0.95
+    },
+    {
+      "code": "OH",
+      "name": "Ohio",
+      "usage_pct": 2.02,
+      "usage_per_capita_index": 0.59
+    },
+    {
+      "code": "MD",
+      "name": "Maryland",
+      "usage_pct": 2,
+      "usage_per_capita_index": 1.09
+    },
+    {
+      "code": "MI",
+      "name": "Michigan",
+      "usage_pct": 1.81,
+      "usage_per_capita_index": 0.61
+    },
+    {
+      "code": "TN",
+      "name": "Tennessee",
+      "usage_pct": 1.46,
+      "usage_per_capita_index": 0.69
+    },
+    {
+      "code": "OR",
+      "name": "Oregon",
+      "usage_pct": 1.39,
+      "usage_per_capita_index": 1.1
+    },
+    {
+      "code": "MN",
+      "name": "Minnesota",
+      "usage_pct": 1.37,
+      "usage_per_capita_index": 0.81
+    },
+    {
+      "code": "UT",
+      "name": "Utah",
+      "usage_pct": 1.28,
+      "usage_per_capita_index": 1.21
+    },
+    {
+      "code": "MO",
+      "name": "Missouri",
+      "usage_pct": 1.26,
+      "usage_per_capita_index": 0.7
+    },
+    {
+      "code": "IN",
+      "name": "Indiana",
+      "usage_pct": 1.23,
+      "usage_per_capita_index": 0.61
+    },
+    {
+      "code": "CT",
+      "name": "Connecticut",
+      "usage_pct": 1.16,
+      "usage_per_capita_index": 1.07
+    },
+    {
+      "code": "NV",
+      "name": "Nevada",
+      "usage_pct": 1.1,
+      "usage_per_capita_index": 1.13
+    },
+    {
+      "code": "WI",
+      "name": "Wisconsin",
+      "usage_pct": 1.02,
+      "usage_per_capita_index": 0.59
+    },
+    {
+      "code": "SC",
+      "name": "South Carolina",
+      "usage_pct": 0.8,
+      "usage_per_capita_index": 0.51
+    },
+    {
+      "code": "DC",
+      "name": "District of Columbia",
+      "usage_pct": 0.76,
+      "usage_per_capita_index": 3.32
+    },
+    {
+      "code": "AL",
+      "name": "Alabama",
+      "usage_pct": 0.71,
+      "usage_per_capita_index": 0.47
+    },
+    {
+      "code": "LA",
+      "name": "Louisiana",
+      "usage_pct": 0.64,
+      "usage_per_capita_index": 0.48
+    },
+    {
+      "code": "OK",
+      "name": "Oklahoma",
+      "usage_pct": 0.63,
+      "usage_per_capita_index": 0.53
+    },
+    {
+      "code": "KY",
+      "name": "Kentucky",
+      "usage_pct": 0.51,
+      "usage_per_capita_index": 0.39
+    },
+    {
+      "code": "HI",
+      "name": "Hawaii",
+      "usage_pct": 0.45,
+      "usage_per_capita_index": 1.14
+    },
+    {
+      "code": "KS",
+      "name": "Kansas",
+      "usage_pct": 0.41,
+      "usage_per_capita_index": 0.48
+    },
+    {
+      "code": "PR",
+      "name": "Puerto Rico",
+      "usage_pct": 0.4,
+      "usage_per_capita_index": null
+    },
+    {
+      "code": "ID",
+      "name": "Idaho",
+      "usage_pct": 0.39,
+      "usage_per_capita_index": 0.68
+    },
+    {
+      "code": "IA",
+      "name": "Iowa",
+      "usage_pct": 0.38,
+      "usage_per_capita_index": 0.41
+    },
+    {
+      "code": "NE",
+      "name": "Nebraska",
+      "usage_pct": 0.36,
+      "usage_per_capita_index": 0.63
+    },
+    {
+      "code": "NH",
+      "name": "New Hampshire",
+      "usage_pct": 0.36,
+      "usage_per_capita_index": 0.88
+    },
+    {
+      "code": "AR",
+      "name": "Arkansas",
+      "usage_pct": 0.35,
+      "usage_per_capita_index": 0.39
+    },
+    {
+      "code": "RI",
+      "name": "Rhode Island",
+      "usage_pct": 0.32,
+      "usage_per_capita_index": 0.96
+    },
+    {
+      "code": "DE",
+      "name": "Delaware",
+      "usage_pct": 0.31,
+      "usage_per_capita_index": 1.05
+    },
+    {
+      "code": "NM",
+      "name": "New Mexico",
+      "usage_pct": 0.3,
+      "usage_per_capita_index": 0.49
+    },
+    {
+      "code": "ME",
+      "name": "Maine",
+      "usage_pct": 0.26,
+      "usage_per_capita_index": 0.65
+    },
+    {
+      "code": "MS",
+      "name": "Mississippi",
+      "usage_pct": 0.24,
+      "usage_per_capita_index": 0.28
+    },
+    {
+      "code": "MT",
+      "name": "Montana",
+      "usage_pct": 0.19,
+      "usage_per_capita_index": 0.58
+    },
+    {
+      "code": "VT",
+      "name": "Vermont",
+      "usage_pct": 0.16,
+      "usage_per_capita_index": 0.87
+    },
+    {
+      "code": "WV",
+      "name": "West Virginia",
+      "usage_pct": 0.13,
+      "usage_per_capita_index": 0.25
+    },
+    {
+      "code": "AK",
+      "name": "Alaska",
+      "usage_pct": 0.11,
+      "usage_per_capita_index": 0.51
+    },
+    {
+      "code": "SD",
+      "name": "South Dakota",
+      "usage_pct": 0.1,
+      "usage_per_capita_index": 0.37
+    },
+    {
+      "code": "ND",
+      "name": "North Dakota",
+      "usage_pct": 0.09,
+      "usage_per_capita_index": 0.37
+    },
+    {
+      "code": "WY",
+      "name": "Wyoming",
+      "usage_pct": 0.07,
+      "usage_per_capita_index": 0.43
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import cesium from 'vite-plugin-cesium'
 import path from 'node:path'
+import fs from 'node:fs'
 
 /**
  * vite-plugin-cesium injects Cesium.js as a render-blocking <script> in <head>.
@@ -29,16 +30,53 @@ function siteUrl(): Plugin {
   }
 }
 
+/**
+ * Serves the real-data snapshots in ../data/real at /data/real during development and copies
+ * them into dist/data/real at build time, so the static site ships the same files the pipeline
+ * validated. They are fetched at runtime rather than bundled: they change nightly and are small.
+ */
+function realDataDir(): Plugin {
+  const dir = path.resolve(__dirname, '../data/real')
+  return {
+    name: 'perai:real-data',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const match = /^\/data\/real\/([\w.-]+\.json)$/.exec(req.url?.split('?')[0] ?? '')
+        if (!match) return next()
+        const file = path.join(dir, match[1])
+        if (!fs.existsSync(file)) {
+          res.statusCode = 404
+          return res.end('not found')
+        }
+        res.setHeader('Content-Type', 'application/json; charset=utf-8')
+        res.setHeader('Cache-Control', 'no-cache')
+        fs.createReadStream(file).pipe(res)
+      })
+    },
+    closeBundle() {
+      if (!fs.existsSync(dir)) return
+      const out = path.resolve(__dirname, 'dist/data/real')
+      fs.mkdirSync(out, { recursive: true })
+      for (const name of fs.readdirSync(dir)) {
+        if (name.endsWith('.json') && !name.startsWith('.')) fs.copyFileSync(path.join(dir, name), path.join(out, name))
+      }
+    },
+  }
+}
+
 export default defineConfig({
   // Relative asset URLs work both at a domain root and under a sub-path such as a GitHub Pages
   // project site. (An absolute sub-path base makes vite-plugin-cesium copy Cesium to the wrong folder.)
   base: process.env.VITE_BASE ?? './',
-  plugins: [react(), cesium(), deferCesiumScript(), siteUrl()],
+  plugins: [react(), cesium(), deferCesiumScript(), siteUrl(), realDataDir()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
       '@shared': path.resolve(__dirname, '../shared'),
+      // shared/ has no node_modules of its own; resolve its zod import to ours.
+      zod: path.resolve(__dirname, 'node_modules/zod'),
     },
+    dedupe: ['zod'],
   },
   server: {
     port: 5173,

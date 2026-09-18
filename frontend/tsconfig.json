@@ -20,7 +20,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@shared/*": ["../shared/*"],
-      "vitest": ["./node_modules/vitest"]
+      "vitest": ["./node_modules/vitest"],
+      "zod": ["./node_modules/zod"]
     }
   },
   "include": ["src", "../shared"],

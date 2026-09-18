@@ -7,6 +7,10 @@ import { useRestoreFocus } from '@/hooks/useRestoreFocus'
 import { useAppStore } from '@/store'
 import { formatCompact, formatNumber, formatPercent } from '@/utils/format'
 import { TrendChart } from './TrendChart'
+import { RealDataPanel } from './RealDataPanel'
+import { getLayer } from '@/layers'
+
+type Tab = 'real' | 'simulation'
 
 const REFRESH_MS = 60_000
 
@@ -18,6 +22,8 @@ export function AnalyticsPanel({ source }: { source: DataSource | null }) {
   const [trends, setTrends] = useState<TrendPoint[]>([])
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
+  const layer = useAppStore((s) => s.layer)
+  const [tab, setTab] = useState<Tab>(() => (getLayer(layer)?.kind === 'real' ? 'real' : 'simulation'))
   const compact = useIsCompact()
   // Declared before the focus-on-open effect so it records the toggle button, not the close button.
   useRestoreFocus(true, '[data-focus-return="analytics"]')
@@ -65,7 +71,7 @@ export function AnalyticsPanel({ source }: { source: DataSource | null }) {
       <div className="panel-head">
         <div>
           <h2 id="panel-title">Analytics</h2>
-          <p>Last 24 hours · simulated{updated ? ` · updated ${updated}` : ''}</p>
+          <p>{tab === 'real' ? 'Published datasets, refreshed nightly' : `Last 24 hours · simulated${updated ? ` · updated ${updated}` : ''}`}</p>
         </div>
         <div style={{ display: 'flex', gap: 6 }}>
           <button type="button" className="btn icon-btn btn-ghost" aria-label="Refresh analytics" onClick={() => void load()} disabled={loading}>
@@ -77,8 +83,33 @@ export function AnalyticsPanel({ source }: { source: DataSource | null }) {
         </div>
       </div>
 
-      <div className="panel-body">
-        {error && !stats && (
+      <div className="panel-tabs" role="tablist" aria-label="Data">
+        {(['real', 'simulation'] as const).map((t) => (
+          <button
+            key={t}
+            type="button"
+            role="tab"
+            id={`tab-${t}`}
+            aria-selected={tab === t}
+            aria-controls="panel-body"
+            tabIndex={tab === t ? 0 : -1}
+            onClick={() => setTab(t)}
+            onKeyDown={(e) => {
+              if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                const next: Tab = t === 'real' ? 'simulation' : 'real'
+                setTab(next)
+                document.getElementById(`tab-${next}`)?.focus()
+              }
+            }}
+          >
+            {t === 'real' ? 'Real data' : 'Simulation'}
+          </button>
+        ))}
+      </div>
+
+      <div className="panel-body" id="panel-body" role="tabpanel" aria-labelledby={`tab-${tab}`}>
+        {tab === 'real' && <RealDataPanel />}
+        {tab === 'simulation' && error && !stats && (
           <div className="panel-state" role="alert">
             <p>Couldn't load analytics. The API may be offline.</p>
             <button type="button" className="btn" style={{ marginTop: 12 }} onClick={() => void load()}>
@@ -86,13 +117,13 @@ export function AnalyticsPanel({ source }: { source: DataSource | null }) {
             </button>
           </div>
         )}
-        {!stats && !error && (
+        {tab === 'simulation' && !stats && !error && (
           <p className="panel-state" role="status">
             Loading analytics…
           </p>
         )}
 
-        {stats && (
+        {tab === 'simulation' && stats && (
           <>
             <section className="panel-section" aria-label="Totals">
               <div className="tiles">

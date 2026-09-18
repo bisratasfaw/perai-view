@@ -47,3 +47,24 @@ describe('app store', () => {
     stop()
   })
 })
+
+describe('real layers and countries in the URL', () => {
+  it('accepts a real layer id and a country code from the URL', () => {
+    history.replaceState(null, '', '/?layer=usage-index&country=de')
+    // The store reads the URL once at module load, so exercise the sync writer instead.
+    const stop = syncUrlWithStore()
+    useAppStore.getState().setLayer('wiki-interest')
+    useAppStore.getState().selectCountry('DE')
+    expect(location.search).toBe('?layer=wiki-interest&country=DE')
+    stop()
+  })
+
+  it('selecting a country clears the city and vice versa', () => {
+    useAppStore.getState().selectCity('Tokyo')
+    useAppStore.getState().selectCountry('JP')
+    expect(useAppStore.getState().selectedCity).toBeNull()
+    expect(useAppStore.getState().selectedCountry).toBe('JP')
+    useAppStore.getState().selectCity('Berlin')
+    expect(useAppStore.getState().selectedCountry).toBeNull()
+  })
+})

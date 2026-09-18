@@ -1,0 +1,3390 @@
+{
+  "source": "github_forks",
+  "as_of": "2026-09-18",
+  "repos": [
+    {
+      "full_name": "openai/openai-python",
+      "assistant": "chatgpt",
+      "vendor": "OpenAI",
+      "forks_total": 5585,
+      "forks_seen": 5524,
+      "with_location": 1827
+    },
+    {
+      "full_name": "openai/openai-node",
+      "assistant": "chatgpt",
+      "vendor": "OpenAI",
+      "forks_total": 1602,
+      "forks_seen": 1558,
+      "with_location": 630
+    },
+    {
+      "full_name": "anthropics/anthropic-sdk-python",
+      "assistant": "claude",
+      "vendor": "Anthropic",
+      "forks_total": 855,
+      "forks_seen": 845,
+      "with_location": 333
+    },
+    {
+      "full_name": "anthropics/anthropic-sdk-typescript",
+      "assistant": "claude",
+      "vendor": "Anthropic",
+      "forks_total": 405,
+      "forks_seen": 397,
+      "with_location": 190
+    },
+    {
+      "full_name": "googleapis/python-genai",
+      "assistant": "gemini",
+      "vendor": "Google",
+      "forks_total": 1013,
+      "forks_seen": 998,
+      "with_location": 329
+    },
+    {
+      "full_name": "google-gemini/gemini-cli",
+      "assistant": "gemini",
+      "vendor": "Google",
+      "forks_total": 14602,
+      "forks_seen": 6000,
+      "with_location": 2168
+    },
+    {
+      "full_name": "mistralai/client-python",
+      "assistant": "mistral",
+      "vendor": "Mistral AI",
+      "forks_total": 208,
+      "forks_seen": 208,
+      "with_location": 97
+    },
+    {
+      "full_name": "meta-llama/llama",
+      "assistant": "llama",
+      "vendor": "Meta",
+      "forks_total": 9771,
+      "forks_seen": 6000,
+      "with_location": 2069
+    }
+  ],
+  "cities": [
+    {
+      "name": "San Francisco",
+      "cc": "US",
+      "lat": 37.7749,
+      "lng": -122.4194,
+      "counts": {
+        "chatgpt": 85,
+        "gemini": 50,
+        "claude": 31,
+        "mistral": 1,
+        "llama": 52
+      },
+      "total": 219
+    },
+    {
+      "name": "Beijing",
+      "cc": "CN",
+      "lat": 39.9042,
+      "lng": 116.4074,
+      "counts": {
+        "chatgpt": 56,
+        "gemini": 48,
+        "claude": 2,
+        "llama": 92
+      },
+      "total": 198
+    },
+    {
+      "name": "Bangalore",
+      "cc": "IN",
+      "lat": 12.9716,
+      "lng": 77.5946,
+      "counts": {
+        "chatgpt": 53,
+        "gemini": 74,
+        "claude": 10,
+        "mistral": 5,
+        "llama": 44
+      },
+      "total": 186
+    },
+    {
+      "name": "New York",
+      "cc": "US",
+      "lat": 40.7128,
+      "lng": -74.006,
+      "counts": {
+        "chatgpt": 40,
+        "gemini": 47,
+        "claude": 25,
+        "mistral": 2,
+        "llama": 33
+      },
+      "total": 147
+    },
+    {
+      "name": "Shanghai",
+      "cc": "CN",
+      "lat": 31.2304,
+      "lng": 121.4737,
+      "counts": {
+        "chatgpt": 43,
+        "gemini": 31,
+        "claude": 5,
+        "llama": 63
+      },
+      "total": 142
+    },
+    {
+      "name": "London",
+      "cc": "GB",
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "counts": {
+        "chatgpt": 48,
+        "gemini": 27,
+        "claude": 4,
+        "mistral": 5,
+        "llama": 31
+      },
+      "total": 115
+    },
+    {
+      "name": "Seoul",
+      "cc": "KR",
+      "lat": 37.5665,
+      "lng": 126.978,
+      "counts": {
+        "chatgpt": 27,
+        "gemini": 29,
+        "claude": 7,
+        "llama": 40
+      },
+      "total": 103
+    },
+    {
+      "name": "New Delhi",
+      "cc": "IN",
+      "lat": 28.6139,
+      "lng": 77.209,
+      "counts": {
+        "chatgpt": 19,
+        "gemini": 44,
+        "claude": 4,
+        "llama": 30
+      },
+      "total": 97
+    },
+    {
+      "name": "Tokyo",
+      "cc": "JP",
+      "lat": 35.6762,
+      "lng": 139.6503,
+      "counts": {
+        "chatgpt": 30,
+        "gemini": 25,
+        "claude": 8,
+        "llama": 12
+      },
+      "total": 75
+    },
+    {
+      "name": "Singapore",
+      "cc": "SG",
+      "lat": 1.3521,
+      "lng": 103.8198,
+      "counts": {
+        "chatgpt": 21,
+        "gemini": 25,
+        "claude": 5,
+        "llama": 23
+      },
+      "total": 74
+    },
+    {
+      "name": "Toronto",
+      "cc": "CA",
+      "lat": 43.6532,
+      "lng": -79.3832,
+      "counts": {
+        "chatgpt": 26,
+        "gemini": 18,
+        "claude": 8,
+        "mistral": 3,
+        "llama": 14
+      },
+      "total": 69
+    },
+    {
+      "name": "Shenzhen",
+      "cc": "CN",
+      "lat": 22.5431,
+      "lng": 114.0579,
+      "counts": {
+        "chatgpt": 15,
+        "gemini": 18,
+        "claude": 2,
+        "llama": 32
+      },
+      "total": 67
+    },
+    {
+      "name": "Los Angeles",
+      "cc": "US",
+      "lat": 34.0522,
+      "lng": -118.2437,
+      "counts": {
+        "chatgpt": 16,
+        "gemini": 23,
+        "claude": 7,
+        "mistral": 1,
+        "llama": 18
+      },
+      "total": 65
+    },
+    {
+      "name": "Paris",
+      "cc": "FR",
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "counts": {
+        "chatgpt": 16,
+        "gemini": 18,
+        "claude": 4,
+        "mistral": 9,
+        "llama": 12
+      },
+      "total": 59
+    },
+    {
+      "name": "Seattle",
+      "cc": "US",
+      "lat": 47.6062,
+      "lng": -122.3321,
+      "counts": {
+        "chatgpt": 20,
+        "gemini": 18,
+        "claude": 3,
+        "mistral": 1,
+        "llama": 12
+      },
+      "total": 54
+    },
+    {
+      "name": "Mumbai",
+      "cc": "IN",
+      "lat": 19.076,
+      "lng": 72.8777,
+      "counts": {
+        "chatgpt": 13,
+        "gemini": 26,
+        "claude": 2,
+        "llama": 8
+      },
+      "total": 49
+    },
+    {
+      "name": "Chennai",
+      "cc": "IN",
+      "lat": 13.0827,
+      "lng": 80.2707,
+      "counts": {
+        "chatgpt": 14,
+        "gemini": 18,
+        "claude": 4,
+        "mistral": 1,
+        "llama": 10
+      },
+      "total": 47
+    },
+    {
+      "name": "Hyderabad",
+      "cc": "IN",
+      "lat": 17.385,
+      "lng": 78.4867,
+      "counts": {
+        "chatgpt": 13,
+        "gemini": 18,
+        "mistral": 1,
+        "llama": 15
+      },
+      "total": 47
+    },
+    {
+      "name": "São Paulo",
+      "cc": "BR",
+      "lat": -23.5505,
+      "lng": -46.6333,
+      "counts": {
+        "chatgpt": 14,
+        "gemini": 13,
+        "claude": 1,
+        "mistral": 2,
+        "llama": 16
+      },
+      "total": 46
+    },
+    {
+      "name": "Nairobi",
+      "cc": "KE",
+      "lat": -1.2921,
+      "lng": 36.8219,
+      "counts": {
+        "chatgpt": 17,
+        "gemini": 12,
+        "claude": 2,
+        "llama": 11
+      },
+      "total": 42
+    },
+    {
+      "name": "Chicago",
+      "cc": "US",
+      "lat": 41.8781,
+      "lng": -87.6298,
+      "counts": {
+        "chatgpt": 15,
+        "gemini": 10,
+        "claude": 3,
+        "llama": 12
+      },
+      "total": 40
+    },
+    {
+      "name": "Hong Kong",
+      "cc": "HK",
+      "lat": 22.3193,
+      "lng": 114.1694,
+      "counts": {
+        "chatgpt": 18,
+        "gemini": 9,
+        "mistral": 1,
+        "llama": 12
+      },
+      "total": 40
+    },
+    {
+      "name": "Sydney",
+      "cc": "AU",
+      "lat": -33.8688,
+      "lng": 151.2093,
+      "counts": {
+        "chatgpt": 14,
+        "gemini": 9,
+        "claude": 1,
+        "llama": 15
+      },
+      "total": 39
+    },
+    {
+      "name": "Atlanta",
+      "cc": "US",
+      "lat": 33.749,
+      "lng": -84.388,
+      "counts": {
+        "chatgpt": 13,
+        "gemini": 7,
+        "claude": 8,
+        "llama": 9
+      },
+      "total": 37
+    },
+    {
+      "name": "Taipei",
+      "cc": "TW",
+      "lat": 25.033,
+      "lng": 121.5654,
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 16,
+        "claude": 3,
+        "llama": 8
+      },
+      "total": 36
+    },
+    {
+      "name": "Berlin",
+      "cc": "DE",
+      "lat": 52.52,
+      "lng": 13.405,
+      "counts": {
+        "chatgpt": 15,
+        "gemini": 4,
+        "claude": 4,
+        "llama": 10
+      },
+      "total": 33
+    },
+    {
+      "name": "Dhaka",
+      "cc": "BD",
+      "lat": 23.8103,
+      "lng": 90.4125,
+      "counts": {
+        "chatgpt": 7,
+        "gemini": 8,
+        "claude": 1,
+        "llama": 17
+      },
+      "total": 33
+    },
+    {
+      "name": "Boston",
+      "cc": "US",
+      "lat": 42.3601,
+      "lng": -71.0589,
+      "counts": {
+        "chatgpt": 11,
+        "gemini": 8,
+        "claude": 5,
+        "llama": 8
+      },
+      "total": 32
+    },
+    {
+      "name": "Dallas",
+      "cc": "US",
+      "lat": 32.7767,
+      "lng": -96.797,
+      "counts": {
+        "chatgpt": 8,
+        "gemini": 12,
+        "claude": 4,
+        "mistral": 3,
+        "llama": 5
+      },
+      "total": 32
+    },
+    {
+      "name": "Montréal",
+      "cc": "CA",
+      "lat": 45.5017,
+      "lng": -73.5673,
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 9,
+        "claude": 2,
+        "mistral": 1,
+        "llama": 10
+      },
+      "total": 31
+    },
+    {
+      "name": "San Jose",
+      "cc": "US",
+      "lat": 37.3382,
+      "lng": -121.8863,
+      "counts": {
+        "chatgpt": 8,
+        "gemini": 5,
+        "claude": 1,
+        "llama": 16
+      },
+      "total": 30
+    },
+    {
+      "name": "Guangzhou",
+      "cc": "CN",
+      "lat": 23.1291,
+      "lng": 113.2644,
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 5,
+        "claude": 1,
+        "llama": 14
+      },
+      "total": 29
+    },
+    {
+      "name": "Karachi",
+      "cc": "PK",
+      "lat": 24.8607,
+      "lng": 67.0011,
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 13,
+        "claude": 3,
+        "llama": 4
+      },
+      "total": 29
+    },
+    {
+      "name": "Vancouver",
+      "cc": "CA",
+      "lat": 49.2827,
+      "lng": -123.1207,
+      "counts": {
+        "chatgpt": 7,
+        "gemini": 11,
+        "llama": 10
+      },
+      "total": 28
+    },
+    {
+      "name": "Chengdu",
+      "cc": "CN",
+      "lat": 30.5728,
+      "lng": 104.0668,
+      "counts": {
+        "chatgpt": 11,
+        "gemini": 3,
+        "claude": 1,
+        "llama": 12
+      },
+      "total": 27
+    },
+    {
+      "name": "Austin",
+      "cc": "US",
+      "lat": 30.2672,
+      "lng": -97.7431,
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 6,
+        "claude": 2,
+        "llama": 8
+      },
+      "total": 25
+    },
+    {
+      "name": "Kolkata",
+      "cc": "IN",
+      "lat": 22.5726,
+      "lng": 88.3639,
+      "counts": {
+        "chatgpt": 6,
+        "gemini": 14,
+        "llama": 5
+      },
+      "total": 25
+    },
+    {
+      "name": "Melbourne",
+      "cc": "AU",
+      "lat": -37.8136,
+      "lng": 144.9631,
+      "counts": {
+        "chatgpt": 6,
+        "gemini": 10,
+        "claude": 2,
+        "mistral": 1,
+        "llama": 5
+      },
+      "total": 24
+    },
+    {
+      "name": "Bangkok",
+      "cc": "TH",
+      "lat": 13.7563,
+      "lng": 100.5018,
+      "counts": {
+        "chatgpt": 8,
+        "gemini": 8,
+        "claude": 2,
+        "llama": 4
+      },
+      "total": 22
+    },
+    {
+      "name": "Houston",
+      "cc": "US",
+      "lat": 29.7604,
+      "lng": -95.3698,
+      "counts": {
+        "chatgpt": 11,
+        "gemini": 6,
+        "claude": 1,
+        "mistral": 1,
+        "llama": 3
+      },
+      "total": 22
+    },
+    {
+      "name": "Lahore",
+      "cc": "PK",
+      "lat": 31.5204,
+      "lng": 74.3587,
+      "counts": {
+        "chatgpt": 6,
+        "gemini": 10,
+        "claude": 4,
+        "llama": 2
+      },
+      "total": 22
+    },
+    {
+      "name": "Dubai",
+      "cc": "AE",
+      "lat": 25.2048,
+      "lng": 55.2708,
+      "counts": {
+        "chatgpt": 5,
+        "gemini": 11,
+        "claude": 2,
+        "llama": 3
+      },
+      "total": 21
+    },
+    {
+      "name": "Lagos",
+      "cc": "NG",
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "counts": {
+        "chatgpt": 11,
+        "gemini": 3,
+        "mistral": 1,
+        "llama": 6
+      },
+      "total": 21
+    },
+    {
+      "name": "Istanbul",
+      "cc": "TR",
+      "lat": 41.0082,
+      "lng": 28.9784,
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 4,
+        "claude": 1,
+        "llama": 5
+      },
+      "total": 19
+    },
+    {
+      "name": "Madrid",
+      "cc": "ES",
+      "lat": 40.4168,
+      "lng": -3.7038,
+      "counts": {
+        "chatgpt": 7,
+        "gemini": 6,
+        "claude": 1,
+        "llama": 5
+      },
+      "total": 19
+    },
+    {
+      "name": "Amsterdam",
+      "cc": "NL",
+      "lat": 52.3676,
+      "lng": 4.9041,
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 5,
+        "llama": 4
+      },
+      "total": 18
+    },
+    {
+      "name": "Miami",
+      "cc": "US",
+      "lat": 25.7617,
+      "lng": -80.1918,
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 5,
+        "claude": 3,
+        "llama": 1
+      },
+      "total": 18
+    },
+    {
+      "name": "Stockholm",
+      "cc": "SE",
+      "lat": 59.3293,
+      "lng": 18.0686,
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 3,
+        "claude": 4,
+        "llama": 2
+      },
+      "total": 18
+    },
+    {
+      "name": "Hanoi",
+      "cc": "VN",
+      "lat": 21.0285,
+      "lng": 105.8542,
+      "counts": {
+        "chatgpt": 5,
+        "gemini": 3,
+        "claude": 3,
+        "llama": 6
+      },
+      "total": 17
+    },
+    {
+      "name": "Moscow",
+      "cc": "RU",
+      "lat": 55.7558,
+      "lng": 37.6173,
+      "counts": {
+        "chatgpt": 11,
+        "gemini": 2,
+        "claude": 1,
+        "llama": 3
+      },
+      "total": 17
+    },
+    {
+      "name": "Zurich",
+      "cc": "CH",
+      "lat": 47.3769,
+      "lng": 8.5417,
+      "counts": {
+        "chatgpt": 7,
+        "gemini": 1,
+        "claude": 2,
+        "mistral": 1,
+        "llama": 6
+      },
+      "total": 17
+    },
+    {
+      "name": "Philadelphia",
+      "cc": "US",
+      "lat": 39.9526,
+      "lng": -75.1652,
+      "counts": {
+        "chatgpt": 7,
+        "gemini": 3,
+        "claude": 1,
+        "mistral": 1,
+        "llama": 4
+      },
+      "total": 16
+    },
+    {
+      "name": "Jakarta",
+      "cc": "ID",
+      "lat": -6.2088,
+      "lng": 106.8456,
+      "counts": {
+        "chatgpt": 5,
+        "gemini": 4,
+        "mistral": 1,
+        "llama": 5
+      },
+      "total": 15
+    },
+    {
+      "name": "Barcelona",
+      "cc": "ES",
+      "lat": 41.3851,
+      "lng": 2.1734,
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 2,
+        "claude": 2,
+        "mistral": 1,
+        "llama": 5
+      },
+      "total": 14
+    },
+    {
+      "name": "Dublin",
+      "cc": "IE",
+      "lat": 53.3498,
+      "lng": -6.2603,
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 4,
+        "llama": 6
+      },
+      "total": 14
+    },
+    {
+      "name": "Ho Chi Minh City",
+      "cc": "VN",
+      "lat": 10.8231,
+      "lng": 106.6297,
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 8,
+        "claude": 1,
+        "llama": 2
+      },
+      "total": 14
+    },
+    {
+      "name": "Johannesburg",
+      "cc": "ZA",
+      "lat": -26.2041,
+      "lng": 28.0473,
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 6,
+        "claude": 1,
+        "mistral": 1,
+        "llama": 2
+      },
+      "total": 14
+    },
+    {
+      "name": "Kampala",
+      "cc": "UG",
+      "lat": 0.3476,
+      "lng": 32.5825,
+      "counts": {
+        "chatgpt": 7,
+        "gemini": 1,
+        "mistral": 1,
+        "llama": 5
+      },
+      "total": 14
+    },
+    {
+      "name": "Buenos Aires",
+      "cc": "AR",
+      "lat": -34.6037,
+      "lng": -58.3816,
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 4,
+        "claude": 3,
+        "llama": 2
+      },
+      "total": 13
+    },
+    {
+      "name": "Prague",
+      "cc": "CZ",
+      "lat": 50.0755,
+      "lng": 14.4378,
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 4,
+        "claude": 4,
+        "mistral": 1,
+        "llama": 1
+      },
+      "total": 13
+    },
+    {
+      "name": "Warsaw",
+      "cc": "PL",
+      "lat": 52.2297,
+      "lng": 21.0122,
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 4,
+        "llama": 5
+      },
+      "total": 11
+    },
+    {
+      "name": "Accra",
+      "cc": "GH",
+      "lat": 5.6037,
+      "lng": -0.187,
+      "counts": {
+        "chatgpt": 6,
+        "gemini": 2,
+        "llama": 2
+      },
+      "total": 10
+    },
+    {
+      "name": "Cairo",
+      "cc": "EG",
+      "lat": 30.0444,
+      "lng": 31.2357,
+      "counts": {
+        "gemini": 7,
+        "llama": 3
+      },
+      "total": 10
+    },
+    {
+      "name": "Cape Town",
+      "cc": "ZA",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "counts": {
+        "chatgpt": 6,
+        "gemini": 1,
+        "claude": 1,
+        "llama": 2
+      },
+      "total": 10
+    },
+    {
+      "name": "Colombo",
+      "cc": "LK",
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "counts": {
+        "chatgpt": 5,
+        "gemini": 5
+      },
+      "total": 10
+    },
+    {
+      "name": "Las Vegas",
+      "cc": "US",
+      "lat": 36.1699,
+      "lng": -115.1398,
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 3,
+        "claude": 2,
+        "llama": 2
+      },
+      "total": 10
+    },
+    {
+      "name": "Rio de Janeiro",
+      "cc": "BR",
+      "lat": -22.9068,
+      "lng": -43.1729,
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 4,
+        "claude": 1,
+        "llama": 2
+      },
+      "total": 10
+    },
+    {
+      "name": "Abuja",
+      "cc": "NG",
+      "lat": 9.0765,
+      "lng": 7.3986,
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 2,
+        "llama": 4
+      },
+      "total": 9
+    },
+    {
+      "name": "Calgary",
+      "cc": "CA",
+      "lat": 51.0447,
+      "lng": -114.0719,
+      "counts": {
+        "chatgpt": 3,
+        "claude": 1,
+        "llama": 5
+      },
+      "total": 9
+    },
+    {
+      "name": "Islamabad",
+      "cc": "PK",
+      "lat": 33.6844,
+      "lng": 73.0479,
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 2,
+        "claude": 1,
+        "llama": 2
+      },
+      "total": 9
+    },
+    {
+      "name": "Kyiv",
+      "cc": "UA",
+      "lat": 50.4501,
+      "lng": 30.5234,
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 2,
+        "llama": 3
+      },
+      "total": 9
+    },
+    {
+      "name": "Brasília",
+      "cc": "BR",
+      "lat": -15.7801,
+      "lng": -47.9292,
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 3,
+        "llama": 3
+      },
+      "total": 8
+    },
+    {
+      "name": "Kuala Lumpur",
+      "cc": "MY",
+      "lat": 3.139,
+      "lng": 101.6869,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "llama": 5
+      },
+      "total": 8
+    },
+    {
+      "name": "Oslo",
+      "cc": "NO",
+      "lat": 59.9139,
+      "lng": 10.7522,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 3,
+        "llama": 4
+      },
+      "total": 8
+    },
+    {
+      "name": "Lisbon",
+      "cc": "PT",
+      "lat": 38.7223,
+      "lng": -9.1393,
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 2,
+        "claude": 1,
+        "llama": 1
+      },
+      "total": 7
+    },
+    {
+      "name": "Mexico City",
+      "cc": "MX",
+      "lat": 19.4326,
+      "lng": -99.1332,
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 2,
+        "llama": 3
+      },
+      "total": 7
+    },
+    {
+      "name": "Perth",
+      "cc": "AU",
+      "lat": -31.9505,
+      "lng": 115.8605,
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 3,
+        "llama": 1
+      },
+      "total": 7
+    },
+    {
+      "name": "Abidjan",
+      "cc": "CI",
+      "lat": 5.36,
+      "lng": -4.0083,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 3,
+        "llama": 2
+      },
+      "total": 6
+    },
+    {
+      "name": "Auckland",
+      "cc": "NZ",
+      "lat": -36.8485,
+      "lng": 174.7633,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "llama": 4
+      },
+      "total": 6
+    },
+    {
+      "name": "Brisbane",
+      "cc": "AU",
+      "lat": -27.4698,
+      "lng": 153.0251,
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 2,
+        "llama": 2
+      },
+      "total": 6
+    },
+    {
+      "name": "Helsinki",
+      "cc": "FI",
+      "lat": 60.1699,
+      "lng": 24.9384,
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 2,
+        "llama": 1
+      },
+      "total": 6
+    },
+    {
+      "name": "Kathmandu",
+      "cc": "NP",
+      "lat": 27.7172,
+      "lng": 85.324,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "claude": 1,
+        "llama": 3
+      },
+      "total": 6
+    },
+    {
+      "name": "Milan",
+      "cc": "IT",
+      "lat": 45.4642,
+      "lng": 9.19,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 5
+      },
+      "total": 6
+    },
+    {
+      "name": "Ankara",
+      "cc": "TR",
+      "lat": 39.9334,
+      "lng": 32.8597,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 3,
+        "llama": 1
+      },
+      "total": 5
+    },
+    {
+      "name": "Bogotá",
+      "cc": "CO",
+      "lat": 4.711,
+      "lng": -74.0721,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 3,
+        "llama": 1
+      },
+      "total": 5
+    },
+    {
+      "name": "Brussels",
+      "cc": "BE",
+      "lat": 50.8503,
+      "lng": 4.3517,
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 2,
+        "llama": 1
+      },
+      "total": 5
+    },
+    {
+      "name": "Bucharest",
+      "cc": "RO",
+      "lat": 44.4268,
+      "lng": 26.1025,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "llama": 2
+      },
+      "total": 5
+    },
+    {
+      "name": "Copenhagen",
+      "cc": "DK",
+      "lat": 55.6761,
+      "lng": 12.5683,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "claude": 1,
+        "llama": 1
+      },
+      "total": 5
+    },
+    {
+      "name": "Kigali",
+      "cc": "RW",
+      "lat": -1.9441,
+      "lng": 30.0619,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "llama": 3
+      },
+      "total": 5
+    },
+    {
+      "name": "Lima",
+      "cc": "PE",
+      "lat": -12.0464,
+      "lng": -77.0428,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "llama": 2
+      },
+      "total": 5
+    },
+    {
+      "name": "Tallinn",
+      "cc": "EE",
+      "lat": 59.437,
+      "lng": 24.7536,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "claude": 2
+      },
+      "total": 5
+    },
+    {
+      "name": "Abu Dhabi",
+      "cc": "AE",
+      "lat": 24.4539,
+      "lng": 54.3773,
+      "counts": {
+        "chatgpt": 2,
+        "llama": 2
+      },
+      "total": 4
+    },
+    {
+      "name": "Addis Ababa",
+      "cc": "ET",
+      "lat": 9.03,
+      "lng": 38.74,
+      "counts": {
+        "claude": 1,
+        "llama": 3
+      },
+      "total": 4
+    },
+    {
+      "name": "Casablanca",
+      "cc": "MA",
+      "lat": 33.5731,
+      "lng": -7.5898,
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 4
+    },
+    {
+      "name": "La Paz",
+      "cc": "BO",
+      "lat": -16.4897,
+      "lng": -68.1193,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "llama": 1
+      },
+      "total": 4
+    },
+    {
+      "name": "Manila",
+      "cc": "PH",
+      "lat": 14.5995,
+      "lng": 120.9842,
+      "counts": {
+        "chatgpt": 3,
+        "llama": 1
+      },
+      "total": 4
+    },
+    {
+      "name": "Osaka",
+      "cc": "JP",
+      "lat": 34.6937,
+      "lng": 135.5023,
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 4
+    },
+    {
+      "name": "Riga",
+      "cc": "LV",
+      "lat": 56.9496,
+      "lng": 24.1052,
+      "counts": {
+        "gemini": 2,
+        "llama": 2
+      },
+      "total": 4
+    },
+    {
+      "name": "Sofia",
+      "cc": "BG",
+      "lat": 42.6977,
+      "lng": 23.3219,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "llama": 2
+      },
+      "total": 4
+    },
+    {
+      "name": "Tel Aviv",
+      "cc": "IL",
+      "lat": 32.0853,
+      "lng": 34.7818,
+      "counts": {
+        "gemini": 1,
+        "claude": 1,
+        "mistral": 1,
+        "llama": 1
+      },
+      "total": 4
+    },
+    {
+      "name": "Wellington",
+      "cc": "NZ",
+      "lat": -41.2865,
+      "lng": 174.7762,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "claude": 1,
+        "llama": 1
+      },
+      "total": 4
+    },
+    {
+      "name": "Athens",
+      "cc": "GR",
+      "lat": 37.9838,
+      "lng": 23.7275,
+      "counts": {
+        "chatgpt": 3
+      },
+      "total": 3
+    },
+    {
+      "name": "Beirut",
+      "cc": "LB",
+      "lat": 33.8938,
+      "lng": 35.5018,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2
+      },
+      "total": 3
+    },
+    {
+      "name": "Busan",
+      "cc": "KR",
+      "lat": 35.1796,
+      "lng": 129.0756,
+      "counts": {
+        "gemini": 1,
+        "llama": 2
+      },
+      "total": 3
+    },
+    {
+      "name": "Douala",
+      "cc": "CM",
+      "lat": 4.0511,
+      "lng": 9.7679,
+      "counts": {
+        "gemini": 1,
+        "llama": 2
+      },
+      "total": 3
+    },
+    {
+      "name": "Luxembourg",
+      "cc": "LU",
+      "lat": 49.6116,
+      "lng": 6.1319,
+      "counts": {
+        "gemini": 1,
+        "llama": 2
+      },
+      "total": 3
+    },
+    {
+      "name": "Panama City",
+      "cc": "PA",
+      "lat": 8.9824,
+      "lng": -79.5199,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "claude": 1
+      },
+      "total": 3
+    },
+    {
+      "name": "Phnom Penh",
+      "cc": "KH",
+      "lat": 11.5564,
+      "lng": 104.9282,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 3
+    },
+    {
+      "name": "Quito",
+      "cc": "EC",
+      "lat": -0.1807,
+      "lng": -78.4678,
+      "counts": {
+        "chatgpt": 2,
+        "llama": 1
+      },
+      "total": 3
+    },
+    {
+      "name": "Rabat",
+      "cc": "MA",
+      "lat": 34.0209,
+      "lng": -6.8416,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2
+      },
+      "total": 3
+    },
+    {
+      "name": "Riyadh",
+      "cc": "SA",
+      "lat": 24.7136,
+      "lng": 46.6753,
+      "counts": {
+        "chatgpt": 1,
+        "llama": 2
+      },
+      "total": 3
+    },
+    {
+      "name": "Rome",
+      "cc": "IT",
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 3
+    },
+    {
+      "name": "Santiago",
+      "cc": "CL",
+      "lat": -33.4489,
+      "lng": -70.6693,
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 1
+      },
+      "total": 3
+    },
+    {
+      "name": "Santo Domingo",
+      "cc": "DO",
+      "lat": 18.4861,
+      "lng": -69.9312,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 3
+    },
+    {
+      "name": "Tehran",
+      "cc": "IR",
+      "lat": 35.6892,
+      "lng": 51.389,
+      "counts": {
+        "gemini": 3
+      },
+      "total": 3
+    },
+    {
+      "name": "Yangon",
+      "cc": "MM",
+      "lat": 16.8409,
+      "lng": 96.1735,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2
+      },
+      "total": 3
+    },
+    {
+      "name": "Amman",
+      "cc": "JO",
+      "lat": 31.9539,
+      "lng": 35.9106,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1
+      },
+      "total": 2
+    },
+    {
+      "name": "Antananarivo",
+      "cc": "MG",
+      "lat": -18.8792,
+      "lng": 47.5079,
+      "counts": {
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "name": "Belgrade",
+      "cc": "RS",
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "counts": {
+        "gemini": 2
+      },
+      "total": 2
+    },
+    {
+      "name": "Budapest",
+      "cc": "HU",
+      "lat": 47.4979,
+      "lng": 19.0402,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1
+      },
+      "total": 2
+    },
+    {
+      "name": "Cotonou",
+      "cc": "BJ",
+      "lat": 6.3654,
+      "lng": 2.4183,
+      "counts": {
+        "llama": 2
+      },
+      "total": 2
+    },
+    {
+      "name": "Gaborone",
+      "cc": "BW",
+      "lat": -24.6282,
+      "lng": 25.9231,
+      "counts": {
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "name": "Lomé",
+      "cc": "TG",
+      "lat": 6.1256,
+      "lng": 1.2254,
+      "counts": {
+        "llama": 2
+      },
+      "total": 2
+    },
+    {
+      "name": "Minsk",
+      "cc": "BY",
+      "lat": 53.9006,
+      "lng": 27.559,
+      "counts": {
+        "chatgpt": 1,
+        "mistral": 1
+      },
+      "total": 2
+    },
+    {
+      "name": "Skopje",
+      "cc": "MK",
+      "lat": 41.9981,
+      "lng": 21.4254,
+      "counts": {
+        "chatgpt": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "name": "Surabaya",
+      "cc": "ID",
+      "lat": -7.2575,
+      "lng": 112.7521,
+      "counts": {
+        "llama": 2
+      },
+      "total": 2
+    },
+    {
+      "name": "Tashkent",
+      "cc": "UZ",
+      "lat": 41.2995,
+      "lng": 69.2401,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1
+      },
+      "total": 2
+    },
+    {
+      "name": "Vienna",
+      "cc": "AT",
+      "lat": 48.2082,
+      "lng": 16.3738,
+      "counts": {
+        "gemini": 2
+      },
+      "total": 2
+    },
+    {
+      "name": "Vilnius",
+      "cc": "LT",
+      "lat": 54.6872,
+      "lng": 25.2797,
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1
+      },
+      "total": 2
+    },
+    {
+      "name": "Yaoundé",
+      "cc": "CM",
+      "lat": 3.848,
+      "lng": 11.5021,
+      "counts": {
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "name": "Algiers",
+      "cc": "DZ",
+      "lat": 36.7538,
+      "lng": 3.0588,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Almaty",
+      "cc": "KZ",
+      "lat": 43.222,
+      "lng": 76.8512,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Asunción",
+      "cc": "PY",
+      "lat": -25.2637,
+      "lng": -57.5759,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Baghdad",
+      "cc": "IQ",
+      "lat": 33.3152,
+      "lng": 44.3661,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Bamako",
+      "cc": "ML",
+      "lat": 12.6392,
+      "lng": -8.0029,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Bergen",
+      "cc": "NO",
+      "lat": 60.3913,
+      "lng": 5.3221,
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Bratislava",
+      "cc": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Caracas",
+      "cc": "VE",
+      "lat": 10.4806,
+      "lng": -66.9036,
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Chișinău",
+      "cc": "MD",
+      "lat": 47.0105,
+      "lng": 28.8638,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Damascus",
+      "cc": "SY",
+      "lat": 33.5138,
+      "lng": 36.2765,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Dar es Salaam",
+      "cc": "TZ",
+      "lat": -6.7924,
+      "lng": 39.2083,
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Dili",
+      "cc": "TL",
+      "lat": -8.5569,
+      "lng": 125.5603,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Doha",
+      "cc": "QA",
+      "lat": 25.2854,
+      "lng": 51.531,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Freetown",
+      "cc": "SL",
+      "lat": 8.4657,
+      "lng": -13.2317,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Jeddah",
+      "cc": "SA",
+      "lat": 21.4858,
+      "lng": 39.1925,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Kingston",
+      "cc": "JM",
+      "lat": 17.997,
+      "lng": -76.7936,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Kinshasa",
+      "cc": "CD",
+      "lat": -4.4419,
+      "lng": 15.2663,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Ljubljana",
+      "cc": "SI",
+      "lat": 46.0569,
+      "lng": 14.5058,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Luanda",
+      "cc": "AO",
+      "lat": -8.839,
+      "lng": 13.2894,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Maputo",
+      "cc": "MZ",
+      "lat": -25.9692,
+      "lng": 32.5732,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Mogadishu",
+      "cc": "SO",
+      "lat": 2.0469,
+      "lng": 45.3182,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Montevideo",
+      "cc": "UY",
+      "lat": -34.9011,
+      "lng": -56.1645,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Pretoria",
+      "cc": "ZA",
+      "lat": -25.7479,
+      "lng": 28.2293,
+      "counts": {
+        "claude": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Salzburg",
+      "cc": "AT",
+      "lat": 47.8095,
+      "lng": 13.055,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Suva",
+      "cc": "FJ",
+      "lat": -18.1416,
+      "lng": 178.4419,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Tunis",
+      "cc": "TN",
+      "lat": 36.8065,
+      "lng": 10.1815,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Ulaanbaatar",
+      "cc": "MN",
+      "lat": 47.8864,
+      "lng": 106.9057,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Windhoek",
+      "cc": "NA",
+      "lat": -22.5609,
+      "lng": 17.0658,
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "name": "Zagreb",
+      "cc": "HR",
+      "lat": 45.815,
+      "lng": 15.9819,
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    }
+  ],
+  "countries": [
+    {
+      "cc": "US",
+      "name": "United States",
+      "counts": {
+        "chatgpt": 580,
+        "gemini": 483,
+        "claude": 184,
+        "mistral": 19,
+        "llama": 432
+      },
+      "total": 1698
+    },
+    {
+      "cc": "IN",
+      "name": "India",
+      "counts": {
+        "chatgpt": 242,
+        "gemini": 454,
+        "claude": 41,
+        "mistral": 13,
+        "llama": 215
+      },
+      "total": 965
+    },
+    {
+      "cc": "CN",
+      "name": "China",
+      "counts": {
+        "chatgpt": 231,
+        "gemini": 176,
+        "claude": 25,
+        "llama": 334
+      },
+      "total": 766
+    },
+    {
+      "cc": "CA",
+      "name": "Canada",
+      "counts": {
+        "chatgpt": 88,
+        "gemini": 73,
+        "claude": 18,
+        "mistral": 5,
+        "llama": 71
+      },
+      "total": 255
+    },
+    {
+      "cc": "GB",
+      "name": "United Kingdom",
+      "counts": {
+        "chatgpt": 83,
+        "gemini": 46,
+        "claude": 14,
+        "mistral": 7,
+        "llama": 66
+      },
+      "total": 216
+    },
+    {
+      "cc": "BR",
+      "name": "Brazil",
+      "counts": {
+        "chatgpt": 50,
+        "gemini": 60,
+        "claude": 8,
+        "mistral": 3,
+        "llama": 50
+      },
+      "total": 171
+    },
+    {
+      "cc": "KR",
+      "name": "South Korea",
+      "counts": {
+        "chatgpt": 44,
+        "gemini": 42,
+        "claude": 10,
+        "llama": 71
+      },
+      "total": 167
+    },
+    {
+      "cc": "DE",
+      "name": "Germany",
+      "counts": {
+        "chatgpt": 54,
+        "gemini": 47,
+        "claude": 12,
+        "mistral": 2,
+        "llama": 49
+      },
+      "total": 164
+    },
+    {
+      "cc": "JP",
+      "name": "Japan",
+      "counts": {
+        "chatgpt": 46,
+        "gemini": 43,
+        "claude": 14,
+        "llama": 27
+      },
+      "total": 130
+    },
+    {
+      "cc": "FR",
+      "name": "France",
+      "counts": {
+        "chatgpt": 39,
+        "gemini": 35,
+        "claude": 6,
+        "mistral": 13,
+        "llama": 26
+      },
+      "total": 119
+    },
+    {
+      "cc": "AU",
+      "name": "Australia",
+      "counts": {
+        "chatgpt": 37,
+        "gemini": 33,
+        "claude": 9,
+        "mistral": 1,
+        "llama": 31
+      },
+      "total": 111
+    },
+    {
+      "cc": "PK",
+      "name": "Pakistan",
+      "counts": {
+        "chatgpt": 29,
+        "gemini": 37,
+        "claude": 9,
+        "llama": 13
+      },
+      "total": 88
+    },
+    {
+      "cc": "TW",
+      "name": "Taiwan",
+      "counts": {
+        "chatgpt": 20,
+        "gemini": 35,
+        "claude": 8,
+        "llama": 22
+      },
+      "total": 85
+    },
+    {
+      "cc": "SG",
+      "name": "Singapore",
+      "counts": {
+        "chatgpt": 21,
+        "gemini": 25,
+        "claude": 5,
+        "llama": 23
+      },
+      "total": 74
+    },
+    {
+      "cc": "VN",
+      "name": "Vietnam",
+      "counts": {
+        "chatgpt": 25,
+        "gemini": 30,
+        "claude": 6,
+        "mistral": 1,
+        "llama": 12
+      },
+      "total": 74
+    },
+    {
+      "cc": "ES",
+      "name": "Spain",
+      "counts": {
+        "chatgpt": 28,
+        "gemini": 17,
+        "claude": 6,
+        "mistral": 1,
+        "llama": 20
+      },
+      "total": 72
+    },
+    {
+      "cc": "NG",
+      "name": "Nigeria",
+      "counts": {
+        "chatgpt": 28,
+        "gemini": 17,
+        "claude": 2,
+        "mistral": 2,
+        "llama": 20
+      },
+      "total": 69
+    },
+    {
+      "cc": "ID",
+      "name": "Indonesia",
+      "counts": {
+        "chatgpt": 17,
+        "gemini": 26,
+        "mistral": 1,
+        "llama": 17
+      },
+      "total": 61
+    },
+    {
+      "cc": "ZA",
+      "name": "South Africa",
+      "counts": {
+        "chatgpt": 25,
+        "gemini": 14,
+        "claude": 7,
+        "mistral": 1,
+        "llama": 14
+      },
+      "total": 61
+    },
+    {
+      "cc": "BD",
+      "name": "Bangladesh",
+      "counts": {
+        "chatgpt": 14,
+        "gemini": 18,
+        "claude": 2,
+        "mistral": 1,
+        "llama": 25
+      },
+      "total": 60
+    },
+    {
+      "cc": "NL",
+      "name": "Netherlands",
+      "counts": {
+        "chatgpt": 23,
+        "gemini": 15,
+        "claude": 4,
+        "mistral": 2,
+        "llama": 12
+      },
+      "total": 56
+    },
+    {
+      "cc": "TH",
+      "name": "Thailand",
+      "counts": {
+        "chatgpt": 18,
+        "gemini": 25,
+        "claude": 2,
+        "llama": 11
+      },
+      "total": 56
+    },
+    {
+      "cc": "KE",
+      "name": "Kenya",
+      "counts": {
+        "chatgpt": 24,
+        "gemini": 15,
+        "claude": 3,
+        "llama": 12
+      },
+      "total": 54
+    },
+    {
+      "cc": "MX",
+      "name": "Mexico",
+      "counts": {
+        "chatgpt": 8,
+        "gemini": 20,
+        "claude": 1,
+        "llama": 12
+      },
+      "total": 41
+    },
+    {
+      "cc": "HK",
+      "name": "Hong Kong",
+      "counts": {
+        "chatgpt": 18,
+        "gemini": 9,
+        "mistral": 1,
+        "llama": 12
+      },
+      "total": 40
+    },
+    {
+      "cc": "RU",
+      "name": "Russia",
+      "counts": {
+        "chatgpt": 24,
+        "gemini": 7,
+        "claude": 1,
+        "llama": 7
+      },
+      "total": 39
+    },
+    {
+      "cc": "TR",
+      "name": "Türkiye",
+      "counts": {
+        "chatgpt": 15,
+        "gemini": 14,
+        "claude": 1,
+        "llama": 8
+      },
+      "total": 38
+    },
+    {
+      "cc": "CH",
+      "name": "Switzerland",
+      "counts": {
+        "chatgpt": 13,
+        "gemini": 5,
+        "claude": 7,
+        "mistral": 2,
+        "llama": 10
+      },
+      "total": 37
+    },
+    {
+      "cc": "AE",
+      "name": "United Arab Emirates",
+      "counts": {
+        "chatgpt": 8,
+        "gemini": 17,
+        "claude": 2,
+        "llama": 6
+      },
+      "total": 33
+    },
+    {
+      "cc": "SE",
+      "name": "Sweden",
+      "counts": {
+        "chatgpt": 13,
+        "gemini": 7,
+        "claude": 4,
+        "llama": 9
+      },
+      "total": 33
+    },
+    {
+      "cc": "AR",
+      "name": "Argentina",
+      "counts": {
+        "chatgpt": 13,
+        "gemini": 8,
+        "claude": 3,
+        "llama": 6
+      },
+      "total": 30
+    },
+    {
+      "cc": "PL",
+      "name": "Poland",
+      "counts": {
+        "chatgpt": 6,
+        "gemini": 14,
+        "claude": 1,
+        "llama": 9
+      },
+      "total": 30
+    },
+    {
+      "cc": "UA",
+      "name": "Ukraine",
+      "counts": {
+        "chatgpt": 10,
+        "gemini": 12,
+        "claude": 1,
+        "llama": 7
+      },
+      "total": 30
+    },
+    {
+      "cc": "EG",
+      "name": "Egypt",
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 20,
+        "llama": 7
+      },
+      "total": 29
+    },
+    {
+      "cc": "IE",
+      "name": "Ireland",
+      "counts": {
+        "chatgpt": 12,
+        "gemini": 7,
+        "llama": 9
+      },
+      "total": 28
+    },
+    {
+      "cc": "IT",
+      "name": "Italy",
+      "counts": {
+        "chatgpt": 6,
+        "gemini": 12,
+        "claude": 4,
+        "llama": 5
+      },
+      "total": 27
+    },
+    {
+      "cc": "IL",
+      "name": "Israel",
+      "counts": {
+        "chatgpt": 8,
+        "gemini": 7,
+        "claude": 4,
+        "mistral": 2,
+        "llama": 5
+      },
+      "total": 26
+    },
+    {
+      "cc": "LK",
+      "name": "Sri Lanka",
+      "counts": {
+        "chatgpt": 10,
+        "gemini": 11,
+        "claude": 1,
+        "llama": 3
+      },
+      "total": 25
+    },
+    {
+      "cc": "PT",
+      "name": "Portugal",
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 6,
+        "claude": 1,
+        "mistral": 2,
+        "llama": 7
+      },
+      "total": 25
+    },
+    {
+      "cc": "MY",
+      "name": "Malaysia",
+      "counts": {
+        "chatgpt": 7,
+        "gemini": 9,
+        "claude": 1,
+        "llama": 7
+      },
+      "total": 24
+    },
+    {
+      "cc": "CL",
+      "name": "Chile",
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 4,
+        "claude": 3,
+        "mistral": 1,
+        "llama": 6
+      },
+      "total": 23
+    },
+    {
+      "cc": "CO",
+      "name": "Colombia",
+      "counts": {
+        "chatgpt": 9,
+        "gemini": 5,
+        "claude": 3,
+        "llama": 6
+      },
+      "total": 23
+    },
+    {
+      "cc": "NZ",
+      "name": "New Zealand",
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 5,
+        "claude": 4,
+        "llama": 9
+      },
+      "total": 22
+    },
+    {
+      "cc": "NO",
+      "name": "Norway",
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 8,
+        "llama": 8
+      },
+      "total": 20
+    },
+    {
+      "cc": "PH",
+      "name": "Philippines",
+      "counts": {
+        "chatgpt": 7,
+        "gemini": 3,
+        "llama": 10
+      },
+      "total": 20
+    },
+    {
+      "cc": "AT",
+      "name": "Austria",
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 5,
+        "claude": 5,
+        "llama": 6
+      },
+      "total": 19
+    },
+    {
+      "cc": "CZ",
+      "name": "Czechia",
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 6,
+        "claude": 5,
+        "mistral": 1,
+        "llama": 2
+      },
+      "total": 18
+    },
+    {
+      "cc": "FI",
+      "name": "Finland",
+      "counts": {
+        "chatgpt": 8,
+        "gemini": 7,
+        "claude": 1,
+        "llama": 2
+      },
+      "total": 18
+    },
+    {
+      "cc": "MA",
+      "name": "Morocco",
+      "counts": {
+        "chatgpt": 7,
+        "gemini": 5,
+        "mistral": 1,
+        "llama": 5
+      },
+      "total": 18
+    },
+    {
+      "cc": "UG",
+      "name": "Uganda",
+      "counts": {
+        "chatgpt": 7,
+        "gemini": 3,
+        "mistral": 1,
+        "llama": 6
+      },
+      "total": 17
+    },
+    {
+      "cc": "GH",
+      "name": "Ghana",
+      "counts": {
+        "chatgpt": 8,
+        "gemini": 3,
+        "llama": 5
+      },
+      "total": 16
+    },
+    {
+      "cc": "PE",
+      "name": "Peru",
+      "counts": {
+        "chatgpt": 5,
+        "gemini": 5,
+        "llama": 5
+      },
+      "total": 15
+    },
+    {
+      "cc": "BE",
+      "name": "Belgium",
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 4,
+        "claude": 2,
+        "llama": 5
+      },
+      "total": 14
+    },
+    {
+      "cc": "IR",
+      "name": "Iran",
+      "counts": {
+        "chatgpt": 5,
+        "gemini": 7,
+        "llama": 1
+      },
+      "total": 13
+    },
+    {
+      "cc": "NP",
+      "name": "Nepal",
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 3,
+        "claude": 1,
+        "llama": 5
+      },
+      "total": 11
+    },
+    {
+      "cc": "GR",
+      "name": "Greece",
+      "counts": {
+        "chatgpt": 6,
+        "gemini": 2,
+        "claude": 1,
+        "llama": 1
+      },
+      "total": 10
+    },
+    {
+      "cc": "RO",
+      "name": "Romania",
+      "counts": {
+        "chatgpt": 5,
+        "gemini": 3,
+        "llama": 2
+      },
+      "total": 10
+    },
+    {
+      "cc": "SA",
+      "name": "Saudi Arabia",
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 3,
+        "llama": 3
+      },
+      "total": 10
+    },
+    {
+      "cc": "DK",
+      "name": "Denmark",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 3,
+        "claude": 2,
+        "llama": 3
+      },
+      "total": 9
+    },
+    {
+      "cc": "DZ",
+      "name": "Algeria",
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 3,
+        "claude": 1,
+        "llama": 2
+      },
+      "total": 9
+    },
+    {
+      "cc": "ET",
+      "name": "Ethiopia",
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 2,
+        "claude": 1,
+        "llama": 4
+      },
+      "total": 9
+    },
+    {
+      "cc": "AM",
+      "name": "Armenia",
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 2,
+        "claude": 2,
+        "llama": 1
+      },
+      "total": 8
+    },
+    {
+      "cc": "BG",
+      "name": "Bulgaria",
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 3,
+        "mistral": 1,
+        "llama": 2
+      },
+      "total": 8
+    },
+    {
+      "cc": "CM",
+      "name": "Cameroon",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 3,
+        "llama": 4
+      },
+      "total": 8
+    },
+    {
+      "cc": "DO",
+      "name": "Dominican Republic",
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 2,
+        "llama": 3
+      },
+      "total": 8
+    },
+    {
+      "cc": "TN",
+      "name": "Tunisia",
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 2,
+        "mistral": 2,
+        "llama": 1
+      },
+      "total": 8
+    },
+    {
+      "cc": "CI",
+      "name": "Ivory Coast",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 3,
+        "llama": 3
+      },
+      "total": 7
+    },
+    {
+      "cc": "EE",
+      "name": "Estonia",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 3,
+        "claude": 3
+      },
+      "total": 7
+    },
+    {
+      "cc": "IQ",
+      "name": "Iraq",
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 2,
+        "claude": 2,
+        "llama": 1
+      },
+      "total": 7
+    },
+    {
+      "cc": "KH",
+      "name": "Cambodia",
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 3,
+        "llama": 1
+      },
+      "total": 7
+    },
+    {
+      "cc": "KZ",
+      "name": "Kazakhstan",
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 3
+      },
+      "total": 7
+    },
+    {
+      "cc": "MG",
+      "name": "Madagascar",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 5,
+        "llama": 1
+      },
+      "total": 7
+    },
+    {
+      "cc": "MM",
+      "name": "Myanmar",
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 4
+      },
+      "total": 7
+    },
+    {
+      "cc": "YE",
+      "name": "Yemen",
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 3,
+        "llama": 2
+      },
+      "total": 7
+    },
+    {
+      "cc": "BO",
+      "name": "Bolivia",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "claude": 1,
+        "llama": 2
+      },
+      "total": 6
+    },
+    {
+      "cc": "HU",
+      "name": "Hungary",
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 6
+    },
+    {
+      "cc": "RW",
+      "name": "Rwanda",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "llama": 4
+      },
+      "total": 6
+    },
+    {
+      "cc": "UZ",
+      "name": "Uzbekistan",
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 2,
+        "llama": 1
+      },
+      "total": 6
+    },
+    {
+      "cc": "VE",
+      "name": "Venezuela",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "llama": 3
+      },
+      "total": 6
+    },
+    {
+      "cc": "BJ",
+      "name": "Benin",
+      "counts": {
+        "gemini": 1,
+        "llama": 4
+      },
+      "total": 5
+    },
+    {
+      "cc": "EC",
+      "name": "Ecuador",
+      "counts": {
+        "chatgpt": 3,
+        "llama": 2
+      },
+      "total": 5
+    },
+    {
+      "cc": "GE",
+      "name": "Georgia",
+      "counts": {
+        "chatgpt": 4,
+        "gemini": 1
+      },
+      "total": 5
+    },
+    {
+      "cc": "LV",
+      "name": "Latvia",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "llama": 2
+      },
+      "total": 5
+    },
+    {
+      "cc": "TZ",
+      "name": "Tanzania",
+      "counts": {
+        "chatgpt": 1,
+        "llama": 4
+      },
+      "total": 5
+    },
+    {
+      "cc": "LB",
+      "name": "Lebanon",
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 2
+      },
+      "total": 4
+    },
+    {
+      "cc": "MD",
+      "name": "Moldova",
+      "counts": {
+        "gemini": 4
+      },
+      "total": 4
+    },
+    {
+      "cc": "OM",
+      "name": "Oman",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "llama": 1
+      },
+      "total": 4
+    },
+    {
+      "cc": "PA",
+      "name": "Panama",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "claude": 1,
+        "llama": 1
+      },
+      "total": 4
+    },
+    {
+      "cc": "RS",
+      "name": "Serbia",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2,
+        "llama": 1
+      },
+      "total": 4
+    },
+    {
+      "cc": "BH",
+      "name": "Bahrain",
+      "counts": {
+        "gemini": 3
+      },
+      "total": 3
+    },
+    {
+      "cc": "BW",
+      "name": "Botswana",
+      "counts": {
+        "gemini": 2,
+        "llama": 1
+      },
+      "total": 3
+    },
+    {
+      "cc": "BY",
+      "name": "Belarus",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "mistral": 1
+      },
+      "total": 3
+    },
+    {
+      "cc": "CY",
+      "name": "Cyprus",
+      "counts": {
+        "gemini": 1,
+        "llama": 2
+      },
+      "total": 3
+    },
+    {
+      "cc": "JO",
+      "name": "Jordan",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 3
+    },
+    {
+      "cc": "LU",
+      "name": "Luxembourg",
+      "counts": {
+        "gemini": 1,
+        "llama": 2
+      },
+      "total": 3
+    },
+    {
+      "cc": "MH",
+      "name": "Marshall Islands",
+      "counts": {
+        "chatgpt": 2,
+        "gemini": 1
+      },
+      "total": 3
+    },
+    {
+      "cc": "MK",
+      "name": "North Macedonia",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 3
+    },
+    {
+      "cc": "ML",
+      "name": "Mali",
+      "counts": {
+        "gemini": 1,
+        "llama": 2
+      },
+      "total": 3
+    },
+    {
+      "cc": "PY",
+      "name": "Paraguay",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 3
+    },
+    {
+      "cc": "SZ",
+      "name": "Eswatini",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 2
+      },
+      "total": 3
+    },
+    {
+      "cc": "AO",
+      "name": "Angola",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "CD",
+      "name": "DR Congo",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "FJ",
+      "name": "Fiji",
+      "counts": {
+        "chatgpt": 2
+      },
+      "total": 2
+    },
+    {
+      "cc": "GT",
+      "name": "Guatemala",
+      "counts": {
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "HN",
+      "name": "Honduras",
+      "counts": {
+        "chatgpt": 2
+      },
+      "total": 2
+    },
+    {
+      "cc": "HR",
+      "name": "Croatia",
+      "counts": {
+        "chatgpt": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "IS",
+      "name": "Iceland",
+      "counts": {
+        "chatgpt": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "JE",
+      "name": "Jersey",
+      "counts": {
+        "gemini": 2
+      },
+      "total": 2
+    },
+    {
+      "cc": "LT",
+      "name": "Lithuania",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "PR",
+      "name": "Puerto Rico",
+      "counts": {
+        "chatgpt": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "SH",
+      "name": "Saint Helena, Ascension and Tristan da Cunha",
+      "counts": {
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "SI",
+      "name": "Slovenia",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "SK",
+      "name": "Slovakia",
+      "counts": {
+        "chatgpt": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "SN",
+      "name": "Senegal",
+      "counts": {
+        "gemini": 2
+      },
+      "total": 2
+    },
+    {
+      "cc": "TG",
+      "name": "Togo",
+      "counts": {
+        "llama": 2
+      },
+      "total": 2
+    },
+    {
+      "cc": "UY",
+      "name": "Uruguay",
+      "counts": {
+        "chatgpt": 1,
+        "gemini": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "ZW",
+      "name": "Zimbabwe",
+      "counts": {
+        "gemini": 1,
+        "llama": 1
+      },
+      "total": 2
+    },
+    {
+      "cc": "AD",
+      "name": "Andorra",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "AQ",
+      "name": "Antarctica",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "BB",
+      "name": "Barbados",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "BZ",
+      "name": "Belize",
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "CG",
+      "name": "Republic of the Congo",
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "GA",
+      "name": "Gabon",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "GN",
+      "name": "Guinea",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "GU",
+      "name": "Guam",
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "JM",
+      "name": "Jamaica",
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "KW",
+      "name": "Kuwait",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "KY",
+      "name": "Cayman Islands",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "LY",
+      "name": "Libya",
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "MN",
+      "name": "Mongolia",
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "MT",
+      "name": "Malta",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "MU",
+      "name": "Mauritius",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "MZ",
+      "name": "Mozambique",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "NA",
+      "name": "Namibia",
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "QA",
+      "name": "Qatar",
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "SD",
+      "name": "Sudan",
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "SL",
+      "name": "Sierra Leone",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "SO",
+      "name": "Somalia",
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "SV",
+      "name": "El Salvador",
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "SY",
+      "name": "Syria",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "TL",
+      "name": "Timor-Leste",
+      "counts": {
+        "chatgpt": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "TM",
+      "name": "Turkmenistan",
+      "counts": {
+        "claude": 1
+      },
+      "total": 1
+    },
+    {
+      "cc": "ZM",
+      "name": "Zambia",
+      "counts": {
+        "llama": 1
+      },
+      "total": 1
+    }
+  ],
+  "geocoding": {
+    "method": "Offline: normalised free-text profile locations matched against the 241 globe cities plus an alias table; otherwise country by name, ISO code, flag emoji, US state, province or well-known city; no fuzzy matching.",
+    "matched_city_pct": 42.1,
+    "matched_country_pct": 87.6
+  }
+}

@@ -4,6 +4,7 @@ import {
   Cartesian2,
   Cartesian3,
   Color,
+  ColorGeometryInstanceAttribute,
   Credit,
   DistanceDisplayCondition,
   GeometryInstance,
@@ -14,7 +15,10 @@ import {
   Material,
   Math as CesiumMath,
   NearFarScalar,
+  PerInstanceColorAppearance,
   PointPrimitiveCollection,
+  PolygonGeometry,
+  PolygonHierarchy,
   PolylineColorAppearance,
   PolylineGeometry,
   PolylineMaterialAppearance,
@@ -33,10 +37,43 @@ import {
 } from 'cesium'
 import { CITIES, type City } from '@shared/cities'
 import type { Activity } from '@shared/simulation'
+import { feature } from 'topojson-client'
+import { CHOROPLETH_NO_DATA, choroplethColor } from './choropleth'
 import { hexToRgb, lighten, programMapColor, type Rgb } from './colors'
 import { renderHeatCanvas } from './heatCanvas'
 
-export type GlobeLayer = 'activity' | 'heat'
+/** 'activity' and 'heat' draw the simulation; 'points' and 'countries' draw data passed in. */
+export type GlobeLayer = 'activity' | 'heat' | 'points' | 'countries'
+
+export interface CityPointDatum {
+  key: string
+  name: string
+  lat: number
+  lng: number
+  /** 0-1, drives beam height and size. */
+  intensity: number
+  /** Hex colour. */
+  color: string
+}
+
+export interface CountryValue {
+  cc: string
+  /** 0-1 normalised value that drives the colour. */
+  value: number
+}
+
+export interface CountryRef {
+  cc: string
+  ccn3: string
+  lat: number
+  lng: number
+}
+
+export interface GlobePick {
+  kind: 'city' | 'country'
+  /** City key (name), or ISO alpha-2 country code. */
+  name: string
+}
 export type GlobeThemeName = 'natural' | 'cyber'
 
 export interface CityIntensity {
@@ -45,16 +82,13 @@ export interface CityIntensity {
 }
 
 export interface GlobeEvents {
-  onCityClick?: (city: string | null) => void
-  onCityHover?: (hover: { city: string; x: number; y: number } | null) => void
+  onPick?: (pick: GlobePick | null) => void
+  onHover?: (hover: (GlobePick & { x: number; y: number }) | null) => void
   onFirstTilesLoaded?: () => void
   onRenderError?: (message: string) => void
 }
 
-interface CityPick {
-  kind: 'city'
-  name: string
-}
+type CityPick = GlobePick
 
 const GIBS = 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best'
 const BLUE_MARBLE_URL = `${GIBS}/BlueMarble_ShadedRelief_Bathymetry/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg`
@@ -82,6 +116,14 @@ function cityPick(name: string): CityPick {
   return { kind: 'city', name }
 }
 
+function countryPick(cc: string): GlobePick {
+  return { kind: 'country', name: cc }
+}
+
+// Antarctica has no data and would dominate the choropleth on screen.
+const SKIP_COUNTRY_IDS = new Set(['010'])
+const CHOROPLETH_HEIGHT = 2_500
+
 interface Flash {
   ring: PointPrimitive
   core: PointPrimitive
@@ -107,6 +149,14 @@ export class GlobeEngine {
   private layer: GlobeLayer = 'activity'
   private theme: GlobeThemeName = 'natural'
   private intensities = new Map<string, number>()
+  private pointData: CityPointDatum[] = []
+  private countryValues = new Map<string, number>()
+  private countryRefs = new Map<string, CountryRef>()
+  private ccn3ToCc = new Map<string, string>()
+  private topology: TopoJSON.Topology | null = null
+  private choropleth: Primitive | null = null
+  private countryOutline: Primitive | null = null
+  private selectedCountry: string | null = null
   private reducedMotion = false
   private rotationWanted = true
   private lastInteraction = 0
@@ -224,7 +274,39 @@ export class GlobeEngine {
 
   setIntensities(values: CityIntensity[]): void {
     this.intensities = new Map(values.map((v) => [v.city, v.intensity]))
-    this.rebuildData()
+    if (this.layer === 'activity' || this.layer === 'heat') this.rebuildData()
+  }
+
+  /** City points for the 'points' layer (real city-level data). */
+  setCityPoints(points: CityPointDatum[]): void {
+    this.pointData = points
+    if (this.layer === 'points') this.rebuildData()
+  }
+
+  /** Country values for the 'countries' layer; needs setCountries() for the id mapping. */
+  setCountryValues(values: CountryValue[]): void {
+    this.countryValues = new Map(values.map((v) => [v.cc, v.value]))
+    if (this.layer === 'countries') this.rebuildData()
+  }
+
+  setCountries(countries: CountryRef[]): void {
+    this.countryRefs = new Map(countries.map((c) => [c.cc, c]))
+    this.ccn3ToCc = new Map(countries.map((c) => [c.ccn3, c.cc]))
+    if (this.layer === 'countries') this.rebuildData()
+  }
+
+  selectCountry(cc: string | null, fly = true): void {
+    this.selectedCountry = cc
+    this.buildCountryOutline()
+    const ref = cc ? this.countryRefs.get(cc) : undefined
+    if (ref && fly) {
+      this.viewer.camera.flyTo({
+        destination: Cartesian3.fromDegrees(ref.lng, ref.lat - 8, 9_000_000),
+        orientation: { heading: 0, pitch: CesiumMath.toRadians(-84), roll: 0 },
+        duration: this.reducedMotion ? 0 : 1.6,
+      })
+    }
+    this.requestRender()
   }
 
   setReducedMotion(reduced: boolean): void {
@@ -348,6 +430,7 @@ export class GlobeEngine {
       this.rotationWanted &&
       !this.reducedMotion &&
       !this.selectedCity &&
+      !this.selectedCountry &&
       !document.hidden &&
       now - this.lastInteraction > RESUME_ROTATION_AFTER_MS
     )
@@ -425,8 +508,7 @@ export class GlobeEngine {
     }
 
     this.handler.setInputAction((event: { position: Cartesian2 }) => {
-      const name = this.pickCity(event.position)
-      this.events.onCityClick?.(name)
+      this.events.onPick?.(this.pickAny(event.position))
     }, ScreenSpaceEventType.LEFT_CLICK)
 
     this.handler.setInputAction((event: { endPosition: Cartesian2 }) => {
@@ -435,17 +517,17 @@ export class GlobeEngine {
       this.hoverFrame = requestAnimationFrame(() => {
         this.hoverFrame = 0
         if (this.destroyed) return
-        const name = this.pickCity(position)
-        this.viewer.scene.canvas.style.cursor = name ? 'pointer' : ''
-        this.events.onCityHover?.(name ? { city: name, x: position.x, y: position.y } : null)
+        const pick = this.pickAny(position)
+        this.viewer.scene.canvas.style.cursor = pick ? 'pointer' : ''
+        this.events.onHover?.(pick ? { ...pick, x: position.x, y: position.y } : null)
       })
     }, ScreenSpaceEventType.MOUSE_MOVE)
   }
 
-  private pickCity(position: Cartesian2): string | null {
+  private pickAny(position: Cartesian2): GlobePick | null {
     const picked = this.viewer.scene.pick(position, 14, 14) as { id?: unknown } | undefined
-    const id = picked?.id as CityPick | undefined
-    return id && typeof id === 'object' && id.kind === 'city' ? id.name : null
+    const id = picked?.id as GlobePick | undefined
+    return id && typeof id === 'object' && (id.kind === 'city' || id.kind === 'country') ? { kind: id.kind, name: id.name } : null
   }
 
   private requestRender(): void {
@@ -491,7 +573,8 @@ export class GlobeEngine {
     this.ensureBaseImagery()
     const { scene } = this.viewer
     const { globe } = scene
-    const heat = this.layer === 'heat'
+    // Dim the imagery under data surfaces so their colours read.
+    const heat = this.layer === 'heat' || this.layer === 'countries'
     const day = this.dayLayer!
     const night = this.nightLayer!
 
@@ -562,9 +645,9 @@ export class GlobeEngine {
         import('world-atlas/countries-110m.json').then((m) => m.default),
       ])
       if (this.destroyed) return
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const topo = topology as any
-      const lines = mesh(topo, topo.objects.countries) as GeoJSON.MultiLineString
+      const topo = topology as unknown as TopoJSON.Topology
+      this.topology = topo
+      const lines = mesh(topo, topo.objects.countries as TopoJSON.GeometryCollection) as GeoJSON.MultiLineString
       const instances = lines.coordinates
         .filter((line) => line.length > 1)
         .map(
@@ -588,10 +671,100 @@ export class GlobeEngine {
         0,
       )
       this.viewer.scene.primitives.lowerToBottom(this.borders)
+      if (this.layer === 'countries') this.rebuildData()
       this.requestRender()
     } catch (error) {
       console.warn('Country borders could not be loaded', error)
     }
+  }
+
+  /** GeoJSON features of the countries topology, keyed by ISO alpha-2 via setCountries(). */
+  private countryFeatures(): { cc: string; feature: GeoJSON.Feature }[] {
+    if (!this.topology) return []
+    const collection = feature(this.topology, this.topology.objects.countries as TopoJSON.GeometryCollection) as GeoJSON.FeatureCollection
+    const out: { cc: string; feature: GeoJSON.Feature }[] = []
+    for (const f of collection.features) {
+      const id = String(f.id ?? '').padStart(3, '0')
+      if (SKIP_COUNTRY_IDS.has(id)) continue
+      const cc = this.ccn3ToCc.get(id)
+      if (cc) out.push({ cc, feature: f })
+    }
+    return out
+  }
+
+  private polygonRings(geometry: GeoJSON.Geometry): GeoJSON.Position[][][] {
+    if (geometry.type === 'Polygon') return [geometry.coordinates]
+    if (geometry.type === 'MultiPolygon') return geometry.coordinates
+    return []
+  }
+
+  private polygonHierarchies(geometry: GeoJSON.Geometry): PolygonHierarchy[] {
+    const toPositions = (ring: GeoJSON.Position[]) => Cartesian3.fromDegreesArray(ring.flatMap(([lng, lat]) => [lng, lat]))
+    return this.polygonRings(geometry)
+      .filter((rings) => rings.length > 0 && rings[0].length >= 4)
+      .map((rings) => new PolygonHierarchy(toPositions(rings[0]), rings.slice(1).filter((r) => r.length >= 4).map((r) => new PolygonHierarchy(toPositions(r)))))
+  }
+
+  private buildChoropleth(): void {
+    const instances: GeometryInstance[] = []
+    for (const { cc, feature: f } of this.countryFeatures()) {
+      const value = this.countryValues.get(cc)
+      const [r, g, b, a] = value === undefined ? CHOROPLETH_NO_DATA : choroplethColor(value)
+      const color = new Color(r / 255, g / 255, b / 255, a)
+      for (const hierarchy of this.polygonHierarchies(f.geometry)) {
+        instances.push(
+          new GeometryInstance({
+            id: countryPick(cc),
+            geometry: new PolygonGeometry({
+              polygonHierarchy: hierarchy,
+              height: CHOROPLETH_HEIGHT,
+              vertexFormat: PerInstanceColorAppearance.VERTEX_FORMAT,
+            }),
+            attributes: { color: ColorGeometryInstanceAttribute.fromColor(color) },
+          }),
+        )
+      }
+    }
+    if (instances.length === 0) return
+    this.choropleth = this.viewer.scene.primitives.add(
+      new Primitive({
+        geometryInstances: instances,
+        appearance: new PerInstanceColorAppearance({ flat: true, translucent: true }),
+        asynchronous: true,
+      }),
+    )
+    if (this.borders) this.viewer.scene.primitives.raiseToTop(this.borders)
+  }
+
+  private buildCountryOutline(): void {
+    if (this.countryOutline) {
+      this.viewer.scene.primitives.remove(this.countryOutline)
+      this.countryOutline = null
+    }
+    if (!this.selectedCountry) return
+    const match = this.countryFeatures().find((c) => c.cc === this.selectedCountry)
+    if (!match) return
+    const instances = this.polygonRings(match.feature.geometry)
+      .filter((rings) => rings[0] && rings[0].length >= 2)
+      .map(
+        (rings) =>
+          new GeometryInstance({
+            geometry: new PolylineGeometry({
+              positions: Cartesian3.fromDegreesArrayHeights(rings[0].flatMap(([lng, lat]) => [lng, lat, CHOROPLETH_HEIGHT + 2_000])),
+              width: 2.5,
+              arcType: ArcType.GEODESIC,
+              vertexFormat: PolylineMaterialAppearance.VERTEX_FORMAT,
+            }),
+          }),
+      )
+    if (instances.length === 0) return
+    this.countryOutline = this.viewer.scene.primitives.add(
+      new Primitive({
+        geometryInstances: instances,
+        appearance: new PolylineMaterialAppearance({ material: Material.fromType('Color', { color: Color.WHITE }), translucent: false }),
+        asynchronous: false,
+      }),
+    )
   }
 
   // ── Data layers ─────────────────────────────────────────────────────────────
@@ -601,43 +774,76 @@ export class GlobeEngine {
   }
 
   private rebuildData(): void {
-    if (this.destroyed || this.intensities.size === 0) return
-    this.clearActivityLayer()
-    if (this.layer === 'activity') this.buildActivityLayer()
-    else this.buildHeatLayer()
+    if (this.destroyed) return
+    this.clearDataLayers()
+    let labelPoints: CityPointDatum[] | null = null
+    if (this.layer === 'activity' || this.layer === 'heat') {
+      if (this.intensities.size === 0) return
+      if (this.layer === 'activity') this.buildPoints(this.simulatedPoints())
+      else this.buildHeatLayer()
+    } else if (this.layer === 'points') {
+      this.buildPoints(this.pointData)
+      labelPoints = this.pointData
+    } else {
+      this.buildChoropleth()
+      this.buildCountryOutline()
+      this.requestRender()
+      return
+    }
     // Labels are drawn into a texture, so wait for the web font or they'd use the fallback face.
     void (document.fonts?.load(LABEL_FONT) ?? Promise.resolve()).finally(() => {
       if (this.destroyed) return
-      this.buildLabels()
+      this.buildLabels(labelPoints)
       this.requestRender()
     })
     this.requestRender()
   }
 
-  private clearActivityLayer(): void {
+  /** The simulation's cities as generic points, coloured by leading assistant. */
+  private simulatedPoints(): CityPointDatum[] {
+    return CITIES.map((city) => ({
+      key: city.name,
+      name: city.name,
+      lat: city.lat,
+      lng: city.lng,
+      intensity: this.cityIntensity(city),
+      color: programMapColor(city.program),
+    }))
+  }
+
+  private clearDataLayers(): void {
     if (this.beams) {
       this.viewer.scene.primitives.remove(this.beams)
       this.beams = null
+    }
+    if (this.choropleth) {
+      this.viewer.scene.primitives.remove(this.choropleth)
+      this.choropleth = null
+    }
+    if (this.countryOutline) {
+      this.viewer.scene.primitives.remove(this.countryOutline)
+      this.countryOutline = null
     }
     this.cityPoints.removeAll()
     this.caps.removeAll()
     this.pulses.removeAll()
     this.pulseList = []
-    if (this.layer === 'activity' && this.heatLayer) {
+    this.labels.removeAll()
+    if (this.layer !== 'heat' && this.heatLayer) {
       this.viewer.imageryLayers.remove(this.heatLayer, true)
       this.heatLayer = null
     }
   }
 
-  private buildActivityLayer(): void {
-    const ranked = [...CITIES].sort((a, b) => this.cityIntensity(b) - this.cityIntensity(a))
+  private buildPoints(points: CityPointDatum[]): void {
+    const ranked = [...points].sort((a, b) => b.intensity - a.intensity)
     const instances: GeometryInstance[] = []
     const outline = new Color(0.012, 0.027, 0.05, 0.9)
 
     ranked.forEach((city, index) => {
-      const intensity = this.cityIntensity(city)
-      const rgb = hexToRgb(programMapColor(city.program))
-      const pick = cityPick(city.name)
+      const intensity = Math.min(1, Math.max(0, city.intensity))
+      const rgb = hexToRgb(city.color)
+      const pick = cityPick(city.key)
       const level = Math.sqrt(intensity)
       const top = BEAM_BASE_HEIGHT + 30_000 + BEAM_MAX_HEIGHT * intensity
 
@@ -756,12 +962,14 @@ export class GlobeEngine {
     }
   }
 
-  private buildLabels(): void {
+  private buildLabels(points: CityPointDatum[] | null): void {
     this.labels.removeAll()
-    const top = [...CITIES].sort((a, b) => b.weight - a.weight).slice(0, LABEL_COUNT)
+    const top = points
+      ? [...points].sort((a, b) => b.intensity - a.intensity).slice(0, LABEL_COUNT).map((p) => ({ key: p.key, name: p.name, lat: p.lat, lng: p.lng }))
+      : [...CITIES].sort((a, b) => b.weight - a.weight).slice(0, LABEL_COUNT).map((c) => ({ key: c.name, name: c.name, lat: c.lat, lng: c.lng }))
     for (const city of top) {
       this.labels.add({
-        id: cityPick(city.name),
+        id: cityPick(city.key),
         position: Cartesian3.fromDegrees(city.lng, city.lat, BEAM_BASE_HEIGHT),
         text: city.name,
         font: LABEL_FONT,

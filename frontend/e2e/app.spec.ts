@@ -18,19 +18,19 @@ test.describe('desktop', () => {
 
   test('switches layer and style, and keeps them in the URL', async ({ page }) => {
     await openApp(page)
-    const layer = page.getByRole('group', { name: 'Map layer' })
     const style = page.getByRole('group', { name: 'Globe style' })
 
-    await layer.getByRole('button', { name: 'Heat map' }).click()
+    await page.getByRole('button', { name: /^Layer/ }).click()
+    await page.getByRole('listbox', { name: 'Map layer' }).getByRole('option', { name: /Heat map/ }).click()
     await style.getByRole('button', { name: 'Cyber' }).click()
-    await expect(layer.getByRole('button', { name: 'Heat map' })).toHaveAttribute('aria-pressed', 'true')
+    await expect(page.getByRole('button', { name: /^Layer/ })).toContainText('Heat map')
     await expect(style.getByRole('button', { name: 'Cyber' })).toHaveAttribute('aria-pressed', 'true')
     await expect(page.getByRole('heading', { name: 'Activity right now' })).toBeVisible()
     await expect(page).toHaveURL(/layer=heat/)
     await expect(page).toHaveURL(/theme=cyber/)
 
     await page.reload()
-    await expect(page.getByRole('group', { name: 'Map layer' }).getByRole('button', { name: 'Heat map' })).toHaveAttribute('aria-pressed', 'true')
+    await expect(page.getByRole('button', { name: /^Layer/ })).toContainText('Heat map')
   })
 
   test('opens analytics, flies to a city and shows its details', async ({ page }) => {

@@ -52,3 +52,6 @@ desktop.ini
 
 # ── Local AI-tool settings ──────────────────────────────────────────────────
 .claude/
+
+# Data pipeline cache (kept in the GitHub Actions cache, not in git)
+data/real/.pipeline-state.json

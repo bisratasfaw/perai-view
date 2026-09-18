@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import { BarChart3, Flame, Info, Layers, MapPin, Moon, Sun } from 'lucide-react'
-import { useAppStore, type GlobeTheme, type Layer } from '@/store'
+import { BarChart3, Info, Layers, Moon, Sun } from 'lucide-react'
+import { useAppStore, type GlobeTheme } from '@/store'
 import { useIsCompact } from '@/hooks/useMediaQuery'
+import { useRealData } from '@/data/realData'
+import { getLayer } from '@/layers'
 import { BrandMark } from './BrandMark'
+import { LayerMenu } from './LayerMenu'
 import { Segmented, type SegmentedOption } from './Segmented'
-
-const LAYER_OPTIONS: SegmentedOption<Layer>[] = [
-  { value: 'activity', label: 'Activity', icon: <MapPin size={15} aria-hidden="true" /> },
-  { value: 'heat', label: 'Heat map', icon: <Flame size={15} aria-hidden="true" /> },
-]
 
 const THEME_OPTIONS: SegmentedOption<GlobeTheme>[] = [
   { value: 'natural', label: 'Natural', icon: <Sun size={15} aria-hidden="true" /> },
@@ -22,9 +20,33 @@ const CONNECTION_TEXT = {
   offline: 'Offline',
 } as const
 
+/** Says where the numbers on screen come from: the simulation, or a named real-data snapshot. */
 function StatusChip() {
   const connection = useAppStore((s) => s.connection)
+  const layer = useAppStore((s) => s.layer)
   const setAboutOpen = useAppStore((s) => s.setAboutOpen)
+  const manifest = useRealData('manifest')
+  const def = getLayer(layer)!
+  const source = def.source && manifest.status === 'ready' ? manifest.data.sources[def.source] : null
+
+  if (def.kind === 'real') {
+    const asOf = source?.as_of ? ` · ${source.as_of}` : ''
+    const publisher = source?.publisher ?? 'snapshot'
+    // Keep the chip short: "Wikimedia Foundation (Wikimedia Analytics)" → "Wikimedia Foundation".
+    const shortPublisher = publisher.replace(/s*(.*)$/, '')
+    return (
+      <button
+        type="button"
+        className="status-chip"
+        data-mode="real"
+        onClick={() => setAboutOpen(true)}
+        aria-label={`Real data from ${publisher}${asOf}. Learn about the sources.`}
+      >
+        <span className="status-dot" data-state="real" aria-hidden="true" />
+        Real data · {shortPublisher}{asOf}
+      </button>
+    )
+  }
   return (
     <button
       type="button"
@@ -39,10 +61,8 @@ function StatusChip() {
 }
 
 export function TopBar() {
-  const layer = useAppStore((s) => s.layer)
   const theme = useAppStore((s) => s.theme)
   const panelOpen = useAppStore((s) => s.panelOpen)
-  const setLayer = useAppStore((s) => s.setLayer)
   const setTheme = useAppStore((s) => s.setTheme)
   const setPanelOpen = useAppStore((s) => s.setPanelOpen)
   const setAboutOpen = useAppStore((s) => s.setAboutOpen)
@@ -114,7 +134,7 @@ export function TopBar() {
           </div>
         ) : (
           <div className="topbar-controls">
-            <Segmented label="Map layer" value={layer} options={LAYER_OPTIONS} onChange={setLayer} />
+            <LayerMenu />
             <Segmented label="Globe style" value={theme} options={THEME_OPTIONS} onChange={setTheme} />
             <span className="divider" aria-hidden="true" />
             <StatusChip />
@@ -132,8 +152,7 @@ export function TopBar() {
       {compact && layersOpen && (
         <div id="layers-popover" ref={popoverRef} className="popover surface" role="group" aria-label="Map options">
           <div className="field">
-            <span className="control-label">Layer</span>
-            <Segmented label="Map layer" value={layer} options={LAYER_OPTIONS} onChange={setLayer} />
+            <LayerMenu inline />
           </div>
           <div className="field">
             <span className="control-label">Style</span>
