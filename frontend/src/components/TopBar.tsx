@@ -33,7 +33,8 @@ function StatusChip() {
     const asOf = source?.as_of ? ` · ${source.as_of}` : ''
     const publisher = source?.publisher ?? 'snapshot'
     // Keep the chip short: "Wikimedia Foundation (Wikimedia Analytics)" → "Wikimedia Foundation".
-    const shortPublisher = publisher.replace(/s*(.*)$/, '')
+    const trimmed = publisher.replace(/\s*\([^()]*\)\s*$/, '').trim()
+    const shortPublisher = trimmed || publisher
     return (
       <button
         type="button"

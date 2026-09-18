@@ -38,7 +38,10 @@ test.describe('real data layers', () => {
 
   test('shows the Wikipedia trend and developer cities with sources', async ({ page }) => {
     await openApp(page, 'layer=dev-cities')
-    await expect(page.getByRole('button', { name: /Real data from GitHub/ })).toBeVisible()
+    const chip = page.getByRole('button', { name: /Real data from GitHub/ })
+    await expect(chip).toBeVisible()
+    // The visible label keeps the publisher name (only a trailing parenthetical is dropped).
+    await expect(chip).toContainText(/Real data · GitHub · \d{4}-\d{2}-\d{2}/)
     await expect(page.getByRole('heading', { name: 'Developers by city' })).toBeVisible()
 
     await page.getByRole('button', { name: 'Analytics' }).click()
