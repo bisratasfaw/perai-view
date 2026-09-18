@@ -433,14 +433,14 @@
     {
       "date": "2026-09-17",
       "views": {
-        "chatgpt": 158321,
-        "gemini": 4304,
-        "claude": 8671,
-        "copilot": 534,
-        "midjourney": 829,
-        "mistral": 3317,
-        "llama": 881,
-        "perplexity": 3373
+        "chatgpt": 159731,
+        "gemini": 5352,
+        "claude": 11022,
+        "copilot": 540,
+        "midjourney": 876,
+        "mistral": 3372,
+        "llama": 904,
+        "perplexity": 3430
       }
     }
   ],
