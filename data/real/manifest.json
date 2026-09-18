@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-18T03:40:41.553Z",
+  "generated_at": "2026-09-18T08:58:57.957Z",
   "pipeline_version": "1.0.0",
   "sources": {
     "anthropic_economic_index": {
@@ -11,7 +11,7 @@
       "license": "CC-BY (release data documentation); dataset card lists MIT",
       "description": "Monthly Claude.ai usage by country and US state (share of global usage and per-capita index) and the global mix of request topics, from the Anthropic Economic Index releases on Hugging Face.",
       "status": "ok",
-      "fetched_at": "2026-09-18T03:40:41.553Z",
+      "fetched_at": "2026-09-18T08:58:57.957Z",
       "as_of": "May 2026",
       "error": null,
       "notes": [
@@ -29,7 +29,7 @@
       "license": "Figures quoted from a published working paper; no dataset was released. Transcription, not redistribution.",
       "description": "Share of consumer ChatGPT messages by conversation topic, July 2025 versus July 2024, from a sample of about one million de-identified consumer messages (May 2024 - June 2025).",
       "status": "ok",
-      "fetched_at": "2026-09-18T03:40:41.553Z",
+      "fetched_at": "2026-09-18T08:58:57.957Z",
       "as_of": "July 2025",
       "error": null,
       "notes": [
@@ -47,7 +47,7 @@
       "license": "CC0 (Wikimedia Analytics pageview datasets are released under the Creative Commons CC0 dedication)",
       "description": "Daily human pageviews of each assistant's Wikipedia article summed across language editions (Pageviews REST API), plus per-country sums from the differentially private country_project_page dataset, over the last 30 full days.",
       "status": "ok",
-      "fetched_at": "2026-09-18T03:40:41.553Z",
+      "fetched_at": "2026-09-18T08:58:57.957Z",
       "as_of": "2026-09-17",
       "error": null,
       "notes": [
@@ -76,11 +76,11 @@
       "license": "Public profile data via the GitHub API, subject to GitHub's Terms of Service; only aggregated counts are stored",
       "description": "Self-reported profile locations of people who forked the official OpenAI, Anthropic, Google Gemini, Mistral and Meta Llama SDK repositories, geocoded offline to the globe's cities and to countries.",
       "status": "ok",
-      "fetched_at": "2026-09-18T03:40:41.553Z",
+      "fetched_at": "2026-09-18T08:58:57.957Z",
       "as_of": "2026-09-18",
       "error": null,
       "notes": [
-        "21532 fork owners enumerated (newest first, at most 6000 per repository); 7643 list a location.",
+        "21542 fork owners enumerated (newest first, at most 6000 per repository); 7642 list a location.",
         "Geocoding matched 42.1% of locations to a globe city and 87.6% to a country.",
         "Organisations and users without a location are counted in forks_seen only."
       ]

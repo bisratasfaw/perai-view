@@ -6,9 +6,9 @@
       "full_name": "openai/openai-python",
       "assistant": "chatgpt",
       "vendor": "OpenAI",
-      "forks_total": 5586,
-      "forks_seen": 5526,
-      "with_location": 1827
+      "forks_total": 5596,
+      "forks_seen": 5536,
+      "with_location": 1826
     },
     {
       "full_name": "openai/openai-node",
@@ -46,7 +46,7 @@
       "full_name": "google-gemini/gemini-cli",
       "assistant": "gemini",
       "vendor": "Google",
-      "forks_total": 14602,
+      "forks_total": 14600,
       "forks_seen": 6000,
       "with_location": 2168
     },
@@ -1981,13 +1981,13 @@
       "cc": "IN",
       "name": "India",
       "counts": {
-        "chatgpt": 242,
+        "chatgpt": 241,
         "gemini": 454,
         "claude": 41,
         "mistral": 13,
         "llama": 215
       },
-      "total": 965
+      "total": 964
     },
     {
       "cc": "CN",
