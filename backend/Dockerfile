@@ -9,7 +9,7 @@
 # backend/Dockerfile.dockerignore limits what is sent from the context.
 
 # ── Build: install all deps and bundle src + shared into dist/server.js ──────────
-FROM node:22-alpine AS build
+FROM node:26-alpine AS build
 WORKDIR /app/backend
 COPY backend/package.json backend/package-lock.json ./
 RUN npm ci --no-audit --no-fund
@@ -18,7 +18,7 @@ COPY backend/ ./
 RUN npm run build
 
 # ── Runtime: production deps only, non-root ─────────────────────────────────────
-FROM node:22-alpine AS runtime
+FROM node:26-alpine AS runtime
 # HOST defaults to 127.0.0.1 outside Docker; a container must listen on all interfaces.
 ENV NODE_ENV=production \
     HOST=0.0.0.0 \
