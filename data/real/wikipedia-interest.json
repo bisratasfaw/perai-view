@@ -1,6 +1,6 @@
 {
   "source": "wikipedia_pageviews",
-  "as_of": "2026-10-26",
+  "as_of": "2026-10-27",
   "days": 30,
   "articles": [
     {
@@ -53,19 +53,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-09-27",
-      "views": {
-        "chatgpt": 66866,
-        "gemini": 4097,
-        "claude": 7744,
-        "copilot": 294,
-        "midjourney": 780,
-        "mistral": 1844,
-        "llama": 628,
-        "perplexity": 2514
-      }
-    },
     {
       "date": "2026-09-28",
       "views": {
@@ -442,6 +429,19 @@
         "llama": 775,
         "perplexity": 3791
       }
+    },
+    {
+      "date": "2026-10-27",
+      "views": {
+        "chatgpt": 275665,
+        "gemini": 15154,
+        "claude": 24582,
+        "copilot": 477,
+        "midjourney": 850,
+        "mistral": 2516,
+        "llama": 722,
+        "perplexity": 3814
+      }
     }
   ],
   "by_country": [
@@ -449,890 +449,937 @@
       "cc": "IN",
       "name": "India",
       "views": {
-        "chatgpt": 303576,
-        "gemini": 20498,
-        "claude": 19872,
+        "chatgpt": 337338,
+        "gemini": 21603,
+        "claude": 22555,
         "mistral": 257,
-        "perplexity": 11120
+        "perplexity": 11913
       },
-      "total": 355323,
+      "total": 393666,
       "leading": "chatgpt"
     },
     {
       "cc": "DE",
       "name": "Germany",
       "views": {
-        "chatgpt": 241663,
-        "gemini": 7326,
-        "claude": 24391,
-        "mistral": 11272,
+        "chatgpt": 259617,
+        "gemini": 8074,
+        "claude": 26548,
+        "mistral": 11735,
         "perplexity": 93
       },
-      "total": 284745,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "US",
-      "name": "United States",
-      "views": {
-        "chatgpt": 142276,
-        "gemini": 19138,
-        "claude": 42754,
-        "copilot": 494,
-        "midjourney": 5193,
-        "mistral": 10121,
-        "llama": 5265,
-        "perplexity": 14480
-      },
-      "total": 239721,
+      "total": 306067,
       "leading": "chatgpt"
     },
     {
       "cc": "BR",
       "name": "Brazil",
       "views": {
-        "chatgpt": 200497,
-        "gemini": 17225,
-        "claude": 9187
+        "chatgpt": 265756,
+        "gemini": 22716,
+        "claude": 12136
       },
-      "total": 226909,
+      "total": 300608,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "US",
+      "name": "United States",
+      "views": {
+        "chatgpt": 152359,
+        "gemini": 21570,
+        "claude": 45672,
+        "copilot": 704,
+        "midjourney": 5330,
+        "mistral": 10544,
+        "llama": 5494,
+        "perplexity": 15453
+      },
+      "total": 257126,
       "leading": "chatgpt"
     },
     {
       "cc": "MX",
       "name": "Mexico",
       "views": {
-        "chatgpt": 199946,
-        "gemini": 3556,
-        "claude": 3346
+        "chatgpt": 228345,
+        "gemini": 4435,
+        "claude": 4647
       },
-      "total": 206848,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "FR",
-      "name": "France",
-      "views": {
-        "chatgpt": 115935,
-        "gemini": 4615,
-        "claude": 14508,
-        "mistral": 13045,
-        "llama": 115,
-        "perplexity": 948
-      },
-      "total": 149166,
+      "total": 237427,
       "leading": "chatgpt"
     },
     {
       "cc": "IT",
       "name": "Italy",
       "views": {
-        "chatgpt": 120635,
-        "gemini": 9416,
-        "claude": 10713,
+        "chatgpt": 150029,
+        "gemini": 13193,
+        "claude": 12784,
         "mistral": 139,
-        "perplexity": 92
+        "perplexity": 188
       },
-      "total": 140995,
+      "total": 176333,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "FR",
+      "name": "France",
+      "views": {
+        "chatgpt": 126104,
+        "gemini": 5029,
+        "claude": 15760,
+        "mistral": 13409,
+        "llama": 115,
+        "perplexity": 1201
+      },
+      "total": 161618,
       "leading": "chatgpt"
     },
     {
       "cc": "ES",
       "name": "Spain",
       "views": {
-        "chatgpt": 121455,
-        "gemini": 5105,
-        "claude": 7416,
-        "perplexity": 496
+        "chatgpt": 145829,
+        "gemini": 5343,
+        "claude": 8800,
+        "perplexity": 612
       },
-      "total": 134472,
+      "total": 160584,
       "leading": "chatgpt"
     },
     {
       "cc": "PE",
       "name": "Peru",
       "views": {
-        "chatgpt": 75563,
-        "gemini": 1018,
-        "claude": 2460
+        "chatgpt": 89039,
+        "gemini": 1114,
+        "claude": 3209
       },
-      "total": 79041,
+      "total": 93362,
       "leading": "chatgpt"
     },
     {
       "cc": "CO",
       "name": "Colombia",
       "views": {
-        "chatgpt": 60367,
-        "gemini": 803,
-        "claude": 2131
+        "chatgpt": 70576,
+        "gemini": 893,
+        "claude": 3116
       },
-      "total": 63301,
+      "total": 74585,
       "leading": "chatgpt"
     },
     {
       "cc": "JP",
       "name": "Japan",
       "views": {
-        "chatgpt": 50684,
-        "gemini": 141,
-        "claude": 12193
+        "chatgpt": 54251,
+        "gemini": 264,
+        "claude": 13134
       },
-      "total": 63018,
+      "total": 67649,
       "leading": "chatgpt"
     },
     {
       "cc": "ID",
       "name": "Indonesia",
       "views": {
-        "chatgpt": 60430,
-        "claude": 1585
+        "chatgpt": 65307,
+        "claude": 2026
       },
-      "total": 62015,
+      "total": 67333,
       "leading": "chatgpt"
     },
     {
       "cc": "PH",
       "name": "Philippines",
       "views": {
-        "chatgpt": 55259,
-        "gemini": 798,
-        "claude": 553
+        "chatgpt": 60172,
+        "gemini": 1097,
+        "claude": 805
       },
-      "total": 56610,
+      "total": 62074,
       "leading": "chatgpt"
     },
     {
       "cc": "GB",
       "name": "United Kingdom",
       "views": {
-        "chatgpt": 39777,
-        "gemini": 2404,
-        "claude": 10801,
-        "mistral": 1707,
-        "perplexity": 1561
+        "chatgpt": 43696,
+        "gemini": 2475,
+        "claude": 11792,
+        "mistral": 1820,
+        "perplexity": 1570
       },
-      "total": 56250,
+      "total": 61353,
       "leading": "chatgpt"
     },
     {
       "cc": "CL",
       "name": "Chile",
       "views": {
-        "chatgpt": 41331
+        "chatgpt": 45192,
+        "gemini": 133
       },
-      "total": 41331,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "AT",
-      "name": "Austria",
-      "views": {
-        "chatgpt": 38192,
-        "claude": 1691,
-        "mistral": 337
-      },
-      "total": 40220,
+      "total": 45325,
       "leading": "chatgpt"
     },
     {
       "cc": "CA",
       "name": "Canada",
       "views": {
-        "chatgpt": 31493,
-        "gemini": 191,
-        "claude": 7314,
+        "chatgpt": 34353,
+        "gemini": 290,
+        "claude": 7814,
         "mistral": 96,
-        "perplexity": 787
+        "perplexity": 885
       },
-      "total": 39881,
+      "total": 43438,
       "leading": "chatgpt"
     },
     {
       "cc": "PT",
       "name": "Portugal",
       "views": {
-        "chatgpt": 32851,
+        "chatgpt": 41541,
         "gemini": 362,
-        "claude": 535
+        "claude": 1116
       },
-      "total": 33748,
+      "total": 43019,
       "leading": "chatgpt"
     },
     {
-      "cc": "AR",
-      "name": "Argentina",
+      "cc": "AT",
+      "name": "Austria",
       "views": {
-        "chatgpt": 30086,
-        "gemini": 220,
-        "claude": 1012
+        "chatgpt": 40621,
+        "claude": 1945,
+        "mistral": 337
       },
-      "total": 31318,
+      "total": 42903,
       "leading": "chatgpt"
     },
     {
       "cc": "MA",
       "name": "Morocco",
       "views": {
-        "chatgpt": 26152,
-        "gemini": 92,
-        "claude": 1146
+        "chatgpt": 33939,
+        "gemini": 236,
+        "claude": 1578
       },
-      "total": 27390,
+      "total": 35753,
       "leading": "chatgpt"
     },
     {
-      "cc": "NL",
-      "name": "Netherlands",
+      "cc": "AR",
+      "name": "Argentina",
       "views": {
-        "chatgpt": 24578,
-        "claude": 2436,
-        "mistral": 219
+        "chatgpt": 32571,
+        "gemini": 220,
+        "claude": 1205
       },
-      "total": 27233,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "CH",
-      "name": "Switzerland",
-      "views": {
-        "chatgpt": 26828,
-        "claude": 303
-      },
-      "total": 27131,
+      "total": 33996,
       "leading": "chatgpt"
     },
     {
       "cc": "MY",
       "name": "Malaysia",
       "views": {
-        "chatgpt": 24051,
-        "gemini": 470,
-        "claude": 1002
+        "chatgpt": 30967,
+        "gemini": 604,
+        "claude": 1409
       },
-      "total": 25523,
+      "total": 32980,
       "leading": "chatgpt"
     },
     {
-      "cc": "TW",
-      "name": "Taiwan",
+      "cc": "CH",
+      "name": "Switzerland",
       "views": {
-        "chatgpt": 15545,
-        "gemini": 2150,
-        "claude": 6616
+        "chatgpt": 30487,
+        "claude": 427
       },
-      "total": 24311,
+      "total": 30914,
       "leading": "chatgpt"
     },
     {
-      "cc": "BE",
-      "name": "Belgium",
+      "cc": "NL",
+      "name": "Netherlands",
       "views": {
-        "chatgpt": 23069
+        "chatgpt": 27295,
+        "claude": 3063,
+        "mistral": 219
       },
-      "total": 23069,
+      "total": 30577,
       "leading": "chatgpt"
     },
     {
       "cc": "DZ",
       "name": "Algeria",
       "views": {
-        "chatgpt": 20632,
-        "gemini": 1246,
-        "claude": 955
+        "chatgpt": 27127,
+        "gemini": 1692,
+        "claude": 1486
       },
-      "total": 22833,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "PL",
-      "name": "Poland",
-      "views": {
-        "chatgpt": 20620,
-        "claude": 817,
-        "mistral": 201
-      },
-      "total": 21638,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "EC",
-      "name": "Ecuador",
-      "views": {
-        "chatgpt": 20126,
-        "gemini": 363,
-        "claude": 329
-      },
-      "total": 20818,
+      "total": 30305,
       "leading": "chatgpt"
     },
     {
       "cc": "AE",
       "name": "United Arab Emirates",
       "views": {
-        "chatgpt": 19367
+        "chatgpt": 29060
       },
-      "total": 19367,
+      "total": 29060,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "TW",
+      "name": "Taiwan",
+      "views": {
+        "chatgpt": 17061,
+        "gemini": 2150,
+        "claude": 7061
+      },
+      "total": 26272,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "EC",
+      "name": "Ecuador",
+      "views": {
+        "chatgpt": 24846,
+        "gemini": 798,
+        "claude": 550
+      },
+      "total": 26194,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "PL",
+      "name": "Poland",
+      "views": {
+        "chatgpt": 23433,
+        "claude": 1309,
+        "mistral": 201
+      },
+      "total": 24943,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "BE",
+      "name": "Belgium",
+      "views": {
+        "chatgpt": 24708
+      },
+      "total": 24708,
       "leading": "chatgpt"
     },
     {
       "cc": "KZ",
       "name": "Kazakhstan",
       "views": {
-        "chatgpt": 17516
+        "chatgpt": 21253
       },
-      "total": 17516,
+      "total": 21253,
       "leading": "chatgpt"
     },
     {
       "cc": "TR",
       "name": "Türkiye",
       "views": {
-        "chatgpt": 16011
+        "chatgpt": 20982
       },
-      "total": 16011,
+      "total": 20982,
       "leading": "chatgpt"
     },
     {
       "cc": "AU",
       "name": "Australia",
       "views": {
-        "chatgpt": 11895,
-        "claude": 3584
+        "chatgpt": 13688,
+        "claude": 4106
       },
-      "total": 15479,
+      "total": 17794,
       "leading": "chatgpt"
     },
     {
       "cc": "SG",
       "name": "Singapore",
       "views": {
-        "chatgpt": 10662,
-        "gemini": 678,
-        "claude": 3772
+        "chatgpt": 11799,
+        "gemini": 657,
+        "claude": 4431
       },
-      "total": 15112,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "IL",
-      "name": "Israel",
-      "views": {
-        "chatgpt": 12163,
-        "gemini": 321,
-        "claude": 1684
-      },
-      "total": 14168,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "UA",
-      "name": "Ukraine",
-      "views": {
-        "chatgpt": 13446
-      },
-      "total": 13446,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "KR",
-      "name": "South Korea",
-      "views": {
-        "chatgpt": 7206,
-        "gemini": 5213,
-        "claude": 367
-      },
-      "total": 12786,
+      "total": 16887,
       "leading": "chatgpt"
     },
     {
       "cc": "TN",
       "name": "Tunisia",
       "views": {
-        "chatgpt": 12189,
-        "claude": 471
+        "chatgpt": 15858,
+        "claude": 566
       },
-      "total": 12660,
+      "total": 16424,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "IL",
+      "name": "Israel",
+      "views": {
+        "chatgpt": 13608,
+        "gemini": 321,
+        "claude": 1781
+      },
+      "total": 15710,
       "leading": "chatgpt"
     },
     {
       "cc": "LK",
       "name": "Sri Lanka",
       "views": {
-        "chatgpt": 11026,
-        "gemini": 665
+        "chatgpt": 13792,
+        "gemini": 962
       },
-      "total": 11691,
+      "total": 14754,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "KR",
+      "name": "South Korea",
+      "views": {
+        "chatgpt": 7854,
+        "gemini": 5854,
+        "claude": 813
+      },
+      "total": 14521,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "UA",
+      "name": "Ukraine",
+      "views": {
+        "chatgpt": 13662
+      },
+      "total": 13662,
       "leading": "chatgpt"
     },
     {
       "cc": "ZA",
       "name": "South Africa",
       "views": {
-        "chatgpt": 9369
+        "chatgpt": 13255,
+        "claude": 108
       },
-      "total": 9369,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "DO",
-      "name": "Dominican Republic",
-      "views": {
-        "chatgpt": 7564
-      },
-      "total": 7564,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "GT",
-      "name": "Guatemala",
-      "views": {
-        "chatgpt": 7215
-      },
-      "total": 7215,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "TZ",
-      "name": "Tanzania",
-      "views": {
-        "chatgpt": 6363
-      },
-      "total": 6363,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "TH",
-      "name": "Thailand",
-      "views": {
-        "chatgpt": 6276
-      },
-      "total": 6276,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "BO",
-      "name": "Bolivia",
-      "views": {
-        "chatgpt": 6164
-      },
-      "total": 6164,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "RO",
-      "name": "Romania",
-      "views": {
-        "chatgpt": 5963,
-        "claude": 96
-      },
-      "total": 6059,
+      "total": 13363,
       "leading": "chatgpt"
     },
     {
       "cc": "KE",
       "name": "Kenya",
       "views": {
-        "chatgpt": 5989
+        "chatgpt": 8663
       },
-      "total": 5989,
+      "total": 8663,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "DO",
+      "name": "Dominican Republic",
+      "views": {
+        "chatgpt": 8412
+      },
+      "total": 8412,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "GT",
+      "name": "Guatemala",
+      "views": {
+        "chatgpt": 8314
+      },
+      "total": 8314,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "TZ",
+      "name": "Tanzania",
+      "views": {
+        "chatgpt": 8222
+      },
+      "total": 8222,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "TH",
+      "name": "Thailand",
+      "views": {
+        "chatgpt": 7835
+      },
+      "total": 7835,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "RO",
+      "name": "Romania",
+      "views": {
+        "chatgpt": 7572,
+        "claude": 209
+      },
+      "total": 7781,
       "leading": "chatgpt"
     },
     {
       "cc": "GR",
       "name": "Greece",
       "views": {
-        "chatgpt": 5673
+        "chatgpt": 7437
       },
-      "total": 5673,
+      "total": 7437,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "BO",
+      "name": "Bolivia",
+      "views": {
+        "chatgpt": 7361
+      },
+      "total": 7361,
       "leading": "chatgpt"
     },
     {
       "cc": "MG",
       "name": "Madagascar",
       "views": {
-        "chatgpt": 5559
+        "chatgpt": 5898
       },
-      "total": 5559,
+      "total": 5898,
       "leading": "chatgpt"
     },
     {
       "cc": "SE",
       "name": "Sweden",
       "views": {
-        "chatgpt": 4685,
-        "claude": 192
+        "chatgpt": 4988,
+        "claude": 309
       },
-      "total": 4877,
+      "total": 5297,
       "leading": "chatgpt"
     },
     {
       "cc": "CR",
       "name": "Costa Rica",
       "views": {
-        "chatgpt": 4097
+        "chatgpt": 5003
       },
-      "total": 4097,
+      "total": 5003,
       "leading": "chatgpt"
     },
     {
       "cc": "PK",
       "name": "Pakistan",
       "views": {
-        "chatgpt": 3905
+        "chatgpt": 4950
       },
-      "total": 3905,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "HU",
-      "name": "Hungary",
-      "views": {
-        "chatgpt": 3789
-      },
-      "total": 3789,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "CZ",
-      "name": "Czechia",
-      "views": {
-        "chatgpt": 3266
-      },
-      "total": 3266,
+      "total": 4950,
       "leading": "chatgpt"
     },
     {
       "cc": "UG",
       "name": "Uganda",
       "views": {
-        "chatgpt": 3197
+        "chatgpt": 4813
       },
-      "total": 3197,
+      "total": 4813,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "HU",
+      "name": "Hungary",
+      "views": {
+        "chatgpt": 4668
+      },
+      "total": 4668,
       "leading": "chatgpt"
     },
     {
       "cc": "QA",
       "name": "Qatar",
       "views": {
-        "chatgpt": 3193
+        "chatgpt": 4505
       },
-      "total": 3193,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "NP",
-      "name": "Nepal",
-      "views": {
-        "chatgpt": 2950
-      },
-      "total": 2950,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "OM",
-      "name": "Oman",
-      "views": {
-        "chatgpt": 2666
-      },
-      "total": 2666,
+      "total": 4505,
       "leading": "chatgpt"
     },
     {
       "cc": "CI",
       "name": "Ivory Coast",
       "views": {
-        "chatgpt": 2422,
-        "claude": 202
+        "chatgpt": 3623,
+        "claude": 419
       },
-      "total": 2624,
+      "total": 4042,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "OM",
+      "name": "Oman",
+      "views": {
+        "chatgpt": 4026
+      },
+      "total": 4026,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "CZ",
+      "name": "Czechia",
+      "views": {
+        "chatgpt": 3782
+      },
+      "total": 3782,
       "leading": "chatgpt"
     },
     {
       "cc": "PA",
       "name": "Panama",
       "views": {
-        "chatgpt": 2402
+        "chatgpt": 3582
       },
-      "total": 2402,
+      "total": 3582,
       "leading": "chatgpt"
     },
     {
-      "cc": "IE",
-      "name": "Ireland",
+      "cc": "NP",
+      "name": "Nepal",
       "views": {
-        "chatgpt": 2330
+        "chatgpt": 3345
       },
-      "total": 2330,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "FI",
-      "name": "Finland",
-      "views": {
-        "chatgpt": 2049,
-        "claude": 90
-      },
-      "total": 2139,
+      "total": 3345,
       "leading": "chatgpt"
     },
     {
       "cc": "KW",
       "name": "Kuwait",
       "views": {
-        "chatgpt": 1926,
+        "chatgpt": 2703,
         "gemini": 97
       },
-      "total": 2023,
+      "total": 2800,
       "leading": "chatgpt"
     },
     {
       "cc": "RS",
       "name": "Serbia",
       "views": {
-        "chatgpt": 1898,
+        "chatgpt": 2614,
         "gemini": 95
       },
-      "total": 1993,
+      "total": 2709,
       "leading": "chatgpt"
     },
     {
       "cc": "MZ",
       "name": "Mozambique",
       "views": {
-        "chatgpt": 1867
+        "chatgpt": 2677
       },
-      "total": 1867,
+      "total": 2677,
       "leading": "chatgpt"
     },
     {
-      "cc": "NO",
-      "name": "Norway",
+      "cc": "IE",
+      "name": "Ireland",
       "views": {
-        "chatgpt": 1862
+        "chatgpt": 2594
       },
-      "total": 1862,
+      "total": 2594,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "FI",
+      "name": "Finland",
+      "views": {
+        "chatgpt": 2391,
+        "claude": 90
+      },
+      "total": 2481,
       "leading": "chatgpt"
     },
     {
       "cc": "AO",
       "name": "Angola",
       "views": {
-        "chatgpt": 1626
+        "chatgpt": 2403
       },
-      "total": 1626,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "NG",
-      "name": "Nigeria",
-      "views": {
-        "chatgpt": 1594
-      },
-      "total": 1594,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "SV",
-      "name": "El Salvador",
-      "views": {
-        "chatgpt": 1562
-      },
-      "total": 1562,
+      "total": 2403,
       "leading": "chatgpt"
     },
     {
       "cc": "LB",
       "name": "Lebanon",
       "views": {
-        "chatgpt": 1375
+        "chatgpt": 2222
       },
-      "total": 1375,
+      "total": 2222,
       "leading": "chatgpt"
     },
     {
-      "cc": "SN",
-      "name": "Senegal",
+      "cc": "NO",
+      "name": "Norway",
       "views": {
-        "chatgpt": 1374
+        "chatgpt": 2143
       },
-      "total": 1374,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "CD",
-      "name": "DR Congo",
-      "views": {
-        "chatgpt": 1365
-      },
-      "total": 1365,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "BF",
-      "name": "Burkina Faso",
-      "views": {
-        "chatgpt": 1356
-      },
-      "total": 1356,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "JO",
-      "name": "Jordan",
-      "views": {
-        "chatgpt": 1274
-      },
-      "total": 1274,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "KG",
-      "name": "Kyrgyzstan",
-      "views": {
-        "chatgpt": 1121
-      },
-      "total": 1121,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "BJ",
-      "name": "Benin",
-      "views": {
-        "chatgpt": 1063
-      },
-      "total": 1063,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "SK",
-      "name": "Slovakia",
-      "views": {
-        "chatgpt": 1048
-      },
-      "total": 1048,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "MN",
-      "name": "Mongolia",
-      "views": {
-        "chatgpt": 887
-      },
-      "total": 887,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "NA",
-      "name": "Namibia",
-      "views": {
-        "chatgpt": 827
-      },
-      "total": 827,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "NZ",
-      "name": "New Zealand",
-      "views": {
-        "chatgpt": 809
-      },
-      "total": 809,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "HR",
-      "name": "Croatia",
-      "views": {
-        "chatgpt": 767
-      },
-      "total": 767,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "BA",
-      "name": "Bosnia and Herzegovina",
-      "views": {
-        "chatgpt": 675
-      },
-      "total": 675,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "BG",
-      "name": "Bulgaria",
-      "views": {
-        "chatgpt": 657
-      },
-      "total": 657,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "LV",
-      "name": "Latvia",
-      "views": {
-        "chatgpt": 628
-      },
-      "total": 628,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "CM",
-      "name": "Cameroon",
-      "views": {
-        "chatgpt": 616
-      },
-      "total": 616,
+      "total": 2143,
       "leading": "chatgpt"
     },
     {
       "cc": "BD",
       "name": "Bangladesh",
       "views": {
-        "chatgpt": 584
+        "chatgpt": 2093
       },
-      "total": 584,
+      "total": 2093,
       "leading": "chatgpt"
     },
     {
-      "cc": "MU",
-      "name": "Mauritius",
+      "cc": "SN",
+      "name": "Senegal",
       "views": {
-        "chatgpt": 563
+        "chatgpt": 1985
       },
-      "total": 563,
+      "total": 1985,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "SV",
+      "name": "El Salvador",
+      "views": {
+        "chatgpt": 1936
+      },
+      "total": 1936,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "JO",
+      "name": "Jordan",
+      "views": {
+        "chatgpt": 1929
+      },
+      "total": 1929,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "NG",
+      "name": "Nigeria",
+      "views": {
+        "chatgpt": 1927
+      },
+      "total": 1927,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "BF",
+      "name": "Burkina Faso",
+      "views": {
+        "chatgpt": 1917
+      },
+      "total": 1917,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "KG",
+      "name": "Kyrgyzstan",
+      "views": {
+        "chatgpt": 1720
+      },
+      "total": 1720,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "BJ",
+      "name": "Benin",
+      "views": {
+        "chatgpt": 1631
+      },
+      "total": 1631,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "CD",
+      "name": "DR Congo",
+      "views": {
+        "chatgpt": 1631
+      },
+      "total": 1631,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "SK",
+      "name": "Slovakia",
+      "views": {
+        "chatgpt": 1629
+      },
+      "total": 1629,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "MN",
+      "name": "Mongolia",
+      "views": {
+        "chatgpt": 1348
+      },
+      "total": 1348,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "NA",
+      "name": "Namibia",
+      "views": {
+        "chatgpt": 1155
+      },
+      "total": 1155,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "HR",
+      "name": "Croatia",
+      "views": {
+        "chatgpt": 1148
+      },
+      "total": 1148,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "BA",
+      "name": "Bosnia and Herzegovina",
+      "views": {
+        "chatgpt": 1146
+      },
+      "total": 1146,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "NZ",
+      "name": "New Zealand",
+      "views": {
+        "chatgpt": 1039
+      },
+      "total": 1039,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "BG",
+      "name": "Bulgaria",
+      "views": {
+        "chatgpt": 978
+      },
+      "total": 978,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "LV",
+      "name": "Latvia",
+      "views": {
+        "chatgpt": 938
+      },
+      "total": 938,
       "leading": "chatgpt"
     },
     {
       "cc": "DK",
       "name": "Denmark",
       "views": {
-        "chatgpt": 544
+        "chatgpt": 839
       },
-      "total": 544,
+      "total": 839,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "CM",
+      "name": "Cameroon",
+      "views": {
+        "chatgpt": 828
+      },
+      "total": 828,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "SI",
+      "name": "Slovenia",
+      "views": {
+        "chatgpt": 812
+      },
+      "total": 812,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "MU",
+      "name": "Mauritius",
+      "views": {
+        "chatgpt": 799
+      },
+      "total": 799,
       "leading": "chatgpt"
     },
     {
       "cc": "ZW",
       "name": "Zimbabwe",
       "views": {
-        "chatgpt": 530
+        "chatgpt": 790
       },
-      "total": 530,
+      "total": 790,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "AL",
+      "name": "Albania",
+      "views": {
+        "chatgpt": 762
+      },
+      "total": 762,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "PY",
+      "name": "Paraguay",
+      "views": {
+        "chatgpt": 762
+      },
+      "total": 762,
       "leading": "chatgpt"
     },
     {
       "cc": "LT",
       "name": "Lithuania",
       "views": {
-        "chatgpt": 514
+        "chatgpt": 734
       },
-      "total": 514,
+      "total": 734,
       "leading": "chatgpt"
     },
     {
-      "cc": "SI",
-      "name": "Slovenia",
+      "cc": "CY",
+      "name": "Cyprus",
+      "views": {
+        "chatgpt": 666
+      },
+      "total": 666,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "BI",
+      "name": "Burundi",
+      "views": {
+        "chatgpt": 562
+      },
+      "total": 562,
+      "leading": "chatgpt"
+    },
+    {
+      "cc": "ZM",
+      "name": "Zambia",
       "views": {
         "chatgpt": 509
       },
@@ -1340,39 +1387,21 @@
       "leading": "chatgpt"
     },
     {
-      "cc": "AL",
-      "name": "Albania",
+      "cc": "UY",
+      "name": "Uruguay",
       "views": {
-        "chatgpt": 489
+        "chatgpt": 466
       },
-      "total": 489,
+      "total": 466,
       "leading": "chatgpt"
     },
     {
-      "cc": "PY",
-      "name": "Paraguay",
+      "cc": "MK",
+      "name": "North Macedonia",
       "views": {
-        "chatgpt": 488
+        "chatgpt": 325
       },
-      "total": 488,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "CY",
-      "name": "Cyprus",
-      "views": {
-        "chatgpt": 433
-      },
-      "total": 433,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "BI",
-      "name": "Burundi",
-      "views": {
-        "chatgpt": 342
-      },
-      "total": 342,
+      "total": 325,
       "leading": "chatgpt"
     },
     {
@@ -1394,30 +1423,30 @@
       "leading": "chatgpt"
     },
     {
-      "cc": "ZM",
-      "name": "Zambia",
+      "cc": "GH",
+      "name": "Ghana",
       "views": {
-        "chatgpt": 263
+        "chatgpt": 208
       },
-      "total": 263,
+      "total": 208,
       "leading": "chatgpt"
     },
     {
-      "cc": "UY",
-      "name": "Uruguay",
+      "cc": "GA",
+      "name": "Gabon",
       "views": {
-        "chatgpt": 243
+        "chatgpt": 203
       },
-      "total": 243,
+      "total": 203,
       "leading": "chatgpt"
     },
     {
-      "cc": "MK",
-      "name": "North Macedonia",
+      "cc": "RE",
+      "name": "Réunion",
       "views": {
-        "chatgpt": 234
+        "chatgpt": 194
       },
-      "total": 234,
+      "total": 194,
       "leading": "chatgpt"
     },
     {
@@ -1430,26 +1459,8 @@
       "leading": "chatgpt"
     },
     {
-      "cc": "GA",
-      "name": "Gabon",
-      "views": {
-        "chatgpt": 105
-      },
-      "total": 105,
-      "leading": "chatgpt"
-    },
-    {
       "cc": "MW",
       "name": "Malawi",
-      "views": {
-        "chatgpt": 95
-      },
-      "total": 95,
-      "leading": "chatgpt"
-    },
-    {
-      "cc": "RE",
-      "name": "Réunion",
       "views": {
         "chatgpt": 95
       },
@@ -1475,5 +1486,5 @@
       "leading": "chatgpt"
     }
   ],
-  "by_country_note": "Lower bound: Wikimedia's differentially private country dataset only publishes page/country/day cells above a privacy threshold, so small countries and low-traffic days are missing rather than zero. Sums cover 29 of 30 days (2026-09-27 to 2026-10-25); all language editions combined."
+  "by_country_note": "Lower bound: Wikimedia's differentially private country dataset only publishes page/country/day cells above a privacy threshold, so small countries and low-traffic days are missing rather than zero. Sums cover 30 of 30 days (2026-09-28 to 2026-10-27); all language editions combined."
 }
