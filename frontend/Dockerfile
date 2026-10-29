@@ -22,7 +22,7 @@ ARG VITE_REPO_URL=https://github.com/bisratasfaw/perai-view
 RUN VITE_DATA_SOURCE="$VITE_DATA_SOURCE" VITE_REPO_URL="$VITE_REPO_URL" npm run build
 
 # ── Runtime: static files + reverse proxy, as a non-root user on port 8080 ──────
-FROM nginxinc/nginx-unprivileged:1.30-alpine AS runtime
+FROM nginxinc/nginx-unprivileged:1.31-alpine AS runtime
 COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/frontend/dist /usr/share/nginx/html
 EXPOSE 8080
