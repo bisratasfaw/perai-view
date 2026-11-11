@@ -1,13 +1,13 @@
 {
   "source": "github_forks",
-  "as_of": "2026-11-10",
+  "as_of": "2026-11-11",
   "repos": [
     {
       "full_name": "openai/openai-python",
       "assistant": "chatgpt",
       "vendor": "OpenAI",
-      "forks_total": 5888,
-      "forks_seen": 5820,
+      "forks_total": 5886,
+      "forks_seen": 5818,
       "with_location": 1935
     },
     {
@@ -22,17 +22,17 @@
       "full_name": "anthropics/anthropic-sdk-python",
       "assistant": "claude",
       "vendor": "Anthropic",
-      "forks_total": 907,
-      "forks_seen": 897,
-      "with_location": 347
+      "forks_total": 908,
+      "forks_seen": 898,
+      "with_location": 346
     },
     {
       "full_name": "anthropics/anthropic-sdk-typescript",
       "assistant": "claude",
       "vendor": "Anthropic",
-      "forks_total": 435,
-      "forks_seen": 427,
-      "with_location": 204
+      "forks_total": 432,
+      "forks_seen": 424,
+      "with_location": 203
     },
     {
       "full_name": "googleapis/python-genai",
@@ -46,9 +46,9 @@
       "full_name": "google-gemini/gemini-cli",
       "assistant": "gemini",
       "vendor": "Google",
-      "forks_total": 14928,
+      "forks_total": 14930,
       "forks_seen": 6000,
-      "with_location": 2152
+      "with_location": 2153
     },
     {
       "full_name": "mistralai/client-python",
@@ -62,7 +62,7 @@
       "full_name": "meta-llama/llama",
       "assistant": "llama",
       "vendor": "Meta",
-      "forks_total": 9764,
+      "forks_total": 9765,
       "forks_seen": 6000,
       "with_location": 2062
     }
@@ -89,12 +89,12 @@
       "lng": 77.5946,
       "counts": {
         "chatgpt": 53,
-        "gemini": 84,
+        "gemini": 85,
         "claude": 12,
         "mistral": 5,
         "llama": 44
       },
-      "total": 198
+      "total": 199
     },
     {
       "name": "Beijing",
@@ -110,20 +110,6 @@
       "total": 196
     },
     {
-      "name": "New York",
-      "cc": "US",
-      "lat": 40.7128,
-      "lng": -74.006,
-      "counts": {
-        "chatgpt": 42,
-        "gemini": 43,
-        "claude": 26,
-        "mistral": 2,
-        "llama": 32
-      },
-      "total": 145
-    },
-    {
       "name": "Shanghai",
       "cc": "CN",
       "lat": 31.2304,
@@ -135,6 +121,20 @@
         "llama": 66
       },
       "total": 144
+    },
+    {
+      "name": "New York",
+      "cc": "US",
+      "lat": 40.7128,
+      "lng": -74.006,
+      "counts": {
+        "chatgpt": 41,
+        "gemini": 43,
+        "claude": 24,
+        "mistral": 2,
+        "llama": 32
+      },
+      "total": 142
     },
     {
       "name": "London",
@@ -332,11 +332,11 @@
       "lng": 36.8219,
       "counts": {
         "chatgpt": 17,
-        "gemini": 12,
+        "gemini": 11,
         "claude": 2,
         "llama": 11
       },
-      "total": 42
+      "total": 41
     },
     {
       "name": "Sydney",
@@ -1772,6 +1772,16 @@
       "total": 1
     },
     {
+      "name": "Dakar",
+      "cc": "SN",
+      "lat": 14.7167,
+      "lng": -17.4677,
+      "counts": {
+        "gemini": 1
+      },
+      "total": 1
+    },
+    {
       "name": "Damascus",
       "cc": "SY",
       "lat": 33.5138,
@@ -1977,25 +1987,25 @@
       "cc": "US",
       "name": "United States",
       "counts": {
-        "chatgpt": 601,
+        "chatgpt": 600,
         "gemini": 475,
-        "claude": 193,
+        "claude": 191,
         "mistral": 20,
         "llama": 435
       },
-      "total": 1724
+      "total": 1721
     },
     {
       "cc": "IN",
       "name": "India",
       "counts": {
         "chatgpt": 252,
-        "gemini": 494,
+        "gemini": 495,
         "claude": 50,
         "mistral": 13,
         "llama": 213
       },
-      "total": 1022
+      "total": 1023
     },
     {
       "cc": "CN",
@@ -2004,9 +2014,9 @@
         "chatgpt": 237,
         "gemini": 171,
         "claude": 28,
-        "llama": 332
+        "llama": 331
       },
-      "total": 768
+      "total": 767
     },
     {
       "cc": "CA",
@@ -2109,9 +2119,9 @@
         "chatgpt": 30,
         "gemini": 36,
         "claude": 8,
-        "llama": 12
+        "llama": 13
       },
-      "total": 86
+      "total": 87
     },
     {
       "cc": "TW",
@@ -2164,24 +2174,24 @@
       "name": "Nigeria",
       "counts": {
         "chatgpt": 28,
-        "gemini": 17,
+        "gemini": 16,
         "claude": 2,
         "mistral": 2,
         "llama": 21
       },
-      "total": 70
+      "total": 69
     },
     {
       "cc": "BD",
       "name": "Bangladesh",
       "counts": {
         "chatgpt": 15,
-        "gemini": 22,
+        "gemini": 23,
         "claude": 2,
         "mistral": 1,
         "llama": 26
       },
-      "total": 66
+      "total": 67
     },
     {
       "cc": "TH",
@@ -2234,11 +2244,11 @@
       "name": "Kenya",
       "counts": {
         "chatgpt": 22,
-        "gemini": 15,
+        "gemini": 14,
         "claude": 3,
         "llama": 12
       },
-      "total": 52
+      "total": 51
     },
     {
       "cc": "MX",
@@ -2602,6 +2612,17 @@
       "total": 11
     },
     {
+      "cc": "ET",
+      "name": "Ethiopia",
+      "counts": {
+        "chatgpt": 3,
+        "gemini": 2,
+        "claude": 1,
+        "llama": 4
+      },
+      "total": 10
+    },
+    {
       "cc": "RO",
       "name": "Romania",
       "counts": {
@@ -2641,17 +2662,6 @@
         "gemini": 3,
         "claude": 2,
         "llama": 2
-      },
-      "total": 9
-    },
-    {
-      "cc": "ET",
-      "name": "Ethiopia",
-      "counts": {
-        "chatgpt": 2,
-        "gemini": 2,
-        "claude": 1,
-        "llama": 4
       },
       "total": 9
     },
@@ -3027,6 +3037,14 @@
       "total": 3
     },
     {
+      "cc": "SN",
+      "name": "Senegal",
+      "counts": {
+        "gemini": 3
+      },
+      "total": 3
+    },
+    {
       "cc": "AO",
       "name": "Angola",
       "counts": {
@@ -3145,14 +3163,6 @@
       "counts": {
         "chatgpt": 1,
         "llama": 1
-      },
-      "total": 2
-    },
-    {
-      "cc": "SN",
-      "name": "Senegal",
-      "counts": {
-        "gemini": 2
       },
       "total": 2
     },
@@ -3426,6 +3436,6 @@
   "geocoding": {
     "method": "Offline: normalised free-text profile locations matched against the 241 globe cities plus an alias table; otherwise country by name, ISO code, flag emoji, US state, province or well-known city; no fuzzy matching.",
     "matched_city_pct": 41.9,
-    "matched_country_pct": 87.3
+    "matched_country_pct": 87.2
   }
 }
